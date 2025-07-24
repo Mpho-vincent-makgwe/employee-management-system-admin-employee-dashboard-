@@ -1,4 +1,4 @@
-import MyTimesheetPage from "../components/MyTimesheetPage";
+import MyTimesheetPage from "../../../components/EmployeeComponents/MyTimesheetPage";
 
 export default function MyTimesheet() {
   return (

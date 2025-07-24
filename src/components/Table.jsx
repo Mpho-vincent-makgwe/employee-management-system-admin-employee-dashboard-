@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { useState, useEffect, useMemo, useCallback } from "react";
 import { FaSort, FaSortUp, FaSortDown } from "react-icons/fa";
-import { useSearch } from "../../context/SearchContext";
+import { useSearch } from "../context/SearchContext";
 
 const Table = ({
   title,

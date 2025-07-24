@@ -1,7 +1,7 @@
 "use client";
 
-import Table from "./Table";
-import { timesheetEntries } from "../../app/employee/data/timesheetData";
+import Table from "../Table";
+import { timesheetEntries } from "../../data/employeeData/timesheetData";
 import { useEffect } from "react";
 import { useSearch } from "../../context/SearchContext";
 
