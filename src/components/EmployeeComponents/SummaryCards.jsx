@@ -1,7 +1,7 @@
 "use client";
 
 import { Clock3, CalendarRange, CalendarCheck, AlarmClock } from "lucide-react";
-import { timesheetEntries, getTimeSummary } from "../data/timesheetData";
+import { timesheetEntries, getTimeSummary } from "../../app/employee/data/timesheetData";
 
 const TimesheetSummaryCards = () => {
   const summary = getTimeSummary(timesheetEntries);

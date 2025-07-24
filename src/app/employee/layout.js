@@ -1,6 +1,6 @@
 import "../globals.css";
-import Sidebar from "./components/Sidebar";
-import { SearchProvider } from "./context/SearchContext";
+import Sidebar from "../../components/EmployeeComponents/Sidebar";
+import { SearchProvider } from "../../context/SearchContext";
 
 export const metadata = {
   title: "Employee Dashboard (Managemant System)",
