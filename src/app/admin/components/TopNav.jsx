@@ -1,12 +1,20 @@
-
+'use client'
 import DropdownMenu from "./DropdownMenu";
+import SearchBar from "./SearchBar";
+
+
 
 export default function TopNav() {
- 
+ const handleSearch = (query) => {
+  
+ }
 
   return (
-   <header className=" z-40 flex justify-end items-center px-8 py-4 bg-white shadow">
+    
+   <header className=" z-40 flex justify-between items-center px-8 py-4 bg-white shadow">
 
+      <SearchBar onSearch={handleSearch}/>
+      
        <DropdownMenu
         trigger={
           <div className="flex items-center gap-2 cursor-pointer">
@@ -34,5 +42,6 @@ export default function TopNav() {
         ]}
       />
     </header>
+    
   );
 }
