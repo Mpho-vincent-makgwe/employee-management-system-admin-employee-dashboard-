@@ -8,12 +8,12 @@ export const metadata = {
 export default function EmployeeLayout({ children }) {
   return (
     // <SearchProvider>
-      <div className="flex min-h-screen">
+      <div className="">
         {/* Sidebar */}
         {/* <Sidebar /> */}
 
         {/* Main Content */}
-        <main className="flex-1 flex flex-col overflow-hidden pt-16 lg:pl-64 bg-gray-100">
+        <main className="">
           {children}
         </main>
       </div>
