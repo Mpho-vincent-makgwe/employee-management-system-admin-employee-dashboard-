@@ -1,28 +1,22 @@
-import "./globals.css";
-import Sidebar from "./components/Sidebar";
-import TopNav from "./components/TopNav";
+import "../globals.css";
 
 export const metadata = {
-  title: "Admin Dashboard (Managemant System)",
-  description: "Admin dashboard for employee managent system",
+  title: "Employee Dashboard (Managemant System)",
+  description: "Employee dashboard for employee managent system",
 };
 
-export default function RootLayout({ children }) {
+export default function EmployeeLayout({ children }) {
   return (
-    <html lang="en">
-      <body
-        className={`antialiased`}
-      >
-        <div className="flex h-screen ">
-        <Sidebar/>
-        <div className="flex-1 flex flex-col overflow-hidden">
-          <TopNav/>
-          <div className="flex-1 overflow-y-auto p-6 ">
-            {children}
-          </div>
-        </div>
+    // <SearchProvider>
+      <div className="flex min-h-screen">
+        {/* Sidebar */}
+        {/* <Sidebar /> */}
+
+        {/* Main Content */}
+        <main className="flex-1 flex flex-col overflow-hidden pt-16 lg:pl-64 bg-gray-100">
+          {children}
+        </main>
       </div>
-      </body>
-    </html>
+    // </SearchProvider>
   );
 }

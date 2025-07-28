@@ -21,8 +21,8 @@ import {
 
 // Employee sidebar menu
 const employeeMenu = [
-  { label: "Dashboard", icon: <BsGridFill />, href: "/employee" },
-  { label: "Employee Directory", icon: <FaUserFriends />, href: "/employee/directory" },
+  { label: "Dashboard", icon: <BsGridFill />, href: "/employee/dasboard" },
+  { label: "Employee Directory", icon: <FaUserFriends />, href: "/employee/employee-directory" },
   { label: "Timesheet", icon: <FaClock />, href: "/employee/timesheet" },
   { label: "Payroll", icon: <FaFileInvoiceDollar />, href: "/employee/payroll" },
   { label: "Birthday", icon: <FaBirthdayCake />, href: "/employee/birthday" },
@@ -32,12 +32,12 @@ const employeeMenu = [
 
 // Admin sidebar menu
 const adminMenu = [
-  { label: "Dashboard", icon: <BsGridFill />, href: "/admin" },
-  { label: "Employee Directory", icon: <FaUserFriends />, href: "/admin/directory" },
+  { label: "Dashboard", icon: <BsGridFill />, href: "/admin/dashboard" },
+  { label: "Employee Directory", icon: <FaUserFriends />, href: "/admin/employee-directory" },
   { label: "Timesheet", icon: <FaClock />, href: "/admin/timesheet" },
   { label: "Payroll", icon: <FaFileInvoiceDollar />, href: "/admin/payroll" },
-  { label: "Birthday", icon: <FaBirthdayCake />, href: "/admin/birthday" },
-  { label: "Setting", icon: <FiSettings />, href: "/admin/setting" },
+  { label: "Birthday", icon: <FaBirthdayCake />, href: "/admin/birthdays" },
+  { label: "Setting", icon: <FiSettings />, href: "/admin/settings" },
   { label: "Logout", icon: <FiLogOut />, href: "/auth/logout" },
 ];
 
