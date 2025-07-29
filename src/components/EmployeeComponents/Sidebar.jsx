@@ -14,15 +14,23 @@ import { Cake, Calendar, Clock, Settings, Users } from "lucide-react";
 
 const menu = [
   { label: "Dashboard", icon: <BsGridFill />, href: "/" },
-  { label: "Employee Directory", icon: <HiUsers />, href: "/request-leave" },
+  {
+    label: "Employee Directory",
+    icon: <HiUsers />,
+    href: "/employee/employee-directory",
+  },
   {
     label: "My Timesheet",
     icon: <BsFillClockFill />,
     href: "/employee/my-timesheet",
   },
-  { label: "My Attendance", icon: <FaCalendar />, href: "/holidays" },
+  {
+    label: "My Attendance",
+    icon: <FaCalendar />,
+    href: "/employee/my-attendance",
+  },
   { label: "Birthdays", icon: <MdCake />, href: "/employee/birthdays" },
-  { label: "Settings", icon: <IoIosSettings />, href: "/notifications" },
+  { label: "Settings", icon: <IoIosSettings />, href: "/employee/settings" },
   { label: "Logout", icon: <FiLogOut />, href: "/auth/logout" },
 ];
 

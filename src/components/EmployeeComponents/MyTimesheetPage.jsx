@@ -4,7 +4,7 @@ import TimesheetEntries from "./TimesheetEntries";
 
 export default function MyTimesheetPage() {
   return (
-    <div className="p-6 bg-gray-100">
+    <div className="px-6 py-5 bg-gray-100">
       <Heading
         title="My Timesheet"
         subtitle="View and manage your timesheet entries"
