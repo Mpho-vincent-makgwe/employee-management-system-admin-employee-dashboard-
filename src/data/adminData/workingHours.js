@@ -20,29 +20,4 @@ export const pieData = {
   ],
 };
 
-const overview = [
-  {
-    label: "Total Employees",
-    value: 35,
-    icon: "FiUsers", 
-    color: "#4F46E5",
-  },
-  {
-    label: "Present Today",
-    value: 16,
-    icon: "FiCheckCircle",
-    color: "#4F46E5",
-  },
-  {
-    label: "On Leave",
-    value: 16,
-    icon: "FiMinusCircle",
-    color: "#4F46E5",
-  },
-  {
-    label: "Hours Logged This Week",
-    value: 1600,
-    icon: "FiClock",
-    color: "#4F46E5",
-  },
-];
+
