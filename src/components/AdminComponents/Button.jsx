@@ -1,6 +1,6 @@
 
 
-const ButtonPrimary = ({ children, onClick, icon: Icon, className = '' }) => {
+const Button = ({ children, onClick, icon: Icon, className = '' }) => {
   return (
     <button
       onClick={onClick}
@@ -12,4 +12,4 @@ const ButtonPrimary = ({ children, onClick, icon: Icon, className = '' }) => {
   );
 };
 
-export default ButtonPrimary
+export default Button

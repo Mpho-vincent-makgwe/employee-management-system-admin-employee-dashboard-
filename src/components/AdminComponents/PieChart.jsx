@@ -1,3 +1,4 @@
+'use client';
 import { Pie } from 'react-chartjs-2';
 import {
   Chart as ChartJS,
@@ -5,14 +6,65 @@ import {
   Tooltip,
   Legend,
 } from 'chart.js';
+import Card from './Card';
+import CardTitle from './CardTitle';
 
 ChartJS.register(ArcElement, Tooltip, Legend);
 
-export default function DonutChart({ data, options }) {
-  const donutOptions = {
-    ...options,
-    cutout: '60%', // you can adjust this value for a thicker/thinner ring
-  };
+export const pieData = {
+  labels: ['New Joiners', 'Exits'],
+  datasets: [
+    {
+      data: [75, 25],
+      backgroundColor: ['#006FFF', '#00AC81'],
+      borderWidth: 0,
+    },
+  ],
+};
 
-  return <Pie data={data} options={donutOptions} />;
+const donutOptions = {
+  responsive: true,
+  maintainAspectRatio: false,
+  cutout: '70%',
+  plugins: {
+    legend: {
+      display: true,
+      position: 'bottom',
+      labels: {
+        color: '#1F2937',
+        font: {
+          size: 13,
+          weight: '500',
+        },
+        
+        boxWidth: 14,
+        padding: 1,
+      },
+    },
+    tooltip: {
+      backgroundColor: '#111827',
+      titleColor: '#F9FAFB',
+      bodyColor: '#E5E7EB',
+      padding: 10,
+      displayColors: false,
+      callbacks: {
+        label: (ctx) => `${ctx.label}: ${ctx.formattedValue}%`,
+      },
+    },
+  },
+};
+
+export default function PieChart() {
+  return (
+    <Card className='h-[376px] px-4 py-6'>
+      <CardTitle className='items-center' level={5}>
+          New Joiners vs Exits
+        </CardTitle>
+      <div style={{ height: '100%', position: 'relative' }}>
+      <Pie data={pieData} options={donutOptions} />
+      </div>
+    </Card>
+  );
 }
+
+
