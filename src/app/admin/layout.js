@@ -1,6 +1,6 @@
-import "./globals.css";
-import Sidebar from "./components/Sidebar";
-import TopNav from "./components/TopNav";
+import "../globals.css"
+import Sidebar from "../../components/AdminComponents/Sidebar";
+import TopNav from "../../components/AdminComponents/TopNav";
 
 export const metadata = {
   title: "Admin Dashboard (Managemant System)",
