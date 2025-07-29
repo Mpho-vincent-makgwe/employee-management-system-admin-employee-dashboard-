@@ -61,14 +61,14 @@ const AuthLayout = () => {
     <div className="min-h-screen grid grid-cols-1 md:grid-cols-2 bg-gray-50">
       {/* Left Side - Consistent across all screens */}
       <div className="bg-[#3730a3] rounded-md text-white flex flex-col justify-center items-center p-8 rounded-l-md">
-        <h1 className="text-2xl font-semibold mb-4 text-center">
-          Manage your work, time, and profile<br />
-          all in one place—simple, fast, and secure.
-        </h1>
         
         {/* Dashboard image placeholder */}
         <div className="w-full max-w-xs h-48 bg-indigo-700 rounded-lg mt-4 flex items-center justify-center text-indigo-200">
-          [Dashboard Preview]
+          <img
+          src="./dashboardpic.jpeg"
+          alt="Dashboard Preview"
+          className="rounded-lg"
+          />
         </div>
         
         {/* Centered Testimonial */}
@@ -232,9 +232,6 @@ const SignupForm = ({ onSwitch, userType, setUserType }) => (
 // OTP Screen - Matches the OTP verification image exactly
 const OtpForm = ({ onSwitch, email }) => (
   <div className="w-full max-w-md">
-    <h1 className="text-2xl font-semibold text-[#3730a3] mb-2">Manage your work, time, and profile</h1>
-    <p className="text-gray-600 mb-6">all in one place—simple, fast, and secure.</p>
-    
     <h2 className="text-xl font-semibold text-gray-800 mb-4">Verify OTP</h2>
     <p className="text-sm text-gray-600 mb-6">
       Enter the OTP sent to your email {email || 'poultronibulor@gmail.com'}
@@ -271,9 +268,6 @@ const OtpForm = ({ onSwitch, email }) => (
 // Personal Details Screen - Matches the profile setup image exactly
 const PersonalDetailsForm = ({ onSwitch, formData, handleInputChange }) => (
   <div className="w-full max-w-md">
-    <h1 className="text-2xl font-semibold text-[#3730a3] mb-2">Manage your work, time, and profile</h1>
-    <p className="text-gray-600 mb-6">all in one place—simple, fast, and secure.</p>
-    
     <h2 className="text-xl font-semibold text-gray-800 mb-6">Set up your Profile</h2>
     <h3 className="text-md font-medium text-gray-700 mb-4">Personal Details</h3>
     
@@ -417,9 +411,6 @@ const PersonalDetailsForm = ({ onSwitch, formData, handleInputChange }) => (
 // Job Details Screen - Matches the job details image exactly
 const JobDetailsForm = ({ onSwitch, formData, handleInputChange }) => (
   <div className="w-full max-w-md">
-    <h1 className="text-2xl font-semibold text-[#3730a3] mb-2">Manage your work, time, and profile</h1>
-    <p className="text-gray-600 mb-6">all in one place—simple, fast, and secure.</p>
-    
     <h2 className="text-xl font-semibold text-gray-800 mb-6">Set up your Profile</h2>
     <h3 className="text-md font-medium text-gray-700 mb-4">Job Details</h3>
     
