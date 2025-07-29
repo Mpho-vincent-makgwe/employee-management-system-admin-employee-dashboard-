@@ -21,7 +21,7 @@ const menu = [
     href: "/employee/my-timesheet",
   },
   { label: "My Attendance", icon: <FaCalendar />, href: "/holidays" },
-  { label: "Birthdays", icon: <MdCake />, href: "/policies" },
+  { label: "Birthdays", icon: <MdCake />, href: "/employee/birthdays" },
   { label: "Settings", icon: <IoIosSettings />, href: "/notifications" },
   { label: "Logout", icon: <FiLogOut />, href: "/auth/logout" },
 ];

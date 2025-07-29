@@ -3,7 +3,7 @@
 import { FaSearch, FaBell, FaUser, FaChevronDown } from "react-icons/fa";
 import { FiSettings } from "react-icons/fi";
 import { useState, useCallback } from "react";
-import EtiLogo from "./Logo";
+import EtiLogo from "./EmployeeComponents/Logo";
 import { useSearch } from "@/context/SearchContext";
 import { useUser } from "@/context/UserContext";
 import Link from "next/link";
