@@ -1,6 +1,9 @@
 import Link from "next/link"
 import { FiPlus } from "react-icons/fi"
 import OverViewCards from "@/components/AdminComponents/OverViewCards"
+import BarChart from "@/components/AdminComponents/BarChart"
+import PieChart from "@/components/AdminComponents/PieChart"
+import Timesheet from "@/components/AdminComponents/Timesheet"
 
 
 export default function Dashboard() {
@@ -19,7 +22,19 @@ export default function Dashboard() {
       </button>
     </Link>
   </div>
-  <OverViewCards/>
+  <div className="mb-6">
+<OverViewCards/>
+  </div>
+  <div className="flex flex-wrap xl:flex-nowrap gap-6">
+  <div className="flex-[0_0_70%]"><BarChart /></div>
+  <div className="flex-[0_0_30%] pr-20"><PieChart /></div>
+</div>
+
+  <div className="mt-6">
+<Timesheet/>
+  </div>
+
+  
         </div>
     )
 }
