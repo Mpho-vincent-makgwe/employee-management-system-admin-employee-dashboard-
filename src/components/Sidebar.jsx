@@ -4,28 +4,31 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import EtiLogo from "./Logo";
-import {
-  FiLogOut,
-  FiSettings,
-} from "react-icons/fi";
-import {
-  BsGridFill,
-  BsCalendarEvent,
-} from "react-icons/bs";
+import { FiLogOut, FiSettings } from "react-icons/fi";
+import { BsGridFill, BsCalendarEvent } from "react-icons/bs";
 import {
   FaUserFriends,
   FaClock,
   FaFileInvoiceDollar,
   FaBirthdayCake,
+  FaCalendar,
 } from "react-icons/fa";
 
 // Employee sidebar menu
 const employeeMenu = [
   { label: "Dashboard", icon: <BsGridFill />, href: "/employee/dasboard" },
-  { label: "Employee Directory", icon: <FaUserFriends />, href: "/employee/employee-directory" },
-  { label: "Timesheet", icon: <FaClock />, href: "/employee/timesheet" },
-  { label: "Payroll", icon: <FaFileInvoiceDollar />, href: "/employee/payroll" },
-  { label: "Birthday", icon: <FaBirthdayCake />, href: "/employee/birthday" },
+  {
+    label: "Employee Directory",
+    icon: <FaUserFriends />,
+    href: "/employee/employee-directory",
+  },
+  { label: "My Timesheet", icon: <FaClock />, href: "/employee/my-timesheet" },
+  {
+    label: "My Attendance",
+    icon: <FaCalendar />,
+    href: "/employee/my-attendance",
+  },
+  { label: "Birthdays", icon: <FaBirthdayCake />, href: "/employee/birthdays" },
   { label: "Setting", icon: <FiSettings />, href: "/employee/setting" },
   { label: "Logout", icon: <FiLogOut />, href: "/auth/logout" },
 ];
@@ -33,7 +36,11 @@ const employeeMenu = [
 // Admin sidebar menu
 const adminMenu = [
   { label: "Dashboard", icon: <BsGridFill />, href: "/admin/dashboard" },
-  { label: "Employee Directory", icon: <FaUserFriends />, href: "/admin/employee-directory" },
+  {
+    label: "Employee Directory",
+    icon: <FaUserFriends />,
+    href: "/admin/employee-directory",
+  },
   { label: "Timesheet", icon: <FaClock />, href: "/admin/timesheet" },
   { label: "Payroll", icon: <FaFileInvoiceDollar />, href: "/admin/payroll" },
   { label: "Birthday", icon: <FaBirthdayCake />, href: "/admin/birthdays" },
