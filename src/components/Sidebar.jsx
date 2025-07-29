@@ -23,11 +23,11 @@ import {
 const employeeMenu = [
   { label: "Dashboard", icon: <BsGridFill />, href: "/employee/dasboard" },
   { label: "Employee Directory", icon: <FaUserFriends />, href: "/employee/employee-directory" },
-  { label: "Timesheet", icon: <FaClock />, href: "/employee/timesheet" },
+  { label: "Timesheet", icon: <FaClock />, href: "/employee/my-timesheet" },
   { label: "Payroll", icon: <FaFileInvoiceDollar />, href: "/employee/payroll" },
-  { label: "Birthday", icon: <FaBirthdayCake />, href: "/employee/birthday" },
+  { label: "Birthday", icon: <FaBirthdayCake />, href: "/employee/birthdays" },
   { label: "Setting", icon: <FiSettings />, href: "/employee/setting" },
-  { label: "Logout", icon: <FiLogOut />, href: "/auth/logout" },
+  { label: "Logout", icon: <FiLogOut />, href: "/" },
 ];
 
 // Admin sidebar menu
@@ -38,7 +38,7 @@ const adminMenu = [
   { label: "Payroll", icon: <FaFileInvoiceDollar />, href: "/admin/payroll" },
   { label: "Birthday", icon: <FaBirthdayCake />, href: "/admin/birthdays" },
   { label: "Setting", icon: <FiSettings />, href: "/admin/settings" },
-  { label: "Logout", icon: <FiLogOut />, href: "/auth/logout" },
+  { label: "Logout", icon: <FiLogOut />, href: "/" },
 ];
 
 export default function Sidebar() {

@@ -8,10 +8,7 @@ export const metadata = {
 export default function EmployeeLayout({ children }) {
   return (
     // <SearchProvider>
-      <div className="">
-        {/* Sidebar */}
-        {/* <Sidebar /> */}
-
+      <div className="   ">
         {/* Main Content */}
         <main className="">
           {children}

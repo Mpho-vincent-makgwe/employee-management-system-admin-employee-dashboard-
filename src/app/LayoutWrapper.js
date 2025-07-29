@@ -8,7 +8,8 @@ import Sidebar from "../components/Sidebar";
 
 export default function LayoutWrapper({ children }) {
   const pathname = usePathname();
-  const isAuthRoute = pathname?.startsWith("/auth");
+  // Check if the path is exactly "/" (auth page)
+  const isAuthRoute = pathname === "/";
 
   return (
     <UserProvider>

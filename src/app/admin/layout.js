@@ -9,10 +9,6 @@ export default function EmployeeLayout({ children }) {
   return (
     // <SearchProvider>
       <div className="">
-        {/* Sidebar */}
-        {/* <Sidebar /> */}
-
-        {/* Main Content */}
         <main className="">
           {children}
         </main>
