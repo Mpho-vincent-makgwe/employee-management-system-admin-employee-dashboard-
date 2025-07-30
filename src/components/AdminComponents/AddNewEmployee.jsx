@@ -1,8 +1,11 @@
 'use client';
 import { useState } from 'react';
+import { useRouter } from 'next/navigation';
 import Button from './Button';
 
 const AddEmployeeForm = () => {
+    const router = useRouter()
+
   const [form, setForm] = useState({
     firstName: '',
     lastName: '',
@@ -23,7 +26,12 @@ const AddEmployeeForm = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log('Form submitted:', form);
+    router.push('/admin/employee-directory')
   };
+
+const handleCancel = () => {
+    router.push('/admin/dashboard')
+}
 
   return (
     <form onSubmit={handleSubmit} className="w-full bg-white rounded-xl shadow-md p-8 space-y-10">
@@ -101,6 +109,7 @@ const AddEmployeeForm = () => {
   </Button>
   <Button
     type="button"
+    onClick={handleCancel}
     className="px-4 py-2 text-sm font-medium bg-white text-[#4F46E5] border border-[#4F46E5] hover:bg-indigo-50 hover:text-white"
   >
     Cancel
