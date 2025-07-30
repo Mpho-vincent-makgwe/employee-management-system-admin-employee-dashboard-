@@ -1,7 +1,7 @@
 import Heading from "@/components/Heading";
 import SearchBar from "@/components/SearchBar";
 import MyAttendanceTable from "@/components/EmployeeComponents/MyAttendanceTable";
-
+import AttendanceSummaryCard from "@/components/EmployeeComponents/AttendanceSummaryCards";
 export default function EmployeeDirectory() {
   return (
     <main className="px-6 py-5">
@@ -9,6 +9,7 @@ export default function EmployeeDirectory() {
         title="My Attendance"
         subtitle="Track your attendance records and punctuality."
       />
+      <AttendanceSummaryCard />
       <MyAttendanceTable />
     </main>
   );
