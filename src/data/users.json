@@ -1,23 +1,97 @@
 [
   {
-    "id": 1,
-    "email": "user@example.com",
-    "password": "password123",
-    "name": "Test User",
-    "role": "Employee"
+    "id": "1",
+    "email": "admin@example.com",
+    "password": "admin123",
+    "role": "Admin",
+    "otp": null,
+    "verified": true,
+    "profile": {
+      "personal": {
+        "firstName": "Admin",
+        "lastName": "User",
+        "gender": "Male",
+        "dob": "1990-01-01",
+        "maritalStatus": "Single",
+        "contactNumber": "+1234567890",
+        "nationality": "American",
+        "homeAddress": "123 Main St",
+        "emergencyNumber": "+1987654321"
+      },
+      "job": {
+        "employeeId": "ADM001",
+        "jobTitle": "System Administrator",
+        "department": "IT",
+        "manager": "CEO",
+        "employmentType": "Full-time",
+        "workEmail": "admin@company.com",
+        "dateOfJoining": "2020-01-01",
+        "workLocation": "Office"
+      }
+    }
   },
   {
-    "id": 2,
-    "email": "mpho@mpho.com",
+    "id": "2",
+    "email": "employee@example.com",
+    "password": "employee123",
+    "role": "Employee",
+    "otp": null,
+    "verified": true,
+    "profile": {
+      "personal": {
+        "firstName": "John",
+        "lastName": "Doe",
+        "gender": "Male",
+        "dob": "1995-05-15",
+        "maritalStatus": "Single",
+        "contactNumber": "+1234567890",
+        "nationality": "American",
+        "homeAddress": "456 Employee Ave",
+        "emergencyNumber": "+1122334455"
+      },
+      "job": {
+        "employeeId": "EMP001",
+        "jobTitle": "Software Developer",
+        "department": "Engineering",
+        "manager": "CTO",
+        "employmentType": "Full-time",
+        "workEmail": "john.doe@company.com",
+        "dateOfJoining": "2021-01-01",
+        "workLocation": "Remote"
+      }
+    }
+  },
+  {
+    "id": "1753871816565",
+    "email": "mphomakgwe4@gmail.com",
     "password": "mpho123",
-    "name": "Mpho Vincent",
-    "role": "Employee"
-  },
-  {
-    "id": 3,
-    "email": "neo@neo.com",
-    "password": "neo123",
-    "name": "Neo Phetoane",
-    "role": "Employee"
+    "role": "Admin",
+    "otp": null,
+    "verified": true,
+    "profile": {
+      "personal": {
+        "firstName": "Mpho Vincent",
+        "lastName": "Makgwe",
+        "gender": "Male",
+        "dob": "2001-05-25",
+        "maritalStatus": "Single",
+        "email": "mphomakgwe4@gmail.com",
+        "contactNumber": "0603597941",
+        "nationality": "South African",
+        "homeAddress": "E826Green Side Section",
+        "emergencyNumber": "0603597941"
+      },
+      "job": {
+        "employeeId": "Inter1234",
+        "jobTitle": "Junior Software",
+        "department": "Management",
+        "manager": "Emma",
+        "employmentType": "Internship",
+        "workEmail": "Mpho.Makgwe@etihuku.com",
+        "dateOfJoining": "2025-05-01",
+        "workLocation": "Remote"
+      }
+    },
+    "createdAt": "2025-07-30T10:36:56.565Z"
   }
 ]
