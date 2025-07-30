@@ -38,7 +38,7 @@ const donutOptions = {
         },
         
         boxWidth: 14,
-        padding: 1,
+        padding: 25,
       },
     },
     tooltip: {
@@ -56,11 +56,11 @@ const donutOptions = {
 
 export default function PieChart() {
   return (
-    <Card className='h-[376px] px-4 py-6'>
+    <Card className='h-[376px] px-4 pt-6'>
       <CardTitle className='items-center' level={5}>
           New Joiners vs Exits
         </CardTitle>
-      <div style={{ height: '100%', position: 'relative' }}>
+      <div style={{ height: '80%', position: 'relative', paddingTop: '25px' }}>
       <Pie data={pieData} options={donutOptions} />
       </div>
     </Card>
