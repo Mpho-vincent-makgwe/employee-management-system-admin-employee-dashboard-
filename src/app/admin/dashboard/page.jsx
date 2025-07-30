@@ -15,7 +15,7 @@ export default function Dashboard() {
       <p className="text-sm">Welcome back! Here's what's happening with your team today.</p>
     </div>
 
-    <Link href="/policies/addpolicy">
+    <Link href="/admin/add-employee">
       <button className="flex items-center gap-2 px-6 py-2 bg-[#4F46E5] text-white text-sm rounded-sm hover:bg-[#4338ca] transition">
         <FiPlus className="text-xl text-white" />
         Add New Employee
