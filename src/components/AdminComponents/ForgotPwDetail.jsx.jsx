@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 
+
 export default function ForgotPwDetail() {
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
