@@ -93,5 +93,18 @@
       }
     },
     "createdAt": "2025-07-30T10:36:56.565Z"
+  },
+  {
+    "id": "1753907725917",
+    "email": "mosobelulu@gmail.com",
+    "password": "12345",
+    "role": "Admin",
+    "otp": "1234",
+    "verified": false,
+    "profile": {
+      "personal": null,
+      "job": null
+    },
+    "createdAt": "2025-07-30T20:35:25.917Z"
   }
 ]
