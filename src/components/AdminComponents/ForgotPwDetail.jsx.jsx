@@ -2,13 +2,18 @@
 
 import { useState } from 'react';
 
+import NotificationModal from './NotificationModal';
+import { CheckCircleIcon } from 'lucide-react';
+
 export default function ForgotPwDetail() {
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
+  const [showSuccess, setShowSuccess] = useState(false)
 
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log('Password reset request:', { password, confirmPassword });
+    setShowSuccess(true);
   };
 
   return (
@@ -71,6 +76,17 @@ export default function ForgotPwDetail() {
           </button>
         </div>
       </form>
+
+       <NotificationModal
+        show={showSuccess}
+        close={() => setShowSuccess(false)}
+        icon={<CheckCircleIcon className="w-6 h-6 text-green-600" />}
+        message="Your password has been reset.  
+You can now use your new password to sign in."
+        buttonLabel='Go Back'
+        onConfirm={() => setShowSuccess(false)}
+       
+      />
     </div>
   );
 }

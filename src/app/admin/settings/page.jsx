@@ -25,7 +25,7 @@ export default function Settings() {
         </p>
       </div>
 
-      {/* Tabs */}
+     
       <div className="flex border-b border-gray-200 mb-4">
         {tabs.map((tab) => (
           <button
@@ -42,7 +42,7 @@ export default function Settings() {
         ))}
       </div>
 
-      {/* Tab Content */}
+     
       <div className="mt-4">
         {activeTab === "Profile" && <Profile />}
         {activeTab === "CompanyInfo" && <CompanyInfo />}
