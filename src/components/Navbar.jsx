@@ -73,7 +73,7 @@ const name = `${user.profile.personal.firstName} ${user.profile.personal.lastNam
         <div className="hidden lg:flex items-center gap-6">
           <div className="relative">
             <button className="p-2 rounded-full hover:bg-gray-100 transition">
-              <FaBell className="text-gray-500 text-lg" />
+              <FaBell className="text-indigo-600 text-lg" />
               <span className="absolute top-1.5 right-1.5 w-2 h-2 bg-red-500 rounded-full" />
             </button>
           </div>
