@@ -3,6 +3,8 @@ import { useState } from "react";
 import CompanyInfo from "@/components/AdminComponents/CompanyInfo";
 import Profile from "@/components/AdminComponents/Profile";
 import ForgotPassword from "@/components/AdminComponents/ForgotPassword";
+import Roles from "@/components/AdminComponents/Roles";
+import UserManagement from "@/components/AdminComponents/UserManagement";
 
 export default function Settings() {
   const [activeTab, setActiveTab] = useState("Profile");
@@ -12,7 +14,7 @@ export default function Settings() {
     { label: "Company Info", value: "CompanyInfo" },
     { label: "Password", value: "ForgotPassword" },
     { label: "Roles", value: "Roles" },
-    { label: "User Management", value: "User Management" },
+    { label: "User Management", value: "UserManagement" },
   ];
 
   return (
@@ -47,6 +49,8 @@ export default function Settings() {
         {activeTab === "Profile" && <Profile />}
         {activeTab === "CompanyInfo" && <CompanyInfo />}
         {activeTab === "ForgotPassword" && <ForgotPassword />}
+        {activeTab === "Roles" && <Roles />}
+        {activeTab === "UserManagement" && <UserManagement />}
       </div>
     </div>
   );
