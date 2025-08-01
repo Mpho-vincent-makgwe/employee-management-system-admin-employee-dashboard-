@@ -95,16 +95,28 @@
     "createdAt": "2025-07-30T10:36:56.565Z"
   },
   {
-    "id": "1753907725917",
-    "email": "mosobelulu@gmail.com",
-    "password": "12345",
-    "role": "Admin",
-    "otp": "1234",
-    "verified": false,
+    "id": "1753992421547",
+    "email": "makgwe44@gmail.com",
+    "password": "vince123",
+    "role": "Employee",
+    "otp": null,
+    "verified": true,
     "profile": {
       "personal": null,
       "job": null
     },
-    "createdAt": "2025-07-30T20:35:25.917Z"
+    "createdAt": "2025-07-31T20:07:01.547Z"
+  },
+  {
+    "id": "1753995456931",
+    "email": "mphomakgwe14@gmail.com",
+    "password": "123456",
+    "otp": null,
+    "verified": true,
+    "profile": {
+      "personal": null,
+      "job": null
+    },
+    "createdAt": "2025-07-31T20:57:36.931Z"
   }
 ]
