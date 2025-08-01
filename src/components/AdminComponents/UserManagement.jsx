@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import { FaEdit, FaTrashAlt } from 'react-icons/fa';
-import { users } from '@/data/adminData/users';
+import { users } from '@/data/adminData/rolesData';
 import Card from './Card';
 import NotificationModal from './NotificationModal';
 
