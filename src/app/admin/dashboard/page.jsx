@@ -8,7 +8,7 @@ import Timesheet from "@/components/AdminComponents/Timesheet"
 
 export default function Dashboard() {
     return (
-        <div className="px-6 py-5">
+        <div className="px-6 py-5 overflow-x-hidden">
         <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-6 w-full gap-3 text-black">
     <div className="space-y-2">
       <h2 className="text-2xl font-semibold">Dashboard Overview</h2>
