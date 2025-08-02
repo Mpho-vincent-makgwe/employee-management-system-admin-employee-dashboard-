@@ -130,5 +130,37 @@
       "job": null
     },
     "createdAt": "2025-08-01T09:18:47.294Z"
+  },
+  {
+    "id": "1754050929906",
+    "email": "lu@lu",
+    "password": "123",
+    "otp": null,
+    "verified": true,
+    "profile": {
+      "personal": {
+        "firstName": "LULU EVELYN",
+        "lastName": "Mosobe",
+        "gender": "Female",
+        "dob": "2025-08-21",
+        "maritalStatus": "single",
+        "email": "lu@lu",
+        "contactNumber": "0765275896",
+        "nationality": "azania",
+        "homeAddress": "26 Maile",
+        "emergencyNumber": "122"
+      },
+      "job": {
+        "employeeId": "fc",
+        "jobTitle": "gvfcds",
+        "department": "vrcwdsredw",
+        "manager": "uyhtgrfe",
+        "employmentType": "trfedwq",
+        "workEmail": "lu@lu",
+        "dateOfJoining": "2025-08-28",
+        "workLocation": "gtrfedw"
+      }
+    },
+    "createdAt": "2025-08-01T12:22:09.906Z"
   }
 ]
