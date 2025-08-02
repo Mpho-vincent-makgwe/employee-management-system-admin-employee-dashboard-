@@ -5,6 +5,7 @@ import { useEffect } from 'react';
 export default function NotificationModal({
   icon,
   message,
+  title,
   buttonLabel = '',
   confirmText = '',
   cancelText = '',
@@ -50,7 +51,7 @@ export default function NotificationModal({
 
 
        
-        <h2 className="text-md mt-2  text-[#4F46E5] mb-2">Successful</h2>
+        <h2 className="text-md mt-2  text-[#4F46E5] mb-2">{title}</h2>
 
       
         <p className="text-sm text-gray-700 mb-6 whitespace-pre-line">{message}</p>

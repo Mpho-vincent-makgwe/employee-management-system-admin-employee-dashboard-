@@ -81,6 +81,7 @@ export default function ForgotPwDetail() {
         show={showSuccess}
         close={() => setShowSuccess(false)}
         icon={<CheckCircleIcon className="w-6 h-6 text-white" />}
+        title= 'Successful'
         message="Your password has been reset.  
 You can now use your new password to sign in."
         buttonLabel='Go Back'

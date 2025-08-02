@@ -69,6 +69,7 @@ export default function UserManagement() {
           show={showDelete}
           close={onCancel}
           icon={<FaTrashAlt className="w-6 h-6 text-white" />}
+          
           message={`Deleting ${selectedUser.name} will revoke their access to this dashboard permanently.`}
           confirmText="Yes, Delete"
           cancelText="No, Cancel"
