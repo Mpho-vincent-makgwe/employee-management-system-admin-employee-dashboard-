@@ -177,7 +177,7 @@ const AuthLayout = () => {
       const result = await updateProfile(personalDetails, jobDetails);
       
       if (result.success) {
-        router.push('/');
+        setStep("login");
       } else {
         setErrors({ form: result.error });
       }
@@ -228,7 +228,7 @@ const AuthLayout = () => {
 
 
       {/* Right Side */}
-      <div className="flex p-8 bg-white">
+      <div className="flex p-8 max-w-[85%]  bg-white">
         {step === "login" && (
           <div className="w-full">
             <h2 className="text-2xl font-semibold text-[#4F46E5] mb-2">Let's Get Started</h2>
@@ -673,6 +673,7 @@ const AuthLayout = () => {
               <button 
                 type="submit"
                 disabled={loading}
+                onClick={handleJobDetailsSubmit}
                 className="w-full bg-indigo-600 text-white py-2 rounded-md hover:bg-indigo-700 disabled:opacity-50"
               >
                 {loading ? 'Submitting...' : 'LogIn'}

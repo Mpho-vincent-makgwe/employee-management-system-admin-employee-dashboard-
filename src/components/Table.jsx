@@ -2,8 +2,8 @@
 
 import Link from "next/link";
 import { useState, useEffect, useMemo, useCallback } from "react";
-import { FaSort, FaSortUp, FaSortDown } from "react-icons/fa";
-import { useSearch } from "../context/SearchContext";
+import { FaSort, FaSortUp, FaSortDown, FaSearch } from "react-icons/fa";
+import { usePathname } from "next/navigation";
 
 const Table = ({
   title,
@@ -15,7 +15,7 @@ const Table = ({
   limit,
   viewMoreLink,
   statusColorMap = {
-    Approved: "text-green-500",
+    Active: "text-green-500",
     Pending: "text-yellow-500",
     Rejected: "text-red-500",
   },
@@ -26,15 +26,34 @@ const Table = ({
   filterTabs = null,
   sortable = false,
   enablePagination = false,
+  showEmployeeCount = false,
+  showFilters = false,
+  showSearch = false,
+  roleFilter,
+  statusFilter,
+  searchTerm
 }) => {
+  const pathname = usePathname();
   const [currentLimit, setCurrentLimit] = useState(limit || data.length);
   const [activeTab, setActiveTab] = useState(filterTabs?.[0] || null);
   const [sortConfig, setSortConfig] = useState(null);
   const [filteredData, setFilteredData] = useState(data);
   const [currentPage, setCurrentPage] = useState(1);
-  const { searchTerm } = useSearch();
+
 
   const itemsPerPage = 5;
+
+  const getDynamicLink = useCallback(
+    (id) => {
+      if (pathname.startsWith("/admin")) {
+        return `/admin/employee-directory/${id}`;
+      } else if (pathname.startsWith("/employee")) {
+        return `/employee/employee-directory/${id}`;
+      }
+      return `/employee-directory/${id}`;
+    },
+    [pathname]
+  );
 
   const filteredResults = useMemo(() => {
     let result = [...data];
@@ -57,6 +76,14 @@ const Table = ({
       );
     }
 
+    if (roleFilter) {
+      result = result.filter((item) => item.role === roleFilter);
+    }
+
+    if (statusFilter) {
+      result = result.filter((item) => item.status === statusFilter);
+    }
+
     if (sortConfig) {
       result.sort((a, b) => {
         if (a[sortConfig.key] < b[sortConfig.key]) {
@@ -70,7 +97,16 @@ const Table = ({
     }
 
     return result;
-  }, [data, activeTab, searchTerm, sortConfig, filterTabs, columns]);
+  }, [
+    data,
+    activeTab,
+    searchTerm,
+    sortConfig,
+    filterTabs,
+    columns,
+    roleFilter,
+    statusFilter,
+  ]);
 
   useEffect(() => {
     setFilteredData(filteredResults);
@@ -126,12 +162,24 @@ const Table = ({
     setCurrentPage(page);
   }, []);
 
+  const uniqueRoles = useMemo(() => {
+    const roles = new Set(data.map((item) => item.role));
+    return Array.from(roles);
+  }, [data]);
+
+  const uniqueStatuses = useMemo(() => {
+    const statuses = new Set(data.map((item) => item.status));
+    return Array.from(statuses);
+  }, [data]);
+
   return (
     <div
       className={`bg-white ${shadow ? "shadow" : ""} ${
         rounded ? "rounded-md" : ""
       } overflow-hidden`}
     >
+
+
       {/* Table Header with Title and View More Link */}
       <div className="flex justify-between items-center p-4 border-b border-gray-100">
         <div>
@@ -161,7 +209,7 @@ const Table = ({
         )}
       </div>
 
-      {/* Original Filtering UI - Restored */}
+      {/* Original Filtering UI */}
       {filterTabs && (
         <div className="bg-white shadow mt-4 mb-4">
           <div className="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-4 gap-4 mb-4 p-2">
@@ -171,7 +219,7 @@ const Table = ({
                 className={`px-4 py-2 rounded ${
                   activeTab === tab
                     ? "bg-[#4f46e5] text-white shadow"
-                    : "bg-white text-gray-600"
+                    : "bg-white text-black"
                 }`}
                 onClick={() => setActiveTab(tab)}
               >
@@ -246,17 +294,17 @@ const Table = ({
                       </td>
                     );
                   }
-                  if (column.key === "action" && row[column.key]) {
+                  if (column.key === "action") {
                     return (
                       <td
                         key={`${rowIndex}-${column.key}`}
-                        className="px-6 py-4 text-indigo-500 font-medium"
+                        className="px-6 py-4 text-orange-300 font-medium"
                       >
                         <Link
-                          href={row[column.key].link}
+                          href={getDynamicLink(row.id)}
                           className="hover:underline"
                         >
-                          {row[column.key].text || "View"}
+                          {row[column.key]?.text || "View Deetials"}
                         </Link>
                       </td>
                     );
@@ -297,7 +345,7 @@ const Table = ({
       {enablePagination && totalPages > 1 && (
         <div className="flex justify-between items-center p-4 border-t border-gray-100">
           <div>
-            <span className="text-sm text-gray-600">
+            <span className="text-sm text-black">
               Showing {(currentPage - 1) * itemsPerPage + 1} to{" "}
               {Math.min(currentPage * itemsPerPage, filteredData.length)} of{" "}
               {filteredData.length} entries
@@ -322,7 +370,7 @@ const Table = ({
                 className={`px-3 py-1 rounded-md ${
                   currentPage === page
                     ? "bg-[#4f46e5] text-white"
-                    : "bg-white text-gray-600 hover:bg-gray-100"
+                    : "bg-white text-black hover:bg-gray-100"
                 }`}
               >
                 {page}
