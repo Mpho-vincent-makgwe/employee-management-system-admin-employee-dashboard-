@@ -80,7 +80,7 @@ export default function ForgotPwDetail() {
        <NotificationModal
         show={showSuccess}
         close={() => setShowSuccess(false)}
-        icon={<CheckCircleIcon className="w-6 h-6 text-green-600" />}
+        icon={<CheckCircleIcon className="w-6 h-6 text-white" />}
         message="Your password has been reset.  
 You can now use your new password to sign in."
         buttonLabel='Go Back'
