@@ -150,5 +150,37 @@
       }
     },
     "createdAt": "2025-08-01T09:31:06.503Z"
+  },
+  {
+    "id": "1754157890625",
+    "email": "mosobelulu@gmail.com",
+    "password": "12345",
+    "otp": null,
+    "verified": true,
+    "profile": {
+      "personal": {
+        "firstName": "LULU EVELYN",
+        "lastName": "Mosobe",
+        "gender": "Female",
+        "dob": "2025-08-02",
+        "maritalStatus": "single",
+        "email": "mosobelulu@gmail.com",
+        "contactNumber": "0765275896",
+        "nationality": "azanian",
+        "homeAddress": "26 Maile",
+        "emergencyNumber": "0123456"
+      },
+      "job": {
+        "employeeId": "12",
+        "jobTitle": "intern",
+        "department": "software Engineering",
+        "manager": "Emmanuel",
+        "employmentType": "contract",
+        "workEmail": "work@work",
+        "dateOfJoining": "2025-08-14",
+        "workLocation": "remote"
+      }
+    },
+    "createdAt": "2025-08-02T18:04:50.625Z"
   }
 ]
