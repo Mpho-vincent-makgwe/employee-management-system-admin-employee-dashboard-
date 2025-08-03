@@ -94,7 +94,7 @@ export default function ForgotPwDetail() {
         <div className="pt-6">
           <button
             type="submit"
-            className="px-6 py-3 bg-[#4F46E5] text-white rounded-sm font-medium text-sm hover:bg-[#4338CA]"
+            className=" w-1/2 px-6 py-3 bg-[#4F46E5] text-white rounded-[4px] font-medium text-sm hover:bg-[#4338CA]"
           >
             Reset Password
           </button>
