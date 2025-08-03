@@ -5,6 +5,7 @@ import { useEffect } from 'react';
 export default function NotificationModal({
   icon,
   message,
+  title,
   buttonLabel = '',
   confirmText = '',
   cancelText = '',
@@ -23,25 +24,34 @@ export default function NotificationModal({
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-[#00000099] bg-opacity-30">
-      <div className="bg-white border border-[#4F46E5] rounded-xl w-full max-w-md p-6 text-center shadow-lg relative">
+      <div className="bg-white  rounded-xl w-[568px] h-[400px] max-w-md p-20 text-center shadow-lg relative">
         
-       
-        <button
-          onClick={close}
-          className="absolute top-4 right-4 text-gray-400 hover:text-gray-600 focus:outline-none text-xl"
-        >
-          &times;
-        </button>
+   <div className="absolute top-[14px] left-1/2 transform -translate-x-1/2 w-[80px] h-[8px] bg-gray-200 rounded-[4px] opacity-100" />
+
+
+       <button
+  onClick={close}
+  className="absolute top-4 right-4 w-8 h-8 bg-[#4F46E5] text-white text-2xl  rounded-full flex items-center justify-center "
+  aria-label="Close"
+>
+  &times;
+</button>
+
 
        
-        {icon && (
-          <div className="flex justify-center mb-4">
-            <div className="bg-[#4F46E5] rounded-full p-2">{icon}</div>
-          </div>
-        )}
+      {icon && (
+  <div className="flex justify-center mt-4">
+    <div className="p-2 rounded-full bg-gray-200">
+      <div className="bg-[#4F46E5] rounded-full p-2">
+        {icon}
+      </div>
+    </div>
+  </div>
+)}
+
 
        
-        <h2 className="text-lg font-semibold text-[#4F46E5] mb-2">Successful</h2>
+        <h2 className="text-md mt-2  text-[#4F46E5] mb-2">{title}</h2>
 
       
         <p className="text-sm text-gray-700 mb-6 whitespace-pre-line">{message}</p>
@@ -50,11 +60,12 @@ export default function NotificationModal({
         <div className="flex justify-center gap-4">
           {buttonLabel ? (
             <button
-              onClick={onConfirm}
-              className="bg-[#4F46E5] hover:bg-[#4338CA] text-white text-sm font-medium px-6 py-2 rounded-sm focus:outline-none"
-            >
-              {buttonLabel}
-            </button>
+  onClick={onConfirm}
+  className="bg-[#4F46E5] w-[390px] h-[50px] hover:bg-[#4338CA] text-white text-sm font-medium px-4 py-1.5 rounded-[15px] focus:outline-none"
+>
+  {buttonLabel}
+</button>
+
           ) : (
             <>
               <button

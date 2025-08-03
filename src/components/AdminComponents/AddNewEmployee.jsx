@@ -78,13 +78,17 @@ const handleCancel = () => {
           </div>
           <div>
             <label className="text-sm text-black">Employment Type</label>
-            <select name="employmentType" value={form.employmentType} onChange={handleChange}
-              className="mt-1 w-full rounded-sm border border-gray-300 px-4 py-3 shadow-sm text-black">
-              <option value="">Select type</option>
-              <option value="Full-time">Full-time</option>
-              <option value="Part-time">Part-time</option>
-              <option value="Contract">Contract</option>
-            </select>
+            <select
+  name="employmentType"
+  value={form.employmentType}
+  onChange={handleChange}
+  className="mt-1 w-full rounded-sm border border-gray-300 px-4  py-3 shadow-sm text-black appearance-none bg-[url('/icons/chevron-down.svg')] bg-no-repeat bg-[length:1rem] bg-[right_0.75rem_center]">
+  <option value="">Select type</option>
+  <option value="Full-time">Full-time</option>
+  <option value="Part-time">Part-time</option>
+  <option value="Contract">Contract</option>
+</select>
+
           </div>
           <div>
             <label className="text-sm text-black">Date Joined</label>

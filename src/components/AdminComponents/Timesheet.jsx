@@ -5,6 +5,7 @@ export default function Timesheet() {
   const timesheetData = [
     {
       name: 'Emmanuel Faremi',
+      initials: 'EF',
       status: 'Present',
       inTime: '09:00 AM',
       outTime: '05:00 PM',
@@ -12,6 +13,7 @@ export default function Timesheet() {
     },
     {
       name: 'Saheed Faremi',
+      initials: 'SF',
       status: 'Late',
       inTime: '09:20 AM',
       outTime: '05:00 PM',
@@ -19,6 +21,7 @@ export default function Timesheet() {
     },
     {
       name: 'Rukome Paul',
+      initials: 'RP',
       status: 'Absent',
       inTime: null,
       outTime: null,
@@ -33,32 +36,34 @@ export default function Timesheet() {
   };
 
   return (
-    <div className="flex flex-col gap-4 p-6 bg-white">
+    <div className="p-6 space-y-4 bg-white">
       <CardTitle level={5}>Yesterday's TimeSheet</CardTitle>
       {timesheetData.map((employee, idx) => (
-        <Card key={idx} className="bg-white rounded-lg shadow-md p-4">
-          <div className="flex items-center gap-3 mb-2">
-            <div className="w-10 h-10 bg-[#4F46E5] rounded-full flex items-center justify-center text-white text-lg">
-              EF
-            </div>
-            <h3 className="text-black text-lg">{employee.name}</h3>
-          </div>
-       <div className="flex items-start justify-between text-sm text-gray-700">
-  <div className="ml-[52px] flex gap-4 items-center">
-    <p>In: {employee.inTime || '-'}</p>
-    <p>Out: {employee.outTime || '-'}</p>
-    <p>Hours: {employee.hours || '-'}</p>
+       <Card key={idx}>
+  <div className="flex justify-between items-center h-full p-4">
+    <div className="flex items-center gap-5">
+      <div className="w-[48px] h-[48px] flex items-center justify-center rounded-full bg-[#4F46E5] text-white font-medium">
+        {employee.initials}
+      </div>
+      <div className="flex flex-col items-start gap-1">
+        <h3 className="text-base text-gray-800">{employee.name}</h3>
+        <div className="flex gap-4 text-sm text-[#2C2C2E]">
+          <p>In: {employee.inTime || '-'}</p>
+          <p>Out: {employee.outTime || '-'}</p>
+          <p>Hours: {employee.hours || '-'}</p>
+        </div>
+      </div>
+    </div>
+
+   <span
+  className={`text-xs font-medium text-center bg-opacity-100 rounded-[8px] px-[10px] py-[10px] min-w-[79px] h-[25px] flex items-center justify-center ${statusColors[employee.status]}`}
+>
+  {employee.status}
+</span>
+
   </div>
-  <span
-    className={`px-2 py-1 rounded-[8px] font-medium text-xs text-center min-w-[80px] ${statusColors[employee.status]}`}
-  >
-    {employee.status}
-  </span>
-</div>
+</Card>
 
-
-
-        </Card>
       ))}
     </div>
   );
