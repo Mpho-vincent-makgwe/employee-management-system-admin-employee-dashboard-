@@ -93,5 +93,94 @@
       }
     },
     "createdAt": "2025-07-30T10:36:56.565Z"
+  },
+  {
+    "id": "1753992421547",
+    "email": "makgwe44@gmail.com",
+    "password": "vince123",
+    "role": "Employee",
+    "otp": null,
+    "verified": true,
+    "profile": {
+      "personal": null,
+      "job": null
+    },
+    "createdAt": "2025-07-31T20:07:01.547Z"
+  },
+  {
+    "id": "1753995456931",
+    "email": "mphomakgwe14@gmail.com",
+    "password": "123456",
+    "otp": null,
+    "verified": true,
+    "profile": {
+      "personal": null,
+      "job": null
+    },
+    "createdAt": "2025-07-31T20:57:36.931Z"
+  },
+  {
+    "id": "1754040666501",
+    "email": "emma@email.com",
+    "password": "Emma123",
+    "otp": null,
+    "verified": true,
+    "profile": {
+      "personal": {
+        "firstName": "Emma",
+        "lastName": "Makgwe",
+        "gender": "Female",
+        "dob": "2001-05-25",
+        "maritalStatus": "single",
+        "email": "Emma@email.com",
+        "contactNumber": "0603597941",
+        "nationality": "South African",
+        "homeAddress": "E826Green Side Section",
+        "emergencyNumber": "0603597941"
+      },
+      "job": {
+        "employeeId": "Inter1234",
+        "jobTitle": "Junior Software Developer",
+        "department": "Full Stack java developer",
+        "manager": "Emma",
+        "employmentType": "uygqa",
+        "workEmail": "sgvuph@email.com",
+        "dateOfJoining": "2025-08-11",
+        "workLocation": "niger"
+      }
+    },
+    "createdAt": "2025-08-01T09:31:06.503Z"
+  },
+  {
+    "id": "1754157890625",
+    "email": "mosobelulu@gmail.com",
+    "password": "12345",
+    "otp": null,
+    "verified": true,
+    "profile": {
+      "personal": {
+        "firstName": "LULU EVELYN",
+        "lastName": "Mosobe",
+        "gender": "Female",
+        "dob": "2025-08-02",
+        "maritalStatus": "single",
+        "email": "mosobelulu@gmail.com",
+        "contactNumber": "0765275896",
+        "nationality": "azanian",
+        "homeAddress": "26 Maile",
+        "emergencyNumber": "0123456"
+      },
+      "job": {
+        "employeeId": "12",
+        "jobTitle": "intern",
+        "department": "software Engineering",
+        "manager": "Emmanuel",
+        "employmentType": "contract",
+        "workEmail": "work@work",
+        "dateOfJoining": "2025-08-14",
+        "workLocation": "remote"
+      }
+    },
+    "createdAt": "2025-08-02T18:04:50.625Z"
   }
 ]

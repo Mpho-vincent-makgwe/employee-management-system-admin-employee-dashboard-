@@ -75,7 +75,7 @@ const BarChart = () => {
         text: 'Working Hours Logged (weekly overview)',
         align: 'start',
         font: {
-          size: 18,
+          size: 14,
           weight: '600',
           family: chartFontFamily,
         },
