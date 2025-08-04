@@ -2,7 +2,7 @@
 
 import Table from "../Table";
 import { timesheetEntries } from "../../data/employeeData/timesheetData";
-import { useEffect } from "react";
+import { useEffect, useMemo } from "react";
 import { useSearch } from "../../context/SearchContext";
 
 const TimesheetEntries = () => {
@@ -12,6 +12,21 @@ const TimesheetEntries = () => {
     { key: "clockOut", title: "Clock out" },
     { key: "totalHours", title: "Total Hours" },
   ];
+
+  const parseDate = (str) => {
+    const [day, month, year] = str.split("/");
+
+    // Converts 2-digit year to 4-digit year
+    const fullYear = parseInt(year) < 50 ? "20" + year : "19" + year;
+
+    return new Date(`${fullYear}-${month}-${day}`); // ISO format
+  };
+
+  const sortedEntries = useMemo(() => {
+    return [...timesheetEntries].sort((a, b) => {
+      return parseDate(b.date) - parseDate(a.date); // most recent first
+    });
+  }, []);
 
   const { setSearchTerm } = useSearch();
 
@@ -25,12 +40,12 @@ const TimesheetEntries = () => {
       <div>
         <Table
           columns={columns}
-          data={timesheetEntries}
+          data={sortedEntries}
           title="Recent Entries"
           titleClassName="text-blue-800 " // Custom title styling
           // subtitle="Manage public holidays and company-specific holidays"
           viewMoreLink={{ text: "Holiday List" }}
-          enablePagination={timesheetEntries.length > 5}
+          enablePagination={sortedEntries.length > 5}
         />
       </div>
     </div>

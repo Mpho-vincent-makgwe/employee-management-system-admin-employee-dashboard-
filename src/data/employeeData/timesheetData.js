@@ -1,17 +1,18 @@
 export const timesheetEntries = [
-  { date: "2/07/25", clockIn: "9:00 AM", clockOut: "5:00PM", totalHours: 8 },
-  { date: "3/07/25", clockIn: "9:01 AM", clockOut: "6:00PM", totalHours: 9 },
-  { date: "4/07/25", clockIn: "8:55 AM", clockOut: "5:00PM", totalHours: 8 },
-  { date: "5/07/25", clockIn: "9:00 AM", clockOut: "5:00PM", totalHours: 8 },
-  { date: "6/07/25", clockIn: "9:10 AM", clockOut: "5:00PM", totalHours: 8 },
-  { date: "7/07/25", clockIn: "9:05 AM", clockOut: "5:00PM", totalHours: 8 },
-  { date: "8/07/25", clockIn: "9:00 AM", clockOut: "5:00PM", totalHours: 8 },
-  { date: "9/07/25", clockIn: "8:50 AM", clockOut: "5:00PM", totalHours: 8 },
+  { date: "07/07/25", clockIn: "9:05 AM", clockOut: "5:00PM", totalHours: 8 },
+  { date: "08/07/25", clockIn: "9:00 AM", clockOut: "5:00PM", totalHours: 8 },
+  { date: "09/07/25", clockIn: "8:50 AM", clockOut: "5:00PM", totalHours: 8 },
   { date: "10/07/25", clockIn: "9:00 AM", clockOut: "5:00PM", totalHours: 8 },
   { date: "11/07/25", clockIn: "9:25 AM", clockOut: "5:00PM", totalHours: 8 },
   { date: "12/07/25", clockIn: "9:35 AM", clockOut: "5:00PM", totalHours: 8 },
   { date: "13/07/25", clockIn: "9:05 AM", clockOut: "5:00PM", totalHours: 8 },
   { date: "14/07/25", clockIn: "9:00 AM", clockOut: "5:00PM", totalHours: 8 },
+  { date: "01/08/25", clockIn: "9:05 AM", clockOut: "5:00PM", totalHours: 8 },
+  { date: "02/08/25", clockIn: "9:00 AM", clockOut: "5:00PM", totalHours: 8 },
+  { date: "03/08/25", clockIn: "9:01 AM", clockOut: "6:00PM", totalHours: 9 },
+  { date: "04/08/25", clockIn: "8:55 AM", clockOut: "5:00PM", totalHours: 8 },
+  { date: "05/08/25", clockIn: "9:00 AM", clockOut: "5:00PM", totalHours: 8 },
+  { date: "06/08/25", clockIn: "9:10 AM", clockOut: "5:00PM", totalHours: 8 },
 ];
 //data is for July 2025
 
