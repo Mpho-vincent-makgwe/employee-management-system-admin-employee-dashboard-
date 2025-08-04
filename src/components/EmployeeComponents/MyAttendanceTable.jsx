@@ -4,8 +4,8 @@ import Table from "../Table";
 import { timesheetEntries } from "../../data/employeeData/timesheetData";
 import { useEffect } from "react";
 import { useSearch } from "../../context/SearchContext";
-import { getStatus } from "../../data/employeeData/timesheetData";
-import { fillMissingDays } from "../../data/employeeData/timesheetData";
+import { getStatus } from "@/utils/attendanceUtils";
+import { fillMissingDays } from "@/utils/attendanceUtils";
 
 const MyAttendanceTable = () => {
   const statusStyles = {

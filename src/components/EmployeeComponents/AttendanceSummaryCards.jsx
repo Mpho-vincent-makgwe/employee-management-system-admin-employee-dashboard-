@@ -1,8 +1,7 @@
-import {
-  timesheetEntries,
-  getTimeSummary,
-} from "../../data/employeeData/timesheetData";
-import { getAttendanceSummary } from "../../data/employeeData/timesheetData";
+import { timesheetEntries } from "../../data/employeeData/timesheetData";
+import { getTimeSummary } from "@/utils/attendanceUtils";
+import { getAttendanceSummary } from "@/utils/attendanceUtils";
+
 import { Clock } from "lucide-react";
 const AttendanceSummary = () => {
   const summary = getAttendanceSummary(timesheetEntries);
