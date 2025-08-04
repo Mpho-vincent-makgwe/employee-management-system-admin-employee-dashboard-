@@ -1,42 +1,19 @@
-// "use client";
+import TimesheetCards from "@/components/AdminComponents/TimesheetCards"
+import TimesheetTracking from "@/components/AdminComponents/TimeSheetTracking"
 
-// import Table from "@/components/Table";
-// import { timesheetData } from "@/data/adminData/timesheetData";
+export default function Timesheet() {
+    return(
+        <div>
+            
+      <div className="mb-6">
+        <h1 className="text-2xl font-bold text-gray-800">Timesheet Tracking</h1>
+        <p className="text-sm text-gray-600">
+          Attendance and working hours on the 4th of July, 2025
+        </p>
+      </div>
+        <TimesheetCards/>
+        <TimesheetTracking />
+        </div>
 
-// const columns = [
-//   { key: "date", title: "Date" },
-//   { key: "status", title: "Status" },
-//   { 
-//     key: "clockIn", 
-//     title: "Clock In",
-//     render: (row) => <div className="text-center">{row.clockIn}</div>
-//   },
-//   { 
-//     key: "clockOut", 
-//     title: "Clock Out",
-//     render: (row) => <div className="text-center">{row.clockOut}</div>
-//   }
-// ];
-
-// const statusColorMap = {
-//   Present: "text-green-500",
-//   Late: "text-yellow-500",
-//   Absent: "text-red-500"
-// };
-
-// export default function MyTimesheet() {
-//   return (
-//     <div className="p-4">
-//       <Table
-//         title="My Timesheet"
-//         subtitle="Your latest attendance log"
-//         columns={columns}
-//         data={timesheetData}
-//         statusColorMap={statusColorMap}
-//         limit={5}
-//         enablePagination={true}
-//         stripedRows={true}
-//       />
-//     </div>
-//   );
-// }
+    )
+}
