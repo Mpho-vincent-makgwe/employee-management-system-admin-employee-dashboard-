@@ -35,8 +35,10 @@ const DirectoryTable = () => {
     () =>
       birthdayData.map((person) => ({
         ...person,
+        name: `${person.firstName} ${person.lastName}`,
         action: {
-          link: `/employees/${person.id}`,
+          link: `/employee/employee-directory/${person.id}`,
+
           text: "View Details",
         },
       })),

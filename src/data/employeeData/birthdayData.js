@@ -1,14 +1,54 @@
 const birthdayData = [
   {
     id: 1,
+    firstName: "Rukome",
+    lastName: "Paul",
     name: "Rukome Paul",
+    // profilePicture: "/profilepic.png",
+    gender: "Male",
     dob: "10/28",
+    maritalStatus: "Single",
+    nationality: "Nigeria",
+    email: "Pauliroribulor@gmail.com",
+    homeAddress: "25 Providence Street, Lekki, Lagos",
+    contactNumber: "+234 9038299205",
+    emergencyNumber: "+234 8163651276",
     role: "Product Designer",
+    department: "Design and Marketing",
+    manager: "Moses Daniel",
     employmentType: "Full time",
     dateJoined: "01/04/22",
     dayOfWeek: "Monday",
     status: "Active",
+    workEmail: "Pauliroribulor@etihuku.com",
+    workLocation: "Remotely",
   },
+
+  // const ProfileView = () => {
+  //   const personalDetails = [
+  //     { label: "First Name", value: "Paul" },
+  //     { label: "Last Name", value: "Iroribulor" },
+  //     { label: "Gender", value: "Male" },
+  //     { label: "DOB", value: "28/10/2000" },
+  //     { label: "Marital Status", value: "Single" },
+  //     { label: "Nationality", value: "Nigeria" },
+  //     { label: "Email Address", value: "Pauliroribulor@gmail.com" },
+  //     { label: "Home Address", value: "25 Providence Street, Lekki, Lagos" },
+  //     { label: "Contact Number", value: "+234 9038299205" },
+  //     { label: "Emergency Number", value: "+234 8163651276" },
+  //   ];
+
+  //   const jobDetails = [
+  //     { label: "Employee I.D", value: "BD6789DD" },
+  //     { label: "Job Title", value: "Product Designer" },
+  //     { label: "Department", value: "Design and Marketing" },
+  //     { label: "Manager", value: "Moses Daniel" },
+  //     { label: "Employment Type", value: "Full Type" },
+  //     { label: "Date of Joining", value: "2nd April 2024" },
+  //     { label: "Work Email", value: "Pauliroribulor@etihuku.com" },
+  //     { label: "Work Location", value: "Remotely" },
+  //   ];
+
   {
     id: 2,
     name: "Lindiwe Nkosi",
