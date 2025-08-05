@@ -150,5 +150,17 @@
       }
     },
     "createdAt": "2025-08-01T09:31:06.503Z"
+  },
+  {
+    "id": "1754051241953",
+    "email": "lulu@lulu.com",
+    "password": "lulu123",
+    "otp": null,
+    "verified": true,
+    "profile": {
+      "personal": null,
+      "job": null
+    },
+    "createdAt": "2025-08-01T12:27:21.954Z"
   }
 ]

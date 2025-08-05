@@ -65,9 +65,9 @@ export default function EmployeeDirectory() {
   }, [employeeData, searchTerm, roleFilter, statusFilter]);
 
   return (
-    <div className="p-4">
+    <div className="p-4 gap-6">
       {/* Always visible filter section */}
-      <div className="flex flex-col gap-4 p-4 bg-white rounded-t-lg border-b border-gray-100 shadow-sm">
+      <div className="flex flex-col gap-4 p-4 pb-4 bg-white rounded-md border-b border-gray-100 shadow-sm">
         <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
           {/* Employee Count - Always visible */}
           <div className="text-lg font-medium">
@@ -133,7 +133,7 @@ export default function EmployeeDirectory() {
         columns={columns}
         data={filteredData.map((employee) => ({
           ...employee,
-          action: { text: "View" },
+          action: { text: "View Details" },
         }))}
         statusColorMap={statusColorMap}
         limit={5}
