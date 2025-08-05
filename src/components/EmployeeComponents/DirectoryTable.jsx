@@ -16,6 +16,12 @@ const DirectoryTable = () => {
     { key: "action", title: "Action" },
   ];
 
+  const statusColorMap = {
+    Active: "text-green-500",
+    "On leave": "text-yellow-500",
+    Suspended: "text-red-500",
+  };
+
   //Search
   const { setSearchTerm } = useSearch();
 
@@ -24,16 +30,34 @@ const DirectoryTable = () => {
     return () => setSearchTerm("");
   }, [setSearchTerm]);
 
+  // Add 'action' field dynamically using the person's ID
+  const formattedData = useMemo(
+    () =>
+      birthdayData.map((person) => ({
+        ...person,
+        name: `${person.firstName} ${person.lastName}`,
+        action: {
+          link: `/employee/employee-directory/${person.id}`,
+
+          text: "View Details",
+        },
+      })),
+    []
+  );
   return (
     <div className="bg-gray-100">
       <div>
         <Table
           columns={columns}
-          data={birthdayData}
+          data={formattedData}
           titleClassName="text-blue-800 " // Custom title styling
           // subtitle="Manage public holidays and company-specific holidays"
           viewMoreLink={{ text: "Birthdays" }}
-          enablePagination={birthdayData.length > 5}
+          statusColorMap={statusColorMap}
+          limit={5}
+          enablePagination={true}
+          stripedRows={true}
+          sortable={true}
         />
       </div>
     </div>

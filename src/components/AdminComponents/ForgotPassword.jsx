@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import ForgotPwDetail from './ForgotPwDetail.jsx';
+import { FiMail } from 'react-icons/fi';
 
 
 export default function ForgotPassword() {
@@ -30,13 +31,16 @@ export default function ForgotPassword() {
             Email Address
           </label>
           <div className="relative">
+              <span className="absolute inset-y-0 left-0 pl-3 flex items-center text-gray-400">
+              <FiMail className='h-5 w-5' />
+            </span>
             <input
               id="email"
               type="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               placeholder="Enter email address"
-              className="w-1/2 px-4 py-2 pr-10 border border-gray-300 rounded-md text-sm focus:outline-none focus:ring-1 focus:ring-indigo-500"
+              className="w-1/2 px-4 py-2 pl-10 pr-10 border border-gray-300 rounded-md text-sm focus:outline-none focus:ring-1 focus:ring-indigo-500"
               required
             />
           </div>
