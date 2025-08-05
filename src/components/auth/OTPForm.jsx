@@ -2,28 +2,31 @@
 "use client";
 
 export const OTPForm = ({ 
-  formData, 
+  email, 
+  onSubmit, 
   errors, 
-  handleInputChange, 
-  handleSubmit, 
-  loading,
-  email 
+  loading 
 }) => {
+  const [otp, setOtp] = useState(['', '', '', '']);
+
   const handleOtpChange = (e, index) => {
-    const { value } = e.target;
-    const newOtp = formData.otp.split('');
+    const value = e.target.value;
+    if (value && !/^[0-9]$/.test(value)) return;
+    
+    const newOtp = [...otp];
     newOtp[index] = value;
-    handleInputChange({
-      target: {
-        name: 'otp',
-        value: newOtp.join('')
-      }
-    });
+    setOtp(newOtp);
     
     // Auto focus to next input
     if (value && index < 3) {
       document.querySelector(`input[name=otp${index+1}]`).focus();
     }
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const otpCode = otp.join('');
+    onSubmit(otpCode);
   };
 
   return (
@@ -45,9 +48,11 @@ export const OTPForm = ({
               type="text"
               name={`otp${index}`}
               maxLength="1"
-              value={formData.otp[index] || ''}
+              value={otp[index]}
               onChange={(e) => handleOtpChange(e, index)}
               className="w-full p-3 text-center border border-gray-300 rounded-md text-black"
+              pattern="[0-9]"
+              inputMode="numeric"
             />
           ))}
         </div>

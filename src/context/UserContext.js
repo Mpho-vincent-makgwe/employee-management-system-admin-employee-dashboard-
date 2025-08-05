@@ -135,14 +135,43 @@ export const UserProvider = ({ children }) => {
 
   const logout = async () => {
     try {
-      await fetch('/api/userauth', {
+      setLoading(true);
+      const response = await fetch('/api/userauth', {
         method: 'DELETE',
-        credentials: 'include'
+        credentials: 'include',
+        headers: {
+          'Content-Type': 'application/json'
+        }
       });
+
+      if (!response.ok) {
+        throw new Error('Logout failed');
+      }
+
+      // Clear client-side state
       setUser(null);
+      
+      // Clear any client-side storage
+      if (typeof window !== 'undefined') {
+        localStorage.clear();
+        sessionStorage.clear();
+      }
+
+      // Force a hard refresh to ensure all state is cleared
       router.push('/');
+      router.refresh(); // This ensures Next.js clears its cache
+
     } catch (error) {
       console.error('Logout error:', error);
+      // Even if API logout fails, clear client-side state
+      setUser(null);
+      if (typeof window !== 'undefined') {
+        localStorage.clear();
+        sessionStorage.clear();
+      }
+      router.push('/');
+    } finally {
+      setLoading(false);
     }
   };
 

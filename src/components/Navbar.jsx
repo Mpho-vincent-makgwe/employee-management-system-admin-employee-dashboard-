@@ -32,6 +32,12 @@ export default function Navbar() {
       .toUpperCase();
   };
 
+  // Safely get user name
+  const getUserName = () => {
+    if (!user || !user.profile?.personal) return "User";
+    return `${user.profile.personal.firstName || ''} ${user.profile.personal.lastName || ''}`.trim() || 'User';
+  };
+
   // Loading state
   if (loading) {
     return (
@@ -46,7 +52,7 @@ export default function Navbar() {
       </header>
     );
   }
-const name = `${user.profile.personal.firstName} ${user.profile.personal.lastName}`
+
   return (
     <header className="bg-white shadow-sm h-16 fixed top-0 right-0 left-0 lg:left-64 z-10 border-b border-gray-200">
       <div className="flex items-center justify-between h-full px-4 lg:px-6 w-full">
@@ -87,11 +93,11 @@ const name = `${user.profile.personal.firstName} ${user.profile.personal.lastNam
               // Show user info when modal is not open
               <div className="flex items-center space-x-3">
                 <div className="w-10 h-10 rounded-full bg-indigo-100 flex items-center justify-center text-indigo-600 font-semibold">
-                  {getInitials(name)}
+                  {getInitials(getUserName())}
                 </div>
                 <div className="flex flex-col text-sm leading-tight">
                   <span className="font-medium text-indigo-600">
-                    {name}
+                    {getUserName()}
                   </span>
                   <span className="text-gray-600 text-xs">
                     {user.role || "Employee"}

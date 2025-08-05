@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import EtiLogo from "./Logo";
 import { FiLogOut, FiSettings } from "react-icons/fi";
@@ -13,9 +13,10 @@ import {
   FaBirthdayCake,
   FaCalendar,
 } from "react-icons/fa";
+import { useUser } from "@/context/UserContext";
 
-// Employee sidebar menu
-const employeeMenu = [
+// Employee sidebar menu items (without logout)
+const employeeMenuItems = [
   { label: "Dashboard", icon: <BsGridFill />, href: "/employee/dasboard" },
   {
     label: "Employee Directory",
@@ -30,11 +31,10 @@ const employeeMenu = [
   },
   { label: "Birthdays", icon: <FaBirthdayCake />, href: "/employee/birthdays" },
   { label: "Setting", icon: <FiSettings />, href: "/employee/setting" },
-  { label: "Logout", icon: <FiLogOut />, href: "/" },
 ];
 
-// Admin sidebar menu
-const adminMenu = [
+// Admin sidebar menu items (without logout)
+const adminMenuItems = [
   { label: "Dashboard", icon: <BsGridFill />, href: "/admin/dashboard" },
   {
     label: "Employee Directory",
@@ -45,12 +45,13 @@ const adminMenu = [
   { label: "Payroll", icon: <FaFileInvoiceDollar />, href: "/admin/payroll" },
   { label: "Birthday", icon: <FaBirthdayCake />, href: "/admin/birthdays" },
   { label: "Setting", icon: <FiSettings />, href: "/admin/settings" },
-  { label: "Logout", icon: <FiLogOut />, href: "/" },
 ];
 
 export default function Sidebar() {
   const pathname = usePathname();
+  const router = useRouter();
   const [isTablet, setIsTablet] = useState(false);
+  const { logout, loading } = useUser();
 
   useEffect(() => {
     const handleResize = () => {
@@ -65,7 +66,15 @@ export default function Sidebar() {
   const isEmployee = pathname.startsWith("/employee");
   const isAdmin = pathname.startsWith("/admin");
 
-  const menu = isEmployee ? employeeMenu : isAdmin ? adminMenu : [];
+  const menuItems = isEmployee ? employeeMenuItems : isAdmin ? adminMenuItems : [];
+
+  const handleLogout = async () => {
+    try {
+      await logout();
+    } catch (error) {
+      console.error('Logout failed:', error);
+    }
+  };
 
   if (!isEmployee && !isAdmin) return null; // Hide sidebar on other routes
 
@@ -75,7 +84,7 @@ export default function Sidebar() {
       <div className="lg:hidden fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 z-40">
         <nav className="p-2">
           <ul className="flex justify-around">
-            {menu.slice(0, 5).map((item, idx) => {
+            {menuItems.slice(0, 5).map((item, idx) => {
               const isActive = pathname === item.href;
               return (
                 <li key={idx}>
@@ -93,13 +102,24 @@ export default function Sidebar() {
                 </li>
               );
             })}
+            {/* Logout button for mobile */}
+            <li>
+              <button
+                onClick={handleLogout}
+                disabled={loading}
+                className="flex items-center justify-center p-3 rounded-full text-lg text-indigo-600 hover:bg-indigo-50 transition-colors"
+                title="Logout"
+              >
+                <FiLogOut />
+              </button>
+            </li>
           </ul>
         </nav>
       </div>
     );
   }
 
-  // ✅ Desktop view (matches image layout)
+  // ✅ Desktop view
   return (
     <aside className="hidden lg:block w-64 bg-white h-screen fixed left-0 top-0 z-20 shadow-md">
       <div className="flex items-center h-24 justify-center">
@@ -107,7 +127,7 @@ export default function Sidebar() {
       </div>
       <nav className="px-4">
         <ul className="space-y-6">
-          {menu.map((item, idx) => {
+          {menuItems.map((item, idx) => {
             const isActive = pathname === item.href;
             return (
               <li key={idx}>
@@ -131,6 +151,19 @@ export default function Sidebar() {
               </li>
             );
           })}
+          {/* Logout button for desktop */}
+          <li>
+            <button
+              onClick={handleLogout}
+              disabled={loading}
+              className={`flex items-center gap-3 w-full px-4 py-3 rounded-lg text-sm font-medium transition-all duration-200 text-gray-700 hover:bg-gray-100`}
+            >
+              <span className="text-lg text-[#4F46E5]">
+                <FiLogOut />
+              </span>
+              {loading ? 'Logging out...' : 'Logout'}
+            </button>
+          </li>
         </ul>
       </nav>
     </aside>
