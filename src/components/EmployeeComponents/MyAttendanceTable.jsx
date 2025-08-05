@@ -40,7 +40,7 @@ const MyAttendanceTable = () => {
   const year = now.getFullYear();
   const month = now.getMonth(); // 0-based: July = 6
 
-  const dataWithStatus = fillMissingDays(timesheetEntries, year, month);
+  const dataWithStatus = fillMissingDays(timesheetEntries);
 
   return (
     <div className="bg-gray-100">

@@ -1,4 +1,16 @@
-import { isSameDay, isSameWeek, isSameMonth, parse } from "date-fns";
+import {
+  isSameDay,
+  isSameWeek,
+  isSameMonth,
+  parse,
+  isAfter,
+  isBefore,
+  format,
+  startOfMonth,
+  endOfMonth,
+  addDays,
+  isWeekend,
+} from "date-fns";
 import { parseDate, formatDateToISO } from "./dateUtils";
 
 /**
@@ -17,13 +29,16 @@ export function getStatus(clockInTime) {
 /**
  * Get all working weekdays in a month
  */
-export function getWorkingDaysInMonth(year, month) {
+function getWorkingDaysInMonth(year, month) {
   const days = [];
   const date = new Date(year, month, 1);
+  const today = new Date();
 
   while (date.getMonth() === month) {
     const isWeekday = date.getDay() !== 0 && date.getDay() !== 6;
-    if (isWeekday) {
+    const isPastOrToday = !isAfter(date, today); // Exclude future dates
+
+    if (isWeekday && isPastOrToday) {
       days.push(new Date(date));
     }
     date.setDate(date.getDate() + 1);
@@ -35,29 +50,51 @@ export function getWorkingDaysInMonth(year, month) {
 /**
  * Fill in missing working days with "Absent" entries
  */
-export function fillMissingDays(entries, year, month) {
-  const workingDays = getWorkingDaysInMonth(year, month);
 
-  return workingDays.map((date) => {
-    const entry = entries.find((e) =>
-      isSameDay(parse(e.date, "d/MM/yy", new Date()), date)
-    );
+export function fillMissingDays(entries) {
+  const today = new Date();
 
-    if (entry) {
-      return {
-        ...entry,
-        status: getStatus(entry.clockIn),
-      };
-    } else {
-      return {
-        date: formatDateToISO(date),
-        clockIn: "-",
-        clockOut: "-",
-        totalHours: "0",
-        status: "Absent",
-      };
+  // Get earliest date in entries
+  const parsedDates = entries.map((e) => parseDate(e.date));
+  const earliest = parsedDates.reduce(
+    (min, date) => (date < min ? date : min),
+    today
+  );
+  const startDate = startOfMonth(earliest);
+  const endDate = endOfMonth(today);
+
+  const filled = [];
+  let current = startDate;
+
+  while (!isAfter(current, endDate)) {
+    const isWeekday = !isWeekend(current);
+    const isInPastOrToday = !isAfter(current, today);
+
+    if (isWeekday && isInPastOrToday) {
+      const match = entries.find((e) => isSameDay(parseDate(e.date), current));
+
+      if (match) {
+        filled.push({
+          ...match,
+          date: format(current, "dd/MM/yy"),
+          status: getStatus(match.clockIn),
+        });
+      } else {
+        filled.push({
+          date: format(current, "dd/MM/yy"),
+          clockIn: "-",
+          clockOut: "-",
+          totalHours: "0",
+          status: "Absent",
+        });
+      }
     }
-  });
+
+    current = addDays(current, 1);
+  }
+
+  // Sort in descending order (most recent first)
+  return filled.sort((a, b) => parseDate(b.date) - parseDate(a.date));
 }
 
 /**
@@ -96,15 +133,22 @@ export function getTimeSummary(entries) {
 export function getAttendanceSummary(entries) {
   const now = new Date();
   const year = now.getFullYear();
-  const month = now.getMonth();
+  const month = now.getMonth(); // 0-based
+
+  // Only entries from current month
+  const currentMonthEntries = entries.filter((e) =>
+    isSameMonth(parseDate(e.date), now)
+  );
 
   const workingDaysThisMonth = getWorkingDaysInMonth(year, month).length;
-  const filledEntries = fillMissingDays(entries, year, month);
 
-  const present = entries.length;
-  const absent = workingDaysThisMonth - present;
+  const filledEntries = fillMissingDays(currentMonthEntries); // Only show current month summary
 
-  const late = filledEntries.filter((entry) => entry.status === "Late").length;
+  const present = filledEntries.filter((e) => e.status === "Present").length;
+
+  const absent = filledEntries.filter((e) => e.status === "Absent").length;
+
+  const late = filledEntries.filter((e) => e.status === "Late").length;
 
   return {
     workingDaysThisMonth,
