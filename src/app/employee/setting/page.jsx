@@ -4,6 +4,7 @@ import CompanyInfo from "@/components/EmployeeComponents/CompanyInfo";
 import ForgotPassword from "@/components/AdminComponents/ForgotPassword";
 import ProfileView from "@/components/EmployeeComponents/ProfileView";
 import Heading from "@/components/Heading";
+import Roles from "@/components/EmployeeComponents/Roles";
 
 export default function Settings() {
   const [activeTab, setActiveTab] = useState("Profile");
@@ -37,6 +38,7 @@ export default function Settings() {
       <div className="mt-4">
         {activeTab === "Profile" && <ProfileView />}
         {activeTab === "CompanyInfo" && <CompanyInfo />}
+        {activeTab === "Roles" && <Roles />}
       </div>
     </div>
   );
