@@ -1,20 +1,38 @@
 "use client";
 
 import React from "react";
-// import Link from 'next/Link';
 import Image from "next/image";
+import { useRouter } from "next/navigation";
+import ProfileEdit from "./ProfileEdit";
+import { useState } from "react";
 
 const ProfileTable = ({
   profilePicture,
   personalDetails,
   jobDetails,
-  editable = false, // Default to false if not provided
+  editable = false,
+  onSave,
+  showActionButton = true,
   theme = {
-    primaryColor: "#4F46E5",
-    labelColor: "#2C2C2E",
-    borderColor: "#D0D5DD",
+    primaryColor: "indigo-700",
+    labelColor: "gray-600",
+    borderColor: "gray-300",
   },
 }) => {
+  const router = useRouter();
+
+  const [isEditing, setIsEditing] = useState(editable);
+
+  // Handle action button click
+  const handleActionClick = () => {
+    if (isEditing) {
+      onSave?.(); // Call save
+      setIsEditing(false); // Back to view mode
+    } else {
+      setIsEditing(true); // Switch to edit mode
+    }
+  };
+
   const renderProfilePicture = () => {
     if (!profilePicture) return null;
 
@@ -29,10 +47,9 @@ const ProfileTable = ({
             height={128}
           />
         ) : (
-          //   <Link to={`/profile/edit'`}>Change Picture</Link>
           <div className="w-32 h-32 bg-gray-300 rounded-full mb-2"></div>
         )}
-        {editable && profilePicture.changeText && (
+        {isEditing && profilePicture.changeText && (
           <button className="text-sm text-indigo-600 hover:text-indigo-800 hover:underline">
             {profilePicture.changeText}
           </button>
@@ -51,39 +68,30 @@ const ProfileTable = ({
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {details.map((detail, index) => (
-            <div
-              key={index}
-              className="flex flex-col gap-[5px] w-[343px]" // Horizontal flow with 5px gap
-            >
+            <div key={index} className="flex flex-col gap-[5px] w-[343px]">
               <label className={`text-sm font-medium text-${theme.labelColor}`}>
                 {detail.label}
               </label>
 
-              {editable ? (
+              {isEditing ? (
                 <input
                   type="text"
                   defaultValue={detail.value}
                   className={`
-        h-[50px]
-        w-full
-        px-[16px]
-        rounded-[4px]
-        border border-${theme.borderColor}
-        bg-white text-gray-800
-        focus:ring focus:ring-${theme.primaryColor}
-        focus:border-transparent
-      `}
+                    h-[50px] w-full px-[16px] rounded-[4px]
+                    border border-${theme.borderColor}
+                    bg-white text-gray-800
+                    focus:ring focus:ring-${theme.primaryColor}
+                    focus:border-transparent
+                  `}
                 />
               ) : (
                 <div
                   className={`
-        h-[50px]
-        w-full
-        px-[16px]
-        rounded-[4px]
-        border border-${theme.borderColor}
-        bg-white text-gray-800 flex items-center
-      `}
+                    h-[50px] w-full px-[16px] rounded-[4px]
+                    border border-${theme.borderColor}
+                    bg-white text-gray-800 flex items-center
+                  `}
                 >
                   {detail.value}
                 </div>
@@ -97,6 +105,19 @@ const ProfileTable = ({
 
   return (
     <div className="bg-white p-6 shadow-sm rounded text-indigo-600">
+      {/* Top-right Action Button */}
+      {showActionButton && (
+        <div className="flex justify-end mb-4">
+          <button
+            type="button"
+            onClick={handleActionClick}
+            className={`bg-${theme.primaryColor} text-white px-6 py-2 rounded-md hover:opacity-90 transition`}
+          >
+            {isEditing ? "Save" : "Edit Profile"}
+          </button>
+        </div>
+      )}
+
       <div className="flex flex-col md:flex-row gap-8">
         {renderProfilePicture()}
         <div className="flex-1 space-y-10">

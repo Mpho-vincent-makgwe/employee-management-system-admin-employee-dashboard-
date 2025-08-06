@@ -2,9 +2,8 @@ import React from "react";
 import { Plus } from "lucide-react";
 import CustomButton from "../Buttons/CustomButton";
 import ProfileTable from "./ProfileTable";
-import Heading from "../Heading";
 
-const ProfileView = () => {
+const ProfileEdit = () => {
   const personalDetails = [
     { label: "First Name", value: "Paul" },
     { label: "Last Name", value: "Iroribulor" },
@@ -31,14 +30,8 @@ const ProfileView = () => {
 
   return (
     <div className="bg-gray-100">
-      <div className="flex justify-between items-center">
-        <div>
-          {/* <Heading
-            title="Profile"
-            subtitle="Manage your personal information and account settings."
-            // position={true}
-          /> */}
-        </div>
+      <div className="flex justify-between items-center mb-6">
+        <CustomButton to="/profile" text="Save" />
       </div>
 
       <ProfileTable
@@ -48,7 +41,7 @@ const ProfileView = () => {
         }}
         personalDetails={personalDetails}
         jobDetails={jobDetails}
-        editable={false} // Set to true when you want editing enabled
+        editable={true}
         theme={{
           primaryColor: "indigo-700",
           labelColor: "gray-600",
@@ -59,4 +52,4 @@ const ProfileView = () => {
   );
 };
 
-export default ProfileView;
+export default ProfileEdit;
