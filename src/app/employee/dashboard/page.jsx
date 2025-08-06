@@ -1,9 +1,12 @@
-import React from 'react'
+import React from "react";
+import RecentEntries from "@/components/EmployeeComponents/RecentEntries";
 
 const page = () => {
   return (
-    <div>page</div>
-  )
-}
+    <div>
+      <RecentEntries />
+    </div>
+  );
+};
 
-export default page
+export default page;

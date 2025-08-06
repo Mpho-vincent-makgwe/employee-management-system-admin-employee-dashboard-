@@ -17,7 +17,7 @@ import { useUser } from "@/context/UserContext";
 
 // Employee sidebar menu items (without logout)
 const employeeMenuItems = [
-  { label: "Dashboard", icon: <BsGridFill />, href: "/employee/dasboard" },
+  { label: "Dashboard", icon: <BsGridFill />, href: "/employee/dashboard" },
   {
     label: "Employee Directory",
     icon: <FaUserFriends />,
@@ -66,13 +66,17 @@ export default function Sidebar() {
   const isEmployee = pathname.startsWith("/employee");
   const isAdmin = pathname.startsWith("/admin");
 
-  const menuItems = isEmployee ? employeeMenuItems : isAdmin ? adminMenuItems : [];
+  const menuItems = isEmployee
+    ? employeeMenuItems
+    : isAdmin
+    ? adminMenuItems
+    : [];
 
   const handleLogout = async () => {
     try {
       await logout();
     } catch (error) {
-      console.error('Logout failed:', error);
+      console.error("Logout failed:", error);
     }
   };
 
@@ -161,7 +165,7 @@ export default function Sidebar() {
               <span className="text-lg text-[#4F46E5]">
                 <FiLogOut />
               </span>
-              {loading ? 'Logging out...' : 'Logout'}
+              {loading ? "Logging out..." : "Logout"}
             </button>
           </li>
         </ul>
