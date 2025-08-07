@@ -51,10 +51,10 @@ export default function DashboardNotifications() {
   const latestNotifications = notifications.slice(0, 2);
 
   return (
-    <div className="bg-white rounded-lg shadow p-6 space-y-4">
+    <div className="bg-white rounded-lg shadow p-6 space-y-4 h-full">
       {/* Custom Heading */}
       <div className="flex justify-between items-center">
-        <h2 className="text-lg mb-4 flex items-center gap-2 text-[#2C2C2E]">
+        <h2 className="text-md mb-4 flex items-center gap-2 text-[#2C2C2E]">
           <span>
             <Bell />
           </span>{" "}

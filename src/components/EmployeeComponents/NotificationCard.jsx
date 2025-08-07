@@ -2,15 +2,15 @@ import { Bell, CalendarDays, Cake } from "lucide-react";
 
 const statusStyles = {
   meeting: {
-    icon: <Bell className="text-indigo-500 w-6 h-6" />,
+    icon: <Bell className="text-indigo-500 w-14 h-14" />,
     border: "border-indigo-100",
   },
   holiday: {
-    icon: <CalendarDays className="text-green-500 w-6 h-6" />,
+    icon: <CalendarDays className="text-green-500 w-14 h-14" />,
     border: "border-green-100",
   },
   birthday: {
-    icon: <Cake className="text-amber-500 w-6 h-6" />,
+    icon: <Cake className="text-amber-500 w-14 h-14" />,
     border: "border-amber-100",
   },
 };
