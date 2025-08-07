@@ -137,7 +137,7 @@ const BarChart = () => {
   };
 
   return (
-    <Card className="h-[376px] px-4 py-6">
+    <Card className="h-full px-4 py-6">
       <div style={{ height: "100%", position: "relative" }}>
         <Bar data={chartData} options={chartOptions} />
       </div>

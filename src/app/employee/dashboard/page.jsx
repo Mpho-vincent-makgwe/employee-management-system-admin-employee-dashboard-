@@ -2,15 +2,40 @@ import React from "react";
 import RecentEntries from "@/components/EmployeeComponents/RecentEntries";
 import BarChart from "@/components/EmployeeComponents/BarChart";
 import DashboardNotifications from "@/components/EmployeeComponents/DashboardNotifications";
+import DashboardSummaryCards from "@/components/EmployeeComponents/DashboardSummaryCards";
+import Heading from "@/components/Heading";
 
 const page = () => {
   return (
-    <div>
-      <BarChart />
-      <DashboardNotifications />
-      <RecentEntries />
+    <div className="p-6 space-y-6">
+      <Heading
+        title="Dashboard Overview"
+        subtitle="Here's what's happening with your work today."
+      />
+
+      {/* Summary Cards */}
+      <div className="grid grid-cols-1">
+        <DashboardSummaryCards />
+      </div>
+
+      {/* Main Content */}
+      <div className="grid grid-cols-1 lg:grid-cols-5 gap-6 h-full">
+        {/* Bar Chart (2/3 width on large screens) */}
+        <div className="lg:col-span-3">
+          <BarChart />
+        </div>
+
+        {/* Notifications (1/3 width) */}
+        <div className="lg:col-span-2">
+          <DashboardNotifications />
+        </div>
+      </div>
+
+      {/* Recent Entries (Full width) */}
+      <div>
+        <RecentEntries />
+      </div>
     </div>
   );
 };
-
 export default page;
