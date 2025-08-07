@@ -1,5 +1,6 @@
 // components/auth/OTPForm.jsx
 "use client";
+import { useState } from "react";
 
 export const OTPForm = ({ 
   email, 
