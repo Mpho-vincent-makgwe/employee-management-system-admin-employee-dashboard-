@@ -16,7 +16,8 @@
         "contactNumber": "+1234567890",
         "nationality": "American",
         "homeAddress": "123 Main St",
-        "emergencyNumber": "+1987654321"
+        "emergencyNumber": "+1987654321",
+        "birthday": "1995-06-14"
       },
       "job": {
         "employeeId": "ADM001",
@@ -37,6 +38,8 @@
     "role": "Employee",
     "otp": null,
     "verified": true,
+    "hoursWorkedThisWeek": 24,
+    "isCheckedIn": false,
     "profile": {
       "personal": {
         "firstName": "John",
@@ -47,7 +50,8 @@
         "contactNumber": "+1234567890",
         "nationality": "American",
         "homeAddress": "456 Employee Ave",
-        "emergencyNumber": "+1122334455"
+        "emergencyNumber": "+1122334455",
+        "birthday": "1995-06-14"
       },
       "job": {
         "employeeId": "EMP001",

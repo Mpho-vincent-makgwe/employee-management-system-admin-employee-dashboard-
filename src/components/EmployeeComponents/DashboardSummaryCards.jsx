@@ -3,31 +3,47 @@
 import { Clock3, CalendarRange, CalendarCheck, AlarmClock } from "lucide-react";
 import { timesheetEntries } from "../../data/employeeData/timesheetData";
 import { getTimeSummary } from "@/utils/attendanceUtils";
+import users from "@/data/users.json";
+import { useUser } from "@/context/UserContext";
 
 const DashboardSummaryCards = () => {
-  const summary = getTimeSummary(timesheetEntries);
+  const { user, loading } = useUser();
+
+  const totalEmployees = users.filter(
+    (user) => user.role === "Employee"
+  ).length;
+
+  const hoursThisWeek = Number(user?.hoursWorkedThisWeek ?? 0);
+
+  const checkedInStatus = user?.isCheckedIn ? "Checked In" : "Not Checked In";
+
+  const birthday = user?.profile?.personal?.birthday || "Not set";
+  console.log("User from context:", user);
+
+  if (loading) return null;
 
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 mb-6">
       {[
         {
           label: "Total Employees",
-          value: `35`,
+          value: totalEmployees,
           icon: <CalendarRange className="w-6 h-6 text-white" />,
         },
         {
           label: "Hours This Week",
-          value: `${16} hrs`,
+          value: `${hoursThisWeek} hrs`,
           icon: <CalendarCheck className="w-6 h-6 text-white" />,
         },
         {
           label: "Today’s Status",
+          // value: checkedInStatus,
           value: `Checked In`,
           icon: <Clock3 className="w-6 h-6 text-white" />,
         },
         {
           label: "My Birthday",
-          value: `28 October`,
+          value: birthday,
           icon: <AlarmClock className="w-6 h-6 text-white" />,
         },
       ].map((item, i) => (
