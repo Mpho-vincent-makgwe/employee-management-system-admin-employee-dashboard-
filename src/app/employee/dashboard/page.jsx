@@ -19,14 +19,14 @@ const page = () => {
       </div>
 
       {/* Main Content */}
-      <div className="grid grid-cols-1 lg:grid-cols-5 gap-6 h-full">
+      <div className="grid grid-cols-1 lg:grid-cols-9 gap-6 h-full">
         {/* Bar Chart (2/3 width on large screens) */}
-        <div className="lg:col-span-3">
+        <div className="lg:col-span-5">
           <BarChart />
         </div>
 
         {/* Notifications (1/3 width) */}
-        <div className="lg:col-span-2">
+        <div className="lg:col-span-4">
           <DashboardNotifications />
         </div>
       </div>
