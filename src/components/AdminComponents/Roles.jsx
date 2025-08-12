@@ -52,7 +52,7 @@ export default function Roles() {
                 <td className="px-4 py-6">{role.name}</td>
                 <td className="px-4 py-6">{role.description}</td>
                 <td className="px-4 py-6">{role.members}</td>
-                <td className="px-4 py-6">{role.action}</td>
+                <td className="px-4 py-6 text-[#AD8330]">{role.action}</td>
               </tr>
             ))}
           </tbody>

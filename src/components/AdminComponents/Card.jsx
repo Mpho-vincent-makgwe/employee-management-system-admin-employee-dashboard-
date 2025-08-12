@@ -7,7 +7,7 @@ const Card = ({
     const customStyles = {
         padding: padding ? padding : '16px',
         backgroundColor: '#fff',
-        border: border ? border : '0.4px solid #d0d5dd'
+        border: border ? border : '0.2px solid #d0d5dd'
     }
   return (
     <div style={customStyles} className={`w-full ${className} rounded-lg`}>{children}</div>

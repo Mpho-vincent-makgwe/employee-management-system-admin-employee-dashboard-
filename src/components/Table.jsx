@@ -234,7 +234,7 @@ const Table = ({
         <table className="min-w-full text-sm text-gray-700">
           <thead>
             <tr className="bg-white text-left">
-              {showRowNumbers && <th className="px-6 py-3">#</th>}
+              {showRowNumbers && <th className="px-6 py-3">No</th>}
               {columns.map((column) => (
                 <th
                   key={column.key}

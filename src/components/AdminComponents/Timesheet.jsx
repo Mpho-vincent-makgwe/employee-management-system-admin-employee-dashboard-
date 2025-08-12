@@ -39,7 +39,8 @@ export default function Timesheet() {
     <div className="p-6 space-y-4 bg-white">
       <CardTitle level={5}>Yesterday's TimeSheet</CardTitle>
       {timesheetData.map((employee, idx) => (
-       <Card key={idx}>
+       <Card key={idx}
+       backgroundColor= 'bg-[#D0D5DD]'>
   <div className="flex justify-between items-center h-full p-4">
     <div className="flex items-center gap-5">
       <div className="w-[48px] h-[48px] flex items-center justify-center rounded-full bg-[#4F46E5] text-white font-medium">
