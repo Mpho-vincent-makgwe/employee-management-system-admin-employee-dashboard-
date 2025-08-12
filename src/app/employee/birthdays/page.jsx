@@ -7,7 +7,7 @@ export default function Birthdays() {
   return (
     <main className="px-6 py-5">
       <Heading title="Upcoming Birthdays" subtitle="View employee birthdays" />
-      <SearchBar />
+      {/* <SearchBar /> */}
       <BirthdayTable />
     </main>
   );

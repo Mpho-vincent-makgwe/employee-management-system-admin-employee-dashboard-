@@ -59,38 +59,32 @@ export default function BirthdayTable() {
   }, [birthdayData, searchTerm, roleFilter, statusFilter]);
 
   return (
-    <div className="p-4">
-      {/* Always visible filter section */}
-      <div className="flex flex-col gap-4 p-4 bg-white rounded-t-lg border-b border-gray-100 shadow-sm">
-        <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
-          {/* Employee Count - Always visible */}
-          <div className="text-lg font-medium">
-            Employee: <span className="font-bold">{filteredData.length}</span>
-          </div>
-
-          {/* Search - Always visible */}
-          <div className="relative w-full sm:w-64">
-            <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-              <FaSearch className="text-gray-400" />
-            </div>
-            <input
-              type="text"
-              className="block w-full pl-10 pr-3 py-2 border border-gray-300 rounded-md leading-5 bg-white placeholder-gray-500 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
-              placeholder="Search employees"
-              value={searchTerm}
-              onChange={(e) => setSearchTerm(e.target.value)}
-            />
-          </div>
-        </div>
-
-        {/* Filters - Always visible */}
-        <div className="flex flex-col sm:flex-row gap-4 w-full">
-          <div className="flex items-center gap-2 w-full sm:w-auto">
-            <span className="text-sm text-black whitespace-nowrap">
-              Filter by Role
+    <div className="">
+      <div className="flex flex-col lg:flex-row pb-4 items-center gap-4">
+        {/* Horizontal flex for search and filters */}
+        <div className="flex flex-row w-full gap-4 items-center">
+          {/* Search Bar */}
+          <div className="relative flex-1 min-w-0">
+            <span className="text-sm text-transparent mb-1 whitespace-nowrap">
+              Search Bar
             </span>
+            <div className="relative w-full">
+              <input
+                type="text"
+                className="w-full h-[51px] pl-10 pr-3 py-2 border border-[0.6px] border-[#D0D5DD] rounded-sm leading-5 bg-white placeholder-gray-500 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                placeholder="Search employees"
+                value={searchTerm}
+                onChange={(e) => setSearchTerm(e.target.value)}
+              />
+              <FaSearch className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 pointer-events-none" />
+            </div>
+          </div>
+
+          {/* Filter by Role */}
+          <div className="flex flex-col">
+            <span className="text-sm text-black mb-1">Filter by Role</span>
             <select
-              className="border rounded-md px-3 py-1 text-sm w-full"
+              className="bg-white h-[51px] border border-[0.6px] border-[#D0D5DD] rounded-sm px-3 py-1 text-sm"
               value={roleFilter}
               onChange={(e) => setRoleFilter(e.target.value)}
             >
@@ -102,12 +96,14 @@ export default function BirthdayTable() {
               ))}
             </select>
           </div>
-          <div className="flex items-center gap-2 w-full sm:w-auto">
-            <span className="text-sm text-black whitespace-nowrap">
+
+          {/* Filter by Status */}
+          <div className="flex flex-col">
+            <span className="text-sm text-black mb-1 whitespace-nowrap">
               Filter by Status
             </span>
             <select
-              className="border rounded-md px-3 py-1 text-sm w-full"
+              className="bg-white h-[51px] border border-[0.6px] border-[#D0D5DD] rounded-sm px-3 py-1 text-sm"
               value={statusFilter}
               onChange={(e) => setStatusFilter(e.target.value)}
             >
