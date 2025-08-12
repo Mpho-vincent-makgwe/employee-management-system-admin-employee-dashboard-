@@ -74,27 +74,30 @@ export default function EmployeeDirectory() {
 
       {/* Always visible filter section */}
       <div className="flex flex-col lg:flex-row pb-4 items-center gap-4">
-        {/* <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4"> */}
-        {/* Search - Always visible */}
-        <div className="relative w-full sm:w-64">
-          <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-            <FaSearch className="text-gray-400" />
+        {/* Horizontal flex for search and filters */}
+        <div className="flex flex-row w-full gap-4 items-center">
+          {/* Search Bar */}
+          <div className="relative flex-1 min-w-0">
+            <span className="text-sm text-transparent mb-1 whitespace-nowrap">
+              Search Bar
+            </span>
+            <div className="relative w-full">
+              <input
+                type="text"
+                className="w-full h-[51px] pl-10 pr-3 py-2 border border-[0.6px] border-[#D0D5DD] rounded-sm leading-5 bg-white placeholder-gray-500 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                placeholder="Search employees"
+                value={searchTerm}
+                onChange={(e) => setSearchTerm(e.target.value)}
+              />
+              <FaSearch className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 pointer-events-none" />
+            </div>
           </div>
-          <input
-            type="text"
-            className="relative w-[669px] h-[51px] pl-10 pr-3 py-2 border border-[0.6px] border-[#D0D5DD] rounded-sm leading-5 bg-white placeholder-gray-500 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
-            placeholder="Search employees"
-            value={searchTerm}
-            onChange={(e) => setSearchTerm(e.target.value)}
-          />
-        </div>
-        {/* </div> */}
-        {/* Filters - Always visible */}
-        <div className="flex flex-col lg:flex-row gap-4 w-auto ml-auto">
-          <div className="flex flex-col w-full sm:w-auto">
+
+          {/* Filter by Role */}
+          <div className="flex flex-col">
             <span className="text-sm text-black mb-1">Filter by Role</span>
             <select
-              className="bg-white h-[51px] border border-[0.6px] border-[#D0D5DD] rounded-sm px-3 py-1 text-sm w-full"
+              className="bg-white h-[51px] border border-[0.6px] border-[#D0D5DD] rounded-sm px-3 py-1 text-sm"
               value={roleFilter}
               onChange={(e) => setRoleFilter(e.target.value)}
             >
@@ -107,12 +110,13 @@ export default function EmployeeDirectory() {
             </select>
           </div>
 
-          <div className="flex flex-col w-full sm:w-auto">
-            <span className="text-sm text-black whitespace-nowrap">
+          {/* Filter by Status */}
+          <div className="flex flex-col">
+            <span className="text-sm text-black mb-1 whitespace-nowrap">
               Filter by Status
             </span>
             <select
-              className="bg-white h-[51px] border border-[0.6px] border-[#D0D5DD] rounded-sm px-3 py-1 text-sm w-full"
+              className="bg-white h-[51px] border border-[0.6px] border-[#D0D5DD] rounded-sm px-3 py-1 text-sm"
               value={statusFilter}
               onChange={(e) => setStatusFilter(e.target.value)}
             >
