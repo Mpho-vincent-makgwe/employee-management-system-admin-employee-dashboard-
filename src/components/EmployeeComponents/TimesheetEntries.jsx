@@ -42,9 +42,9 @@ const TimesheetEntries = () => {
           columns={columns}
           data={sortedEntries}
           title="Recent Entries"
-          titleClassName="text-blue-800 " // Custom title styling
+          titleClassName="text-[#3A3A3C] text-md" // Custom title styling
           // subtitle="Manage public holidays and company-specific holidays"
-          viewMoreLink={{ text: "Holiday List" }}
+          viewMoreLink={{ text: "" }}
           enablePagination={sortedEntries.length > 5}
         />
       </div>

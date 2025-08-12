@@ -49,7 +49,7 @@ const MyAttendanceTable = () => {
           columns={columns}
           data={dataWithStatus}
           title="Recent Entries"
-          titleClassName="text-blue-800 " // Custom title styling
+          titleClassName="text-[#3A3A3C] font-base text-md" // Custom title styling
           // subtitle="Manage public holidays and company-specific holidays"
           viewMoreLink={{ text: "Holiday List" }}
           enablePagination={timesheetEntries.length > 5}
