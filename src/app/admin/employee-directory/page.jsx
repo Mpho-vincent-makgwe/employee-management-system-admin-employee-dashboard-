@@ -67,36 +67,33 @@ export default function EmployeeDirectory() {
   return (
     <div className="p-4 gap-6">
       {/* Always visible filter section */}
-      <div className="flex flex-col gap-4 p-4 pb-4 bg-white rounded-md border-b border-gray-100 shadow-sm">
+      <div className="flex flex-col gap-4 p-4 pb-4  ">
         <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
           {/* Employee Count - Always visible */}
-          <div className="text-lg font-medium">
+          <div className="text-lg font-medium text-black">
             Employee: <span className="font-bold">{filteredData.length}</span>
           </div>
+</div>
+         
 
-          {/* Search - Always visible */}
-          <div className="relative w-full sm:w-64">
-            <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+        {/* Filters - Always visible */}
+        <div className="flex flex-row sm:flex-row gap-4  ">
+          <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
               <FaSearch className="text-gray-400" />
             </div>
             <input
               type="text"
-              className="block w-full pl-10 pr-3 py-2 border border-gray-300 rounded-md leading-5 bg-white placeholder-gray-500 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+              className="block w-full pl-10 pr-3 py-2 bg-white border border-gray-300 rounded-md leading-5 bg-white placeholder-gray-500 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
               placeholder="Search employees"
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
             />
-          </div>
-        </div>
-
-        {/* Filters - Always visible */}
-        <div className="flex flex-col sm:flex-row gap-4 w-full">
-          <div className="flex items-center gap-2 w-full sm:w-auto">
+            <div className="flex items-center gap-2 w-1/2  ">
             <span className="text-sm text-black whitespace-nowrap">
               Filter by Role
             </span>
             <select
-              className="border rounded-md px-3 py-1 text-sm w-full"
+              className="bg-white text-black border rounded-md px-3 py-1 text-sm w-full"
               value={roleFilter}
               onChange={(e) => setRoleFilter(e.target.value)}
             >
@@ -104,6 +101,23 @@ export default function EmployeeDirectory() {
               {uniqueRoles.map((role) => (
                 <option key={role} value={role}>
                   {role}
+                </option>
+              ))}
+            </select>
+          </div>
+           <div className="flex items-center gap-2 w-full sm:w-auto">
+            <span className="text-sm text-black whitespace-nowrap">
+              Filter by Status
+            </span>
+            <select
+              className="border rounded-md px-3 py-1 text-sm w-full"
+              value={statusFilter}
+              onChange={(e) => setStatusFilter(e.target.value)}
+            >
+              <option value="">All Statuses</option>
+              {uniqueStatuses.map((status) => (
+                <option key={status} value={status}>
+                  {status}
                 </option>
               ))}
             </select>
@@ -125,8 +139,11 @@ export default function EmployeeDirectory() {
               ))}
             </select>
           </div>
+          </div>
+          
+          
         </div>
-      </div>
+   
 
       {/* Table component */}
       <Table
@@ -140,6 +157,7 @@ export default function EmployeeDirectory() {
         enablePagination={true}
         stripedRows={true}
         sortable={true}
+        className='mt-8'
         // Remove these props as they're now handled in the parent component
         // showEmployeeCount={true}
         // showFilters={true}

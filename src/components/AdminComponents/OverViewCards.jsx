@@ -37,7 +37,7 @@ export default function OverViewCards() {
                  <Card
           key={index}
           className="h-[130px] w-full xl:max-w-none"
-          border="0.6px solid #d0d5dd "
+          border="0.6px solid  "
           
           >
             <div className="flex items-center h-full gap-5 w-full text-black">
