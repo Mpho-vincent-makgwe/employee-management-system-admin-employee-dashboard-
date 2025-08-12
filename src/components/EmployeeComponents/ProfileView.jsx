@@ -1,32 +1,44 @@
+"use client";
+
 import React from "react";
 import { Plus } from "lucide-react";
 import CustomButton from "../Buttons/CustomButton";
 import ProfileTable from "./ProfileTable";
 import Heading from "../Heading";
+import { useUser } from "@/context/UserContext";
 
 const ProfileView = () => {
+  const { user, loading } = useUser();
+
+  if (loading) {
+    return <div>Loading profile...</div>;
+  }
+
+  if (!user || !user.profile) {
+    return <div>No profile data found.</div>;
+  }
   const personalDetails = [
-    { label: "First Name", value: "Paul" },
-    { label: "Last Name", value: "Iroribulor" },
-    { label: "Gender", value: "Male" },
-    { label: "DOB", value: "28/10/2000" },
-    { label: "Marital Status", value: "Single" },
-    { label: "Nationality", value: "Nigeria" },
-    { label: "Email Address", value: "Pauliroribulor@gmail.com" },
-    { label: "Home Address", value: "25 Providence Street, Lekki, Lagos" },
-    { label: "Contact Number", value: "+234 9038299205" },
-    { label: "Emergency Number", value: "+234 8163651276" },
+    { label: "First Name", value: user.profile.personal.firstName },
+    { label: "Last Name", value: user.profile.personal.lastName },
+    { label: "Gender", value: user.profile.personal.gender },
+    { label: "DOB", value: user.profile.personal.dob },
+    { label: "Marital Status", value: user.profile.personal.maritalStatus },
+    { label: "Nationality", value: user.profile.personal.nationality },
+    { label: "Email Address", value: user.email },
+    { label: "Home Address", value: user.profile.personal.homeAddress },
+    { label: "Contact Number", value: user.profile.personal.contactNumber },
+    { label: "Emergency Number", value: user.profile.personal.emergencyNumber },
   ];
 
   const jobDetails = [
-    { label: "Employee I.D", value: "BD6789DD" },
-    { label: "Job Title", value: "Product Designer" },
-    { label: "Department", value: "Design and Marketing" },
-    { label: "Manager", value: "Moses Daniel" },
-    { label: "Employment Type", value: "Full Type" },
-    { label: "Date of Joining", value: "2nd April 2024" },
-    { label: "Work Email", value: "Pauliroribulor@etihuku.com" },
-    { label: "Work Location", value: "Remotely" },
+    { label: "Employee I.D", value: user.profile.job.employeeId },
+    { label: "Job Title", value: user.profile.job.jobTitle },
+    { label: "Department", value: user.profile.job.department },
+    { label: "Manager", value: user.profile.job.manager },
+    { label: "Employment Type", value: user.profile.job.employmentType },
+    { label: "Date of Joining", value: user.profile.job.dateOfJoining },
+    { label: "Work Email", value: user.profile.job.workEmail },
+    { label: "Work Location", value: user.profile.job.workLocation },
   ];
 
   return (
