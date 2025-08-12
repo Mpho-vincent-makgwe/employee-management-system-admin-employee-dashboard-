@@ -20,7 +20,7 @@ const NotificationCard = ({ status, title, message, timeAgo }) => {
 
   return (
     <div className="flex justify-between items-start w-full px-4 py-8 border-[0.6px] border-[#D0D5DD] rounded-[4px] bg-white gap-3">
-      <div className="flex items-start gap-[12px]">
+      <div className="flex gap-[12px]">
         {styles.icon}
         <div>
           <h4 className="w-full text-[14px] leading-[22px] font-semibold text-[#2C2C2E]">
