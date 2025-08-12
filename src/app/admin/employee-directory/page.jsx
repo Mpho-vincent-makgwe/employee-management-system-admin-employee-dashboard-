@@ -1,4 +1,5 @@
 "use client";
+
 import { useState, useMemo } from "react";
 import Table from "@/components/Table";
 import { employeeData } from "@/data/adminData/employeeData";
@@ -10,32 +11,30 @@ const columns = [
   { key: "employeeType", title: "Employee Type" },
   { key: "status", title: "Status" },
   { key: "dateJoined", title: "Date Joined" },
-  { key: "action", title: "Action" }
+  { key: "action", title: "Action" },
 ];
 
 const statusColorMap = {
   Active: "text-green-500",
   "On leave": "text-yellow-500",
-  Suspended: "text-red-500"
+  Suspended: "text-red-500",
 };
 
 export default function EmployeeDirectory() {
   const [roleFilter, setRoleFilter] = useState("");
   const [statusFilter, setStatusFilter] = useState("");
   const [searchTerm, setSearchTerm] = useState("");
-  
-  // Calculate unique roles and statuses for filter dropdowns
+
   const uniqueRoles = useMemo(() => {
     const roles = new Set(employeeData.map((item) => item.role));
     return Array.from(roles);
-  }, [employeeData]);
+  }, []);
 
   const uniqueStatuses = useMemo(() => {
     const statuses = new Set(employeeData.map((item) => item.status));
     return Array.from(statuses);
-  }, [employeeData]);
+  }, []);
 
-  // Filter data based on filters and search term
   const filteredData = useMemo(() => {
     let result = [...employeeData];
 
@@ -62,90 +61,76 @@ export default function EmployeeDirectory() {
     }
 
     return result;
-  }, [employeeData, searchTerm, roleFilter, statusFilter]);
+  }, [searchTerm, roleFilter, statusFilter]);
 
   return (
-    <div className="p-4 gap-6">
-      {/* Always visible filter section */}
-      <div className="flex flex-col gap-4 p-4 pb-4  ">
+    <div className="p-6 max-w-7xl  space-y-4">
+      {/* Filter Section */}
+      <div className="flex flex-col gap-6">
         <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
-          {/* Employee Count - Always visible */}
           <div className="text-lg font-medium text-black">
             Employee: <span className="font-bold">{filteredData.length}</span>
+            <p>Manage and view all employee information</p>
           </div>
-</div>
-         
-
-        {/* Filters - Always visible */}
-        <div className="flex flex-row sm:flex-row gap-4  ">
-          <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-              <FaSearch className="text-gray-400" />
-            </div>
-            <input
-              type="text"
-              className="block w-full pl-10 pr-3 py-2 bg-white border border-gray-300 rounded-md leading-5 bg-white placeholder-gray-500 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
-              placeholder="Search employees"
-              value={searchTerm}
-              onChange={(e) => setSearchTerm(e.target.value)}
-            />
-            <div className="flex items-center gap-2 w-1/2  ">
-            <span className="text-sm text-black whitespace-nowrap">
-              Filter by Role
-            </span>
-            <select
-              className="bg-white text-black border rounded-md px-3 py-1 text-sm w-full"
-              value={roleFilter}
-              onChange={(e) => setRoleFilter(e.target.value)}
-            >
-              <option value="">All Roles</option>
-              {uniqueRoles.map((role) => (
-                <option key={role} value={role}>
-                  {role}
-                </option>
-              ))}
-            </select>
-          </div>
-           <div className="flex items-center gap-2 w-full sm:w-auto">
-            <span className="text-sm text-black whitespace-nowrap">
-              Filter by Status
-            </span>
-            <select
-              className="border rounded-md px-3 py-1 text-sm w-full"
-              value={statusFilter}
-              onChange={(e) => setStatusFilter(e.target.value)}
-            >
-              <option value="">All Statuses</option>
-              {uniqueStatuses.map((status) => (
-                <option key={status} value={status}>
-                  {status}
-                </option>
-              ))}
-            </select>
-          </div>
-          <div className="flex items-center gap-2 w-full sm:w-auto">
-            <span className="text-sm text-black whitespace-nowrap">
-              Filter by Status
-            </span>
-            <select
-              className="border rounded-md px-3 py-1 text-sm w-full"
-              value={statusFilter}
-              onChange={(e) => setStatusFilter(e.target.value)}
-            >
-              <option value="">All Statuses</option>
-              {uniqueStatuses.map((status) => (
-                <option key={status} value={status}>
-                  {status}
-                </option>
-              ))}
-            </select>
-          </div>
-          </div>
-          
-          
         </div>
-   
 
-      {/* Table component */}
+       <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-2">
+  {/* Search Input - Left */}
+  <div className="flex flex-col gap-1 w-[669px] pt-5">
+    <span className="text-sm text-black"> </span>
+    <div className="relative">
+      <FaSearch className="absolute left-3 top-3.5 text-gray-400" />
+      <input
+        type="text"
+        className="w-[669px] h-[51px] pl-10 pr-3 py-3 bg-white border border-gray-300 rounded-[4px] text-sm placeholder-gray-500 "
+        placeholder="Search employees"
+        value={searchTerm}
+        onChange={(e) => setSearchTerm(e.target.value)}
+      />
+    </div>
+  </div>
+
+  {/* Filters - Right */}
+  <div className="flex flex-col sm:flex-row gap-4">
+    {/* Role Filter */}
+    <div className="flex flex-col gap-1 w-[193px]">
+      <span className="text-sm text-black">Filter by Role</span>
+      <select
+        className="w-[193px] h-[50px] px-3 py-3 bg-white border border-gray-300 rounded-[4px] text-sm text-black placeholder-gray-500 "
+        value={roleFilter}
+        onChange={(e) => setRoleFilter(e.target.value)}
+      >
+        <option value="">All Roles</option>
+        {uniqueRoles.map((role) => (
+          <option key={role} value={role}>
+            {role}
+          </option>
+        ))}
+      </select>
+    </div>
+
+    {/* Status Filter */}
+    <div className="flex flex-col gap-1 w-[193px]">
+      <span className="text-sm text-black">Filter by Status</span>
+      <select
+        className="w-[193px] h-[50px] px-3 py-3 bg-white border border-gray-300 rounded-[4px] text-sm text-black placeholder-gray-500 "
+        value={statusFilter}
+        onChange={(e) => setStatusFilter(e.target.value)}
+      >
+        <option value="">All Statuses</option>
+        {uniqueStatuses.map((status) => (
+          <option key={status} value={status}>
+            {status}
+          </option>
+        ))}
+      </select>
+    </div>
+  </div>
+</div>
+
+      </div>
+
+      {/* Table Section */}
       <Table
         columns={columns}
         data={filteredData.map((employee) => ({
@@ -157,14 +142,6 @@ export default function EmployeeDirectory() {
         enablePagination={true}
         stripedRows={true}
         sortable={true}
-        className='mt-8'
-        // Remove these props as they're now handled in the parent component
-        // showEmployeeCount={true}
-        // showFilters={true}
-        // showSearch={true}
-        // roleFilter={roleFilter}
-        // statusFilter={statusFilter}
-        // searchTerm={searchTerm}
       />
     </div>
   );
