@@ -1,6 +1,6 @@
 "use client";
 
-import Table from "@/components/Table"; // Adjust this if your Table component is elsewhere
+import Table from "@/components/Table"; 
 import payrollData from "@/data/adminData/payrollData";
 
 const columns = [
@@ -27,7 +27,6 @@ const PayrollPage = () => {
         shadow
         rounded
         enablePagination
-        filterTabs={["All", "Paid", "Pending", "Rejected"]}
         statusColorMap={{
           Paid: "text-green-500",
           Pending: "text-yellow-500",
