@@ -13,4 +13,6 @@ export const timesheetEntries = [
   { date: "04/08/25", clockIn: "8:55 AM", clockOut: "5:00PM", totalHours: 8 },
   { date: "05/08/25", clockIn: "9:00 AM", clockOut: "5:00PM", totalHours: 8 },
   { date: "06/08/25", clockIn: "9:10 AM", clockOut: "5:00PM", totalHours: 8 },
+  { date: "12/08/25", clockIn: "9:00 AM", clockOut: "5:00PM", totalHours: 8 },
+  { date: "13/08/25", clockIn: "9:10 AM", clockOut: "5:00PM", totalHours: 8 },
 ];

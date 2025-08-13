@@ -9,7 +9,7 @@ import Link from "next/link";
 
 const MyAttendanceTable = () => {
   const statusStyles = {
-    Present: "text-[#10B981]",
+    Present: "text-[#10B981] font-[500]",
     Late: "text-[#D1A039]",
     Absent: "text-[#D11A2A]",
   };
@@ -45,7 +45,7 @@ const MyAttendanceTable = () => {
         <h2 className="text-base text-[#3A3A3C]">Recent Entries</h2>
         <Link
           href="/employee/my-attendance"
-          className="text-sm text-[#6C63FF] font-medium hover:underline"
+          className="text-sm text-[#4F46E5] font-medium hover:underline"
         >
           View all
         </Link>
@@ -53,8 +53,8 @@ const MyAttendanceTable = () => {
 
       <Table
         columns={columns}
-        data={recentEntries} // ⬅️ Using limited data here
-        enablePagination={false} // ⬅️ Pagination disabled
+        data={recentEntries} 
+        enablePagination={false} 
       />
     </div>
   );

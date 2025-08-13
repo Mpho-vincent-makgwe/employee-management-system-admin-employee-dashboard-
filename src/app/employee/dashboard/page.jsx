@@ -7,19 +7,19 @@ import Heading from "@/components/Heading";
 
 const page = () => {
   return (
-    <div className="p-6 space-y-6">
+    <div className="ml-[25px]">
       <Heading
         title="Dashboard Overview"
         subtitle="Here's what's happening with your work today."
       />
 
       {/* Summary Cards */}
-      <div className="grid grid-cols-1">
+      <div className="grid grid-cols-1 mb-[22px] ">
         <DashboardSummaryCards />
       </div>
 
       {/* Main Content */}
-      <div className="grid grid-cols-1 lg:grid-cols-9 gap-6 h-full">
+      <div className="grid grid-cols-1 lg:grid-cols-9 gap-[12px] h-full mb-[20px]">
         {/* Bar Chart (2/3 width on large screens) */}
         <div className="lg:col-span-5">
           <BarChart />
