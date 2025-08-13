@@ -49,7 +49,7 @@ const DashboardSummaryCards = () => {
       ].map((item, i) => (
         <div
           key={i}
-          className="w-full h-[124px] p-4 border-[0.4px] border-gray-200 rounded-[8px] bg-white flex flex-col sm:flex-row items-center gap-[10px] shadow"
+          className="w-full h-[124px] p-4 border-[0.4px] border-[#D0D5DD] rounded-[8px] bg-white flex flex-col sm:flex-row items-center gap-[10px]"
         >
           {/* Icon */}
           <div className="w-[40px] h-[40px] bg-indigo-600 rounded-full flex items-center justify-center">
