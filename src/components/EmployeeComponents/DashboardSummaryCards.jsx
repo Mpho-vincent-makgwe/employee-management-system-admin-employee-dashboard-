@@ -1,10 +1,14 @@
 "use client";
 
-import { Clock3, CalendarRange, CalendarCheck, AlarmClock } from "lucide-react";
+import { Clock3, CalendarRange, CalendarCheck, AlarmClock, Users } from "lucide-react";
 import { timesheetEntries } from "../../data/employeeData/timesheetData";
 import { getTimeSummary } from "@/utils/attendanceUtils";
 import users from "@/data/users.json";
 import { useUser } from "@/context/UserContext";
+import { HiUsers } from "react-icons/hi";
+import { BsClock, BsClockFill } from "react-icons/bs";
+import { FaClock } from "react-icons/fa";
+import { MdCake } from "react-icons/md";
 
 const DashboardSummaryCards = () => {
   const { user, loading } = useUser();
@@ -28,23 +32,23 @@ const DashboardSummaryCards = () => {
         {
           label: "Total Employees",
           value: totalEmployees,
-          icon: <CalendarRange className="w-6 h-6 text-white" />,
+          icon: <HiUsers className="w-[14px] h-[14px] text-white" />,
         },
         {
           label: "Hours This Week",
           value: `${hoursThisWeek} hrs`,
-          icon: <CalendarCheck className="w-6 h-6 text-white" />,
+          icon: <BsClockFill className="w-[14px] h-[14px] text-white" />,
         },
         {
           label: "Today’s Status",
           // value: checkedInStatus,
           value: `Checked In`,
-          icon: <Clock3 className="w-6 h-6 text-white" />,
+          icon: <BsClockFill className="w-[14px] h-[14px] text-white" />,
         },
         {
           label: "My Birthday",
           value: birthday,
-          icon: <AlarmClock className="w-6 h-6 text-white" />,
+          icon: <MdCake className="w-[14px] h-[14px] text-white" />,
         },
       ].map((item, i) => (
         <div
@@ -52,7 +56,7 @@ const DashboardSummaryCards = () => {
           className="w-full h-[124px] p-4 border-[0.4px] border-[#D0D5DD] rounded-[8px] bg-white flex flex-col sm:flex-row items-center gap-[10px]"
         >
           {/* Icon */}
-          <div className="w-[40px] h-[40px] bg-indigo-600 rounded-full flex items-center justify-center">
+          <div className="w-[40px] h-[40px] bg-[#4F46E5] rounded-full flex items-center justify-center">
             {item.icon}
           </div>
 
