@@ -1,6 +1,6 @@
 "use client";
 
-import { Clock3, CalendarRange, CalendarCheck, AlarmClock } from "lucide-react";
+import { BsClockFill } from "react-icons/bs";
 import { timesheetEntries } from "../../data/employeeData/timesheetData";
 import { getTimeSummary } from "@/utils/attendanceUtils";
 
@@ -13,30 +13,31 @@ const TimesheetSummaryCards = () => {
         {
           label: "This Month",
           value: `${summary.thisMonth} hrs`,
-          icon: <CalendarRange className="w-6 h-6 text-white" />,
+          icon: <BsClockFill className="w-[14px] h-[14px] text-white" />,
         },
         {
           label: "This Week",
           value: `${summary.thisWeek} hrs`,
-          icon: <CalendarCheck className="w-6 h-6 text-white" />,
+          icon: <BsClockFill className="w-[14px] h-[14px] text-white" />,
         },
         {
           label: "Today",
           value: `${summary.today} hrs`,
-          icon: <Clock3 className="w-6 h-6 text-white" />,
+          icon: <BsClockFill className="w-[14px] h-[14px] text-white" />,
         },
         {
           label: "Overtime",
           value: `${summary.overtime} hrs`,
-          icon: <AlarmClock className="w-6 h-6 text-white" />,
+          icon: <BsClockFill className="w-[14px] h-[14px] text-white" />,
         },
+      
       ].map((item, i) => (
         <div
           key={i}
-          className="w-full h-[124px] p-4 border-[0.4px] border-gray-200 rounded-[8px] bg-white flex flex-col sm:flex-row items-center gap-[10px] shadow"
+          className="w-full h-[124px] p-4 border-[0.4px] border-[#D0D5DD] rounded-[8px] bg-white flex flex-col sm:flex-row items-center gap-[10px]"
         >
           {/* Icon */}
-          <div className="w-[40px] h-[40px] bg-indigo-600 rounded-full flex items-center justify-center">
+          <div className="w-[40px] h-[40px] bg-[#4F46E5] rounded-full flex items-center justify-center">
             {item.icon}
           </div>
 

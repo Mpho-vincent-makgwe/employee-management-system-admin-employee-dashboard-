@@ -15,9 +15,9 @@ const columns = [
 ];
 
 const statusColorMap = {
-  Active: "text-green-500",
-  "On leave": "text-yellow-500",
-  Suspended: "text-red-500",
+  Active: "text-[#10B981]",
+  "On leave": "text-[#F59E0B]",
+  Suspended: "text-[#EF4444]",
 };
 
 export default function EmployeeDirectory() {

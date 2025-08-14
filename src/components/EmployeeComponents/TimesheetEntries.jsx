@@ -36,13 +36,13 @@ const TimesheetEntries = () => {
   }, [setSearchTerm]);
 
   return (
-    <div className="bg-gray-100">
+    <div className="">
       <div>
         <Table
           columns={columns}
           data={sortedEntries}
           title="Recent Entries"
-          titleClassName="text-[#3A3A3C] text-md" // Custom title styling
+          titleClassName="" // Custom title styling
           // subtitle="Manage public holidays and company-specific holidays"
           viewMoreLink={{ text: "" }}
           enablePagination={sortedEntries.length > 5}
