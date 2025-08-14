@@ -48,8 +48,8 @@ export default function NotificationPage() {
   ];
 
   return (
-    <main className="bg-gray-100 overflow-hidden">
-      <div className="mx-auto">
+    <main className="ml-[25px]">
+      <div className="">
         {/* Header */}
         <Heading
           title="Notifications"

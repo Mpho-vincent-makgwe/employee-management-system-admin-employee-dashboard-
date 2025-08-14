@@ -1,17 +1,22 @@
 import { Bell, CalendarDays, Cake } from "lucide-react";
+import { FaBell, FaCalendar } from "react-icons/fa";
+import { MdCake } from "react-icons/md";
 
 const statusStyles = {
   meeting: {
-    icon: <Bell className="text-indigo-500 w-5 h-5" />,
-    border: "border-indigo-100",
+    icon: (
+      <FaBell className="text-[#4F46E5] w-5 sm:w-6 md:w-[16px] h-5 sm:h-6 md:h-[16px] flex-shrink-0" />
+    ),
   },
   holiday: {
-    icon: <CalendarDays className="text-green-500 w-5 h-5" />,
-    border: "border-green-100",
+    icon: (
+      <FaCalendar className="text-[#10B981] w-5 sm:w-6 md:w-[16px] h-5 sm:h-6 md:h-[16px] flex-shrink-0" />
+    ),
   },
   birthday: {
-    icon: <Cake className="text-amber-500 w-5 h-5" />,
-    border: "border-amber-100",
+    icon: (
+      <MdCake className="text-[#D1A039] w-5 sm:w-6 md:w-[16px] h-5 sm:h-6 md:h-[16px] flex-shrink-0" />
+    ),
   },
 };
 
