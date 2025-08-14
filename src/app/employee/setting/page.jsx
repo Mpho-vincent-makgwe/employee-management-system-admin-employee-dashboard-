@@ -16,7 +16,7 @@ export default function Settings() {
   ];
 
   return (
-    <div className="w-full">
+    <div className="ml-[25px]">
       <Heading title="Settings" subtitle="Manage your account settings" />
 
       <div className="flex border-b border-gray-200 mb-4">

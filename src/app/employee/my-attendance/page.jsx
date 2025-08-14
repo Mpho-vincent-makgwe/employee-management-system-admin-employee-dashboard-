@@ -4,7 +4,7 @@ import MyAttendanceTable from "@/components/EmployeeComponents/MyAttendanceTable
 import AttendanceSummaryCard from "@/components/EmployeeComponents/AttendanceSummaryCards";
 export default function EmployeeDirectory() {
   return (
-    <main className="px-6 py-5">
+    <main className="ml-[25px]">
       <Heading
         title="My Attendance"
         subtitle="Track your attendance records and punctuality."
