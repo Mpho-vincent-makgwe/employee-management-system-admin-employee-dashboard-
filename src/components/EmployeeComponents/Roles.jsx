@@ -10,9 +10,7 @@ const columns = [
 
 export default function Roles() {
   return (
-    <div className="p-4">
-      <h1 className="text-lg text-black font-semibold mb-4">Roles</h1>
-
+    <div className="">
       <div className="overflow-x-auto bg-white rounded-lg shadow-sm">
         <table className="min-w-full text-sm text-gray-700">
           <thead>
