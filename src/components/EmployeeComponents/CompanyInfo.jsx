@@ -6,8 +6,8 @@ import DetailField from "./DetailField";
 
 export default function CompanyInfo() {
   return (
-    <div className="p-6">
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 bg-white rounded-lg p-6">
+    <div className="">
+      <div className="grid grid-cols-1 md:grid-cols-4 gap-6 bg-white rounded-lg p-[68px]">
         {/* Company Avatar & Identity */}
         <div className="col-span-1 flex flex-col items-center">
           <img
@@ -16,15 +16,15 @@ export default function CompanyInfo() {
               "https://placehold.co/140x140/cccccc/333333?text=birthdayData"
             }
             alt={`${birthdayData.firstName} ${birthdayData.lastName}`}
-            className="w-30 h-30 rounded-full object-cover border-4 border-indigo-200 mb-4"
+            className="w-[180px] h-[180px] rounded-full object-cover border-4 border-indigo-200 mb-4"
           />
-          <p className="text-base font-semibold">{companyData.name}</p>
+          <p className="text-base text-[#4F46E5] ">{companyData.name}</p>
           <span className="text-sm text-gray-500">Company Profile</span>
         </div>
 
         {/* Company Info Sections */}
-        <div className="col-span-1 md:col-span-2 pl-5 border-l border-gray-100">
-          <h2 className="text-lg font-semibold text-indigo-600 mb-4">
+        <div className="col-span-1 md:col-span-3 pl-[29px] border-l-[0.6px] border-[#D0D5DD] opacity-100">
+          <h2 className="text-md text-[#4F46E5] mb-4 mt-1">
             Company Information
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-7">
