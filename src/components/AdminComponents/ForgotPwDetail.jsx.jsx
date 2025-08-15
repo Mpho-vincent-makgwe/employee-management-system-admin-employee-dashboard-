@@ -23,7 +23,7 @@ export default function ForgotPwDetail() {
   const toggleShowConfirm = () => setShowConfirm((prev) => !prev);
 
   return (
-    <div className="p-6">
+    <div >
   <form className="w-full bg-white rounded-lg shadow-sm h-auto p-6 space-y-6">
       <h2 className="text-lg font-semibold text-[#4F46E5] mb-6">Reset Password</h2>
 

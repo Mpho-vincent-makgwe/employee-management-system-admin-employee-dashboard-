@@ -28,7 +28,7 @@ export default function UserManagement() {
   };
 
   return (
-    <div className="p-6 space-y-4">
+    <div className=" space-y-4">
       <h2 className="text-lg font-semibold text-[#4F46E5]">User Management</h2>
       {users.map((user) => (
         <Card key={user.id}>
