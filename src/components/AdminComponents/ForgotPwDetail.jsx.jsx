@@ -25,7 +25,11 @@ export default function ForgotPwDetail() {
   return (
     <div >
   <form className="w-full bg-white rounded-lg shadow-sm h-auto p-6 space-y-6">
-      <h2 className="text-lg font-semibold text-[#4F46E5] mb-6">Reset Password</h2>
+    <div className='space-y-2'>
+  <h2 className="text-lg font-semibold text-[#4F46E5] ">Reset Password</h2>
+      <p className='text-black'>Enter New Password</p>
+    </div>
+    
 
       <div className="grid grid-cols-1 md:grid-cols-1 gap-6 items-start">
        
