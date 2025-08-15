@@ -1,38 +1,45 @@
-'use client';
+"use client";
 
-import { useState } from 'react';
-import ForgotPwDetail from './ForgotPwDetail.jsx';
-import { FiMail } from 'react-icons/fi';
-
+import { useState } from "react";
+import ForgotPwDetail from "./ForgotPwDetail.jsx";
+import { FiMail } from "react-icons/fi";
 
 export default function ForgotPassword() {
-  const [email, setEmail] = useState('');
-  const [showDetail, setShowDetail] = useState(false); 
+  const [email, setEmail] = useState("");
+  const [showDetail, setShowDetail] = useState(false);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log('Password reset request for:', email);
-    setShowDetail(true); 
+    console.log("Password reset request for:", email);
+    setShowDetail(true);
   };
 
   if (showDetail) {
-    return <ForgotPwDetail email={email} />
+    return <ForgotPwDetail email={email} />;
   }
 
   return (
     <div className="">
       <div className="w-full bg-white rounded-lg shadow-sm h-auto p-6">
-        <h2 className="text-lg font-semibold text-indigo-600 mb-6">
-          Forgot Password
-        </h2>
+        <div className="space-y-2">
+          <h2 className="text-xl font-semibold text-indigo-600">
+            Forgot Password
+          </h2>
+          <p className="text-sm text-gray-700">
+            Provide your email address to reset your password.
+          </p>
+        </div>
 
-        <form onSubmit={handleSubmit}>
-          <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
+        <form onSubmit={handleSubmit} className="mt-6">
+          <label
+            htmlFor="email"
+            className="block text-sm font-medium text-gray-700 mb-2"
+          >
             Email Address
           </label>
           <div className="relative">
-              <span className="absolute inset-y-0 left-0 pl-3 flex items-center text-gray-400">
-              <FiMail className='h-5 w-5' />
+            <span className="absolute inset-y-0 left-0 pl-3 flex items-center text-gray-400">
+              <FiMail className="h-5 w-5" />
             </span>
             <input
               id="email"
@@ -53,8 +60,6 @@ export default function ForgotPassword() {
           </button>
         </form>
       </div>
-
-      
     </div>
   );
 }
