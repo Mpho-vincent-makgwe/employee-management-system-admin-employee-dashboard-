@@ -24,7 +24,7 @@ export default function CompanyInfo() {
 
         {/* Company Info Sections */}
         <div className="col-span-1 md:col-span-3 pl-[29px] border-l-[0.6px] border-[#D0D5DD] opacity-100">
-          <h2 className="text-md text-[#4F46E5] mb-4 mt-1">
+          <h2 className="text-lg font-medium text-[#4F46E5] mb-4 mt-1">
             Company Information
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-7">

@@ -76,7 +76,9 @@ const ProfileEdit = ({ onSave, onCancel }) => {
           </div>
 
           {/* Personal Details */}
-          <h2 className="text-md text-[#4F46E5] mb-4 mt-1">Personal Details</h2>
+          <h2 className="text-lg font-medium text-[#4F46E5] mb-4 mt-1">
+            Personal Details
+          </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-7">
             {Object.entries(formData.personal).map(([key, value]) => (
               <div key={key}>
@@ -96,7 +98,9 @@ const ProfileEdit = ({ onSave, onCancel }) => {
           </div>
 
           {/* Job Details */}
-          <h2 className="text-md text-[#4F46E5] mb-4">Job Details</h2>
+          <h2 className="text-lg font-medium text-[#4F46E5] mb-4">
+            Job Details
+          </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             {Object.entries(formData.job).map(([key, value]) => (
               <div key={key}>
