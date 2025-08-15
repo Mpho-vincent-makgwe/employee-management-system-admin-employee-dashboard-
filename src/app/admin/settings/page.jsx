@@ -45,7 +45,7 @@ export default function Settings() {
       </div>
 
      
-      <div className="mt-4 ">
+      <div className="mt-4  ">
         {activeTab === "Profile" && <Profile />}
         {activeTab === "CompanyInfo" && <CompanyInfo />}
         {activeTab === "ForgotPassword" && <ForgotPassword />}

@@ -6,7 +6,7 @@ import DetailField from "./DetailField";
 
 export default function Profile() {
   return (
-    <div className="p-6">
+    <div className="">
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 bg-white rounded-lg p-6">
         <div className="col-span-1 flex flex-col items-center">
           <img
