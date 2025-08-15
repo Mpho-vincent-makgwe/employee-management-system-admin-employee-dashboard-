@@ -4,6 +4,7 @@ import { useState, useMemo } from "react";
 import Table from "@/components/Table";
 import { employeeData } from "@/data/adminData/employeeData";
 import { FaSearch } from "react-icons/fa";
+import { FiChevronDown } from "react-icons/fi";
 
 const columns = [
   { key: "name", title: "Name" },
@@ -73,59 +74,71 @@ export default function EmployeeDirectory() {
         
         </div>
 
-       <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-2">
-  {/* Search Input - Left */}
-  <div className="flex flex-col gap-1 w-[669px] pt-5">
-    <span className="text-sm text-black"> </span>
-    <div className="relative">
-      <FaSearch className="absolute left-3 top-3.5 text-gray-400" />
-      <input
-        type="text"
-        className="w-[669px] h-[51px] pl-10 pr-3 py-3 bg-white border border-gray-300 rounded-[4px] text-sm placeholder-gray-500 "
-        placeholder="Search employees"
-        value={searchTerm}
-        onChange={(e) => setSearchTerm(e.target.value)}
-      />
-    </div>
-  </div>
+                <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-2 mb-4">
+        {/* Search Input - Left */}
+        <div className="flex flex-col gap-1  pt-5">
+          <span className="text-sm text-black"> </span>
+          <div className="relative">
+            <FaSearch className="absolute left-3 top-3.5 text-gray-400" />
+            <input
+              type="text"
+              className="w-[769px] h-[51px] pl-10 pr-3 py-3 bg-white border border-gray-300 rounded-[4px] text-sm placeholder-gray-500 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
+              placeholder="Search employees"
+              value={searchTerm}
+              onChange={(e) => setSearchTerm(e.target.value)}
+            />
+          </div>
+        </div>
+      
+        {/* Filters - Right */}
+        <div className="flex flex-col sm:flex-row gap-4">
+          {/* Role Filter */}
+        <div className="flex flex-col gap-1 w-[193px]">
+  <span className="text-sm text-black">Filter by Role</span>
+  
+  <div className="relative w-full h-[50px]">
+    <select
+      className="appearance-none w-full h-full px-3 pr-10 py-3 bg-white border border-gray-300 rounded-[4px] text-sm text-black focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
+      value={roleFilter}
+      onChange={(e) => setRoleFilter(e.target.value)}
+    >
+      <option value="">All Roles</option>
+      {uniqueRoles.map((role) => (
+        <option key={role} value={role}>
+          {role}
+        </option>
+      ))}
+    </select>
 
-  {/* Filters - Right */}
-  <div className="flex flex-col sm:flex-row gap-4">
-    {/* Role Filter */}
-    <div className="flex flex-col gap-1 w-[193px]">
-      <span className="text-sm text-black">Filter by Role</span>
-      <select
-        className="w-[193px] h-[50px] px-3 py-3 bg-white border border-gray-300 rounded-[4px] text-sm text-black placeholder-gray-500 "
-        value={roleFilter}
-        onChange={(e) => setRoleFilter(e.target.value)}
-      >
-        <option value="">All Roles</option>
-        {uniqueRoles.map((role) => (
-          <option key={role} value={role}>
-            {role}
-          </option>
-        ))}
-      </select>
-    </div>
-
-    {/* Status Filter */}
-    <div className="flex flex-col gap-1 w-[193px]">
-      <span className="text-sm text-black">Filter by Status</span>
-      <select
-        className="w-[193px] h-[50px] px-3 py-3 bg-white border border-gray-300 rounded-[4px] text-sm text-black placeholder-gray-500 "
-        value={statusFilter}
-        onChange={(e) => setStatusFilter(e.target.value)}
-      >
-        <option value="">All Statuses</option>
-        {uniqueStatuses.map((status) => (
-          <option key={status} value={status}>
-            {status}
-          </option>
-        ))}
-      </select>
-    </div>
+    {/* Custom dropdown icon */}
+    <FiChevronDown className="absolute right-3 top-1/2 transform -translate-y-1/2 text-black pointer-events-none" />
   </div>
 </div>
+      
+          {/* Status Filter */}
+        <div className="flex flex-col gap-1 w-[193px]">
+  <span className="text-sm text-black">Filter by Status</span>
+
+  <div className="relative w-full h-[50px]">
+    <select
+      className="appearance-none w-full h-full px-3 pr-10 py-3 bg-white border border-gray-300 rounded-[4px] text-sm text-black focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
+      value={statusFilter}
+      onChange={(e) => setStatusFilter(e.target.value)}
+    >
+      <option value="">All Statuses</option>
+      {uniqueStatuses.map((status) => (
+        <option key={status} value={status}>
+          {status}
+        </option>
+      ))}
+    </select>
+
+    {/* Custom dropdown icon */}
+    <FiChevronDown className="absolute right-3 top-1/2 transform -translate-y-1/2 text-black pointer-events-none" />
+  </div>
+</div>
+        </div>
+      </div>
 
       </div>
 
@@ -138,7 +151,7 @@ export default function EmployeeDirectory() {
         }))}
         statusColorMap={statusColorMap}
         limit={5}
-        enablePagination={true}
+        enablePagination
         stripedRows={true}
         sortable={true}
       />

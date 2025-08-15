@@ -163,5 +163,38 @@ export const employeeData = [
       { label: "Salary", value: "$160,000/year" },
       { label: "Benefits", value: "Health, Dental, 401k, Stock Options, Bonus" }
     ]
+  },
+  {
+    id: 6,
+    name: "David Wilson",
+    role: "Marketing Director",
+    employeeType: "Full-time",
+    status: "Active",
+    dateJoined: "2018-11-03",
+    profilePicture: "/images/profiles/david-wilson.jpg",
+    personalDetails: [
+      { label: "First Name", value: "David" },
+      { label: "Last Name", value: "Wilson" },
+      { label: "Gender", value: "Male" },
+      { label: "Date of Birth", value: "1985-04-28" },
+      { label: "Marital Status", value: "Divorced" },
+      { label: "Nationality", value: "American" },
+      { label: "Email Address", value: "david.wilson@example.com" },
+      { label: "Contact Number", value: "+1 (555) 567-8901" },
+      { label: "Address", value: "654 Cedar St, Palo Alto, CA 94301" },
+      { label: "Emergency Contact", value: "Jennifer Wilson (Sister) +1 (555) 543-2109" }
+    ],
+    jobDetails: [
+      { label: "Employee ID", value: "EMP-005" },
+      { label: "Job Title", value: "Marketing Director" },
+      { label: "Department", value: "Marketing" },
+      { label: "Manager", value: "CEO" },
+      { label: "Employment Type", value: "Full-time" },
+      { label: "Date of Joining", value: "2018-11-03" },
+      { label: "Work Location", value: "San Francisco HQ" },
+      { label: "Work Email", value: "david.wilson@company.com" },
+      { label: "Salary", value: "$160,000/year" },
+      { label: "Benefits", value: "Health, Dental, 401k, Stock Options, Bonus" }
+    ]
   }
 ];
