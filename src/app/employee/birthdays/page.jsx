@@ -5,7 +5,7 @@ import { Import } from "lucide-react";
 
 export default function Birthdays() {
   return (
-    <main className="px-6 py-5">
+    <main className="ml-[25px]">
       <Heading title="Upcoming Birthdays" subtitle="View employee birthdays" />
       {/* <SearchBar /> */}
       <BirthdayTable />

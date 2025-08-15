@@ -15,7 +15,7 @@ const Table = ({
   limit,
   viewMoreLink,
   statusColorMap = {
-    Active: "text-green-500",
+    Active: "text-[#10B981]",
     Pending: "text-yellow-500",
     Rejected: "text-red-500",
   },
@@ -185,7 +185,8 @@ const Table = ({
         <div>
           {title && (
             <h3
-              className={`text-lg font-semibold ${
+              className={`font-medium text-[14px] leading-[22px] tracking-[0] text-[#3A3A3C]
+ ${
                 titleClassName || "text-gray-800"
               }`}
             >
@@ -298,13 +299,13 @@ const Table = ({
                     return (
                       <td
                         key={`${rowIndex}-${column.key}`}
-                        className="px-6 py-4 text-orange-300 font-medium"
+                        className="px-6 py-4 text-[#AD8330] font-medium"
                       >
                         <Link
                           href={getDynamicLink(row.id)}
                           className="hover:underline"
                         >
-                          {row[column.key]?.text || "View Deetials"}
+                          {row[column.key]?.text || "View Details"}
                         </Link>
                       </td>
                     );

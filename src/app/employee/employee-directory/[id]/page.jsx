@@ -1,4 +1,4 @@
-import ProfileTable from "@/components/ProfileTable";
+import DirectoryProfileTable from "@/components/EmployeeComponents/DirectoryProfileTable";
 import { employeeData } from "@/data/adminData/employeeData";
 import { notFound } from "next/navigation";
 
@@ -12,8 +12,8 @@ export default function EmployeeProfilePage({ params }) {
   return (
     <div className="p-6">
       <div className="max-w-6xl mx-auto">
-        <div className="bg-white rounded-lg shadow-md p-6">
-          <ProfileTable
+        <div className="bg-white rounded-[4px]">
+          <DirectoryProfileTable
             profilePicture={{
               image: employee.profilePicture,
               changeText: "Change Picture",

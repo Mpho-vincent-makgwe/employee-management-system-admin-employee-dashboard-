@@ -3,6 +3,7 @@ import { getTimeSummary } from "@/utils/attendanceUtils";
 import { getAttendanceSummary } from "@/utils/attendanceUtils";
 
 import { Clock } from "lucide-react";
+import { BsClockFill } from "react-icons/bs";
 const AttendanceSummary = () => {
   const summary = getAttendanceSummary(timesheetEntries);
 
@@ -18,11 +19,11 @@ const AttendanceSummary = () => {
       {items.map(({ title, value }) => (
         <div
           key={title}
-          className="w-full h-[124px] p-4 border-[0.4px] border-gray-200 rounded-[8px] bg-white flex flex-col sm:flex-row items-center gap-[10px] shadow"
+          className="w-full h-[124px] p-4 border-[0.4px] border-[#D0D5DD] rounded-[8px] bg-white flex flex-col sm:flex-row items-center gap-[10px]"
         >
           {/* Icon */}
-          <div className="w-[40px] h-[40px] bg-indigo-600 text-white rounded-full flex items-center justify-center">
-            <Clock />
+           <div className="w-[40px] h-[40px] bg-[#4F46E5] rounded-full flex items-center justify-center">
+          <BsClockFill className="w-[14px] h-[14px] text-white"/>
           </div>
 
           {/* Text Block */}
