@@ -344,7 +344,7 @@ const Table = ({
       )}
 
       {enablePagination && totalPages > 1 && (
-        <div className="flex justify-between items-center p-4 border-t border-gray-100">
+        <div className="flex justify-between items-center p-6 border-t border-gray-100">
           <div>
             <span className="text-sm text-black">
               Showing {(currentPage - 1) * itemsPerPage + 1} to{" "}

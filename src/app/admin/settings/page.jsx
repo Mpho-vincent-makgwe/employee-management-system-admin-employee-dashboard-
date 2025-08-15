@@ -20,7 +20,7 @@ export default function Settings() {
   return (
     <div className="w-full">
     
-      <div className="mb-6">
+      <div className="mb-6 space-y-2">
         <h1 className="text-2xl font-bold text-gray-800">Settings</h1>
         <p className="text-sm text-gray-600">
           Manage system preferences and configurations.
@@ -45,7 +45,7 @@ export default function Settings() {
       </div>
 
      
-      <div className="mt-4">
+      <div className="mt-4  ">
         {activeTab === "Profile" && <Profile />}
         {activeTab === "CompanyInfo" && <CompanyInfo />}
         {activeTab === "ForgotPassword" && <ForgotPassword />}

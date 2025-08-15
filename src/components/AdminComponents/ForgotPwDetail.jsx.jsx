@@ -23,7 +23,7 @@ export default function ForgotPwDetail() {
   const toggleShowConfirm = () => setShowConfirm((prev) => !prev);
 
   return (
-    <div className="p-6">
+    <div >
   <form className="w-full bg-white rounded-lg shadow-sm h-auto p-6 space-y-6">
       <h2 className="text-lg font-semibold text-[#4F46E5] mb-6">Reset Password</h2>
 
@@ -93,8 +93,10 @@ export default function ForgotPwDetail() {
        
         <div className="pt-6">
           <button
+          onClick={handleSubmit}
             type="submit"
             className=" w-1/2 px-6 py-3 bg-[#4F46E5] text-white rounded-[4px] font-medium text-sm hover:bg-[#4338CA]"
+
           >
             Reset Password
           </button>

@@ -66,12 +66,11 @@ export default function EmployeeDirectory() {
   return (
     <div className="p-6 max-w-7xl  space-y-4">
       {/* Filter Section */}
-      <div className="flex flex-col gap-6">
-        <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
-          <div className="text-lg font-medium text-black">
-            Employee: <span className="font-bold">{filteredData.length}</span>
+      <div className="flex flex-col">
+        <div className="space-y-2 text- text-black ">
+          <h2 className="text-2xl"> Employee: <span className="font-bold">{filteredData.length}</span> </h2> 
             <p>Manage and view all employee information</p>
-          </div>
+        
         </div>
 
        <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-2">

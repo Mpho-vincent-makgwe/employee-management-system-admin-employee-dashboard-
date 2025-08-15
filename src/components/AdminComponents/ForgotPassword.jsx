@@ -20,7 +20,7 @@ export default function ForgotPassword() {
   }
 
   return (
-    <div className="p-6">
+    <div className="">
       <div className="w-full bg-white rounded-lg shadow-sm h-auto p-6">
         <h2 className="text-lg font-semibold text-indigo-600 mb-6">
           Forgot Password
