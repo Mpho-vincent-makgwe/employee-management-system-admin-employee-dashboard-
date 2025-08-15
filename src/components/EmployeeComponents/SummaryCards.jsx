@@ -30,7 +30,6 @@ const TimesheetSummaryCards = () => {
           value: `${summary.overtime} hrs`,
           icon: <BsClockFill className="w-[14px] h-[14px] text-white" />,
         },
-      
       ].map((item, i) => (
         <div
           key={i}
@@ -43,7 +42,7 @@ const TimesheetSummaryCards = () => {
 
           {/* Text Block */}
           <div className="text-center sm:text-left">
-            <div className="text-[10px] font-normal leading-[16px] text-gray-600 w-[110px] h-[16px] mb-1">
+            <div className="text-[12px] leading-[16px] text-gray-600 w-[110px] h-[16px] mb-1">
               {item.label}
             </div>
             <div className="w-[110px] h-[24px] text-[20px] font-semibold leading-[32px] text-[#3A3A3C]">
