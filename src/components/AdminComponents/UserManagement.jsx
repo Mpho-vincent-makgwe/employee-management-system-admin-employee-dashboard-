@@ -28,8 +28,9 @@ export default function UserManagement() {
   };
 
   return (
-    <div className=" space-y-4">
-      <h2 className="text-lg font-semibold text-[#4F46E5]">User Management</h2>
+    <div className=" space-y-4 bg-white h-screen">
+      <div className='p-4 space-y-4'>
+      <h2 className="text-lg  text-[#4F46E5]">User Management</h2>
       {users.map((user) => (
         <Card key={user.id}>
           <div className="flex justify-between items-center h-full p-4">
@@ -77,6 +78,7 @@ export default function UserManagement() {
           onCancel={onCancel}
         />
       )}
+      </div>
     </div>
   );
 }
