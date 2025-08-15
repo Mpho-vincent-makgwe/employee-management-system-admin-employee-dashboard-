@@ -58,9 +58,14 @@ const PayrollPage = () => {
       return result;
     }, [searchTerm, roleFilter, statusFilter]);
   return (
-    <div className="p-6">
+    <div className="p-4">
+      <div className="space-y-2">
+        <h2 className="text-black  text-2xl">Payroll</h2>
+        <p className="text-black">View all employee information</p>
+      </div>
 
             <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-2 mb-4">
+             
   {/* Search Input - Left */}
   <div className="flex flex-col gap-1 w-[669px] pt-5">
     <span className="text-sm text-black"> </span>

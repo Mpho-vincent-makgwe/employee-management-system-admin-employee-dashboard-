@@ -12,7 +12,7 @@ export default function Dashboard() {
         <div className="px-6 py-5 overflow-x-hidden overflow-y-hidden">
         <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-6 w-full gap-3 text-black">
     <div className="space-y-2">
-      <h2 className="text-2xl font-semibold">Dashboard Overview</h2>
+      <h2 className="text-2xl">Dashboard Overview</h2>
       <p className="text-sm">Welcome back! Here's what's happening with your team today.</p>
     </div>
 
