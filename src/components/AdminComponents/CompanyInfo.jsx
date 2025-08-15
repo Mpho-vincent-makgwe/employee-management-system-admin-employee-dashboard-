@@ -18,7 +18,7 @@ export default function CompanyInfo() {
                      alt={`${adminData.firstName} ${adminData.lastName}`}
                      className="w-40 h-40 rounded-full object-cover border-4 border-indigo-200 mb-4"
                    />
-          <p className="text-base font-semibold">{companyData.name}</p>
+          <p className=" text-black text-base font-semibold">{companyData.name}</p>
           <span className="text-sm text-gray-500">Company Profile</span>
         </div>
 
