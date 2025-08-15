@@ -58,7 +58,11 @@ export default function Birthdays() {
       return result;
     }, [searchTerm, roleFilter, statusFilter]);
   return (
-    <div>
+    <div className="p-4">
+      <div className="space-y-2">
+        <h2 className="text-black  text-2xl">Upcoming Birthday's</h2>
+        <p className="text-black">View all employee birthdays</p>
+      </div>
                   <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-2 mb-4">
         {/* Search Input - Left */}
         <div className="flex flex-col gap-1 w-[669px] pt-5">
