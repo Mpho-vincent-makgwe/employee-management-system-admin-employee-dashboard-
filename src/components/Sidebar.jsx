@@ -30,7 +30,7 @@ const employeeMenuItems = [
     href: "/employee/my-attendance",
   },
   { label: "Birthdays", icon: <FaBirthdayCake />, href: "/employee/birthdays" },
-  { label: "Setting", icon: <FiSettings />, href: "/employee/setting" },
+  { label: "Settings", icon: <FiSettings />, href: "/employee/settings" },
 ];
 
 // Admin sidebar menu items (without logout)
@@ -44,7 +44,7 @@ const adminMenuItems = [
   { label: "Timesheet", icon: <FaClock />, href: "/admin/timesheet" },
   { label: "Payroll", icon: <FaFileInvoiceDollar />, href: "/admin/payroll" },
   { label: "Birthday", icon: <FaBirthdayCake />, href: "/admin/birthdays" },
-  { label: "Setting", icon: <FiSettings />, href: "/admin/settings" },
+  { label: "Settings", icon: <FiSettings />, href: "/admin/settings" },
 ];
 
 export default function Sidebar() {
