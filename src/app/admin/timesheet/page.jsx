@@ -3,7 +3,7 @@ import TimesheetTracking from "@/components/AdminComponents/TimeSheetTracking"
 
 export default function Timesheet() {
     return(
-        <div>
+        <div className="p-6 ">
             
       <div className="mb-6 space-y-2">
         <h1 className="text-2xl text-gray-800">Timesheet Tracking</h1>
