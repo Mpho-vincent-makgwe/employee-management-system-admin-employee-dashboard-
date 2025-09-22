@@ -10,7 +10,7 @@ export default function Heading({
         position ? "" : ""
       } ${className}`}
     >
-      <h1 className="text-[20px] leading-[30px] font-medium text-[#2C2C2E]">
+      <h1 className="text-[20px] leading-[30px] font-semibold text-[#2C2C2E]">
         {title}
       </h1>
       <p className="text-sm leading-[22px] font-normal text-[#3A3A3C]">

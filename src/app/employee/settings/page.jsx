@@ -24,7 +24,7 @@ export default function Settings() {
           <button
             key={tab.value}
             onClick={() => setActiveTab(tab.value)}
-            className={`px-4 py-2 text-sm font-medium focus:outline-none ${
+            className={`px-4 py-2 text-md font-sm focus:outline-none ${
               activeTab === tab.value
                 ? "text-[#4F46E5] border-b-2 border-[#4F46E5]"
                 : "text-[#2C2C2E] hover:text-[#4F46E5]"

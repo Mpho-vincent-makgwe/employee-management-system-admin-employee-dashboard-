@@ -1,4 +1,4 @@
-import BirthdayTable from "@/components/BirthdayTable";
+import BirthdayTable from "@/components/EmployeeComponents/BirthdayTable";
 import Heading from "@/components/Heading";
 import SearchBar from "@/components/SearchBar";
 import { Import } from "lucide-react";

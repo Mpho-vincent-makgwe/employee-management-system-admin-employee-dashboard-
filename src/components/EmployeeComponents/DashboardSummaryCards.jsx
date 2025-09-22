@@ -1,6 +1,12 @@
 "use client";
 
-import { Clock3, CalendarRange, CalendarCheck, AlarmClock, Users } from "lucide-react";
+import {
+  Clock3,
+  CalendarRange,
+  CalendarCheck,
+  AlarmClock,
+  Users,
+} from "lucide-react";
 import { timesheetEntries } from "../../data/employeeData/timesheetData";
 import { getTimeSummary } from "@/utils/attendanceUtils";
 import users from "@/data/users.json";
@@ -62,7 +68,7 @@ const DashboardSummaryCards = () => {
 
           {/* Text Block */}
           <div className="text-center sm:text-left">
-            <div className="text-[10px] font-normal leading-[16px] text-gray-600 w-[110px] h-[16px] mb-1">
+            <div className="text-[12px] font-normal leading-[16px] text-gray-600 w-[110px] h-[16px] mb-1">
               {item.label}
             </div>
             <div className="w-[110px] h-[24px] text-[20px] font-semibold leading-[32px] text-[#3A3A3C]">

@@ -30,7 +30,7 @@ const employeeMenuItems = [
     href: "/employee/my-attendance",
   },
   { label: "Birthdays", icon: <FaBirthdayCake />, href: "/employee/birthdays" },
-  { label: "Setting", icon: <FiSettings />, href: "/employee/setting" },
+  { label: "Settings", icon: <FiSettings />, href: "/employee/settings" },
 ];
 
 // Admin sidebar menu items (without logout)
@@ -44,7 +44,7 @@ const adminMenuItems = [
   { label: "Timesheet", icon: <FaClock />, href: "/admin/timesheet" },
   { label: "Payroll", icon: <FaFileInvoiceDollar />, href: "/admin/payroll" },
   { label: "Birthday", icon: <FaBirthdayCake />, href: "/admin/birthdays" },
-  { label: "Setting", icon: <FiSettings />, href: "/admin/settings" },
+  { label: "Settings", icon: <FiSettings />, href: "/admin/settings" },
 ];
 
 export default function Sidebar() {
@@ -82,7 +82,7 @@ export default function Sidebar() {
 
   if (!isEmployee && !isAdmin) return null; // Hide sidebar on other routes
 
-  // ✅ Mobile view
+  // Mobile view
   if (isTablet) {
     return (
       <div className="lg:hidden fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 z-40">
@@ -123,13 +123,13 @@ export default function Sidebar() {
     );
   }
 
-  // ✅ Desktop view
+  // Desktop view
   return (
-    <aside className="hidden lg:block w-64 bg-white h-screen fixed left-0 top-0 z-20 shadow-md">
-      <div className="flex items-center h-24 justify-center">
-        <EtiLogo className="h-10 w-auto" />
+    <aside className="hidden lg:block w-[274px] bg-white h-screen fixed left-0 top-0 z-20 shadow-md">
+      <div className="px-[37px] mb-[40px] mt-[28px]">
+        <EtiLogo />
       </div>
-      <nav className="px-4">
+      <nav className="px-[37px]">
         <ul className="space-y-6">
           {menuItems.map((item, idx) => {
             const isActive = pathname === item.href;
@@ -140,7 +140,7 @@ export default function Sidebar() {
                   className={`flex items-center gap-3 px-4 py-3 rounded-lg text-sm font-medium transition-all duration-200 ${
                     isActive
                       ? "bg-[#4F46E5] text-white shadow"
-                      : "text-gray-700 hover:bg-gray-100"
+                      : "text-[#3A3A3C] hover:bg-gray-100"
                   }`}
                 >
                   <span
