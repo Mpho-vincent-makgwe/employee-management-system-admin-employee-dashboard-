@@ -3,7 +3,7 @@ import RecentEntries from "@/components/EmployeeComponents/RecentEntries";
 import BarChart from "@/components/EmployeeComponents/BarChart";
 import DashboardNotifications from "@/components/EmployeeComponents/DashboardNotifications";
 import DashboardSummaryCards from "@/components/EmployeeComponents/DashboardSummaryCards";
-import Heading from "@/components/Heading";
+import Heading from "@/components/ui/Heading";
 
 const page = () => {
   return (

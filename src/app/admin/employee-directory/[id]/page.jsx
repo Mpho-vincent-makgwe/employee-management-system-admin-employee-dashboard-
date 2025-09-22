@@ -4,13 +4,13 @@ import { useState } from "react";
 import { useParams } from "next/navigation";
 import { employeeData } from "@/data/adminData/employeeData";
 import DetailField from "@/components/AdminComponents/DetailField";
-import CustomButton from "@/components/Buttons/CustomButton";
+import CustomButton from "@/components/ui/CustomButton";
 import NotificationModal from "@/components/AdminComponents/NotificationModal";
 import { FaTrashAlt } from "react-icons/fa";
 
 export default function EmployeeProfilePage() {
   const { id } = useParams();
-  const employee = employeeData.find(emp => emp.id.toString() === id);
+  const employee = employeeData.find((emp) => emp.id.toString() === id);
 
   const [showDelete, setShowDelete] = useState(false);
   const [selectedEmployee, setSelectedEmployee] = useState(null);
@@ -48,21 +48,35 @@ export default function EmployeeProfilePage() {
             alt={employee.name}
             className="w-40 h-40 rounded-full object-cover border-4 border-indigo-200 mb-4"
           />
-          <button className="text-sm font-medium text-black">Change Picture</button>
+          <button className="text-sm font-medium text-black">
+            Change Picture
+          </button>
         </div>
 
         <div className="col-span-1 md:col-span-2 pl-5 border-l border-gray-100">
-          <h2 className="text-lg font-semibold text-indigo-600 mb-4">Personal Details</h2>
+          <h2 className="text-lg font-semibold text-indigo-600 mb-4">
+            Personal Details
+          </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-7">
             {employee.personalDetails.map((field, index) => (
-              <DetailField key={index} label={field.label} value={field.value} />
+              <DetailField
+                key={index}
+                label={field.label}
+                value={field.value}
+              />
             ))}
           </div>
 
-          <h2 className="text-lg font-semibold text-indigo-600 mb-4">Job Details</h2>
+          <h2 className="text-lg font-semibold text-indigo-600 mb-4">
+            Job Details
+          </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             {employee.jobDetails.map((field, index) => (
-              <DetailField key={index} label={field.label} value={field.value} />
+              <DetailField
+                key={index}
+                label={field.label}
+                value={field.value}
+              />
             ))}
           </div>
 

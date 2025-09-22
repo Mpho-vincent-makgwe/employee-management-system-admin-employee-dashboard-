@@ -3,7 +3,7 @@ import { useState } from "react";
 import CompanyInfo from "@/components/EmployeeComponents/CompanyInfo";
 import ForgotPassword from "@/components/AdminComponents/ForgotPassword";
 import ProfileView from "@/components/EmployeeComponents/ProfileView";
-import Heading from "@/components/Heading";
+import Heading from "@/components/ui/Heading";
 import Roles from "@/components/EmployeeComponents/Roles";
 
 export default function Settings() {

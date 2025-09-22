@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import { useUser } from "@/context/UserContext";
-import CustomButton from "../Buttons/CustomButton";
+import CustomButton from "../ui/CustomButton";
 
 const ProfileEdit = ({ onSave, onCancel }) => {
   const { user } = useUser();

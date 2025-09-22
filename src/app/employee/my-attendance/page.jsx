@@ -1,4 +1,4 @@
-import Heading from "@/components/Heading";
+import Heading from "@/components/ui/Heading";
 import SearchBar from "@/components/SearchBar";
 import MyAttendanceTable from "@/components/EmployeeComponents/MyAttendanceTable";
 import AttendanceSummaryCard from "@/components/EmployeeComponents/AttendanceSummaryCards";
