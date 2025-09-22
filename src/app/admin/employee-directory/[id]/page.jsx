@@ -5,7 +5,7 @@ import { useParams } from "next/navigation";
 import { employeeData } from "@/data/adminData/employeeData";
 import DetailField from "@/components/AdminComponents/DetailField";
 import CustomButton from "@/components/ui/CustomButton";
-import NotificationModal from "@/components/AdminComponents/NotificationModal";
+import NotificationModal from "@/ui/NotificationModal";
 import { FaTrashAlt } from "react-icons/fa";
 
 export default function EmployeeProfilePage() {

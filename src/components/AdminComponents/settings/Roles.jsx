@@ -2,6 +2,7 @@
 import { useState } from "react";
 import { roles } from "@/data/adminData/roles";
 import AssignRoles from "./AssignRoles";
+import Button from "../Button";
 
 const columns = [
   { key: "no", title: "No" },
@@ -16,18 +17,16 @@ export default function Roles() {
 
   const handleAssign = (e) => {
     e.preventDefault();
-    console.log('assign role', assign)
-    setAssign(true)
-  }
+    console.log("assign role", assign);
+    setAssign(true);
+  };
 
   if (assign) {
-    return <AssignRoles assign={assign} />
+    return <AssignRoles assign={assign} />;
   }
 
   return (
     <div className="p-4">
-      <h1 className="text-lg text-black font-semibold mb-4">Roles</h1>
-
       <div className="overflow-x-auto bg-white rounded-lg shadow-sm">
         <table className="min-w-full text-sm text-gray-700">
           <thead>
@@ -59,14 +58,13 @@ export default function Roles() {
         </table>
       </div>
       <div className="mt-6 flex justify-start">
-  <button
-    onClick={handleAssign}
-    className="px-5 py-2 bg-[#4F46E5] text-white text-sm font-medium rounded-sm hover:bg-[#4338CA] transition-all"
-  >
-    Assign Role
-  </button>
-</div>
-
+        <Button
+          onClick={handleAssign}
+          className="px-5 py-2 bg-[#4F46E5] text-white text-sm font-medium rounded-sm hover:bg-[#4338CA] transition-all"
+        >
+          Assign Role
+        </Button>
+      </div>
     </div>
   );
 }
