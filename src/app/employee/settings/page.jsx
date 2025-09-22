@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
 import CompanyInfo from "@/components/EmployeeComponents/CompanyInfo";
-import ForgotPassword from "@/components/AdminComponents/ForgotPassword";
+import ForgotPassword from "@/components/AdminComponents/settings/ForgotPassword";
 import ProfileView from "@/components/EmployeeComponents/ProfileView";
 import Heading from "@/components/Heading";
 import Roles from "@/components/EmployeeComponents/Roles";

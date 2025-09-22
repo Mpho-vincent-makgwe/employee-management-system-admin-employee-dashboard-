@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { adminData } from "@/data/adminData/adminData";
-import DetailField from "./DetailField";
+import DetailField from "../DetailField";
 
 export default function Profile() {
   return (
@@ -17,7 +17,9 @@ export default function Profile() {
             alt={`${adminData.firstName} ${adminData.lastName}`}
             className="w-40 h-40 rounded-full object-cover border-4 border-indigo-200 mb-4"
           />
-          <button className=" text-sm font-medium">Change Picture</button>
+          <button className=" text-black text-sm font-medium">
+            Change Picture
+          </button>
         </div>
 
         <div className="col-span-1 md:col-span-2 pl-5 border-l border-gray-100">
