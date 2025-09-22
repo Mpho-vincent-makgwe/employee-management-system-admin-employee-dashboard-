@@ -1,8 +1,8 @@
-'use client';
+"use client";
 
-import { companyData } from '@/data/adminData/adminData';
-import { adminData } from '@/data/adminData/adminData';
-import DetailField from './DetailField';
+import { companyData } from "@/data/adminData/adminData";
+import { adminData } from "@/data/adminData/adminData";
+import DetailField from "../DetailField";
 
 export default function CompanyInfo() {
   return (
@@ -10,15 +10,17 @@ export default function CompanyInfo() {
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 bg-white rounded-lg p-6">
         {/* Company Avatar & Identity */}
         <div className="col-span-1 flex flex-col items-center">
-         <img
-                     src={
-                       adminData.profilePicture ||
-                       "https://placehold.co/140x140/cccccc/333333?text=adminData"
-                     }
-                     alt={`${adminData.firstName} ${adminData.lastName}`}
-                     className="w-40 h-40 rounded-full object-cover border-4 border-indigo-200 mb-4"
-                   />
-          <p className=" text-black text-base font-semibold">{companyData.name}</p>
+          <img
+            src={
+              adminData.profilePicture ||
+              "https://placehold.co/140x140/cccccc/333333?text=adminData"
+            }
+            alt={`${adminData.firstName} ${adminData.lastName}`}
+            className="w-40 h-40 rounded-full object-cover border-4 border-indigo-200 mb-4"
+          />
+          <p className=" text-black text-base font-semibold">
+            {companyData.name}
+          </p>
           <span className="text-sm text-gray-500">Company Profile</span>
         </div>
 
@@ -29,7 +31,10 @@ export default function CompanyInfo() {
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-7">
             <DetailField label="Company Name" value={companyData.name} />
-            <DetailField label="Company Email Address" value={companyData.email} />
+            <DetailField
+              label="Company Email Address"
+              value={companyData.email}
+            />
             <DetailField label="Company Type" value={companyData.type} />
             <DetailField label="Staff Size" value={companyData.staffSize} />
             <DetailField label="Industry" value={companyData.industry} />
@@ -38,9 +43,8 @@ export default function CompanyInfo() {
             <DetailField label="Office Address" value={companyData.address} />
           </div>
 
-           <div className="md:col-span-1">
+          <div className="md:col-span-1">
             <DetailField label="Specialities" value={companyData.specialties} />
-           
           </div>
         </div>
       </div>

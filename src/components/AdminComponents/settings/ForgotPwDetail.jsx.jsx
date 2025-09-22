@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import NotificationModal from "../../ui/NotificationModal";
+import NotificationModal from "../../../ui/NotificationModal";
 import { CheckCircleIcon } from "lucide-react";
 import { FiEye, FiEyeOff } from "react-icons/fi";
 import { FaCheck } from "react-icons/fa";

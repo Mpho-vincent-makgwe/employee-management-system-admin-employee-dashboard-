@@ -1,10 +1,10 @@
-'use client'
+"use client";
 import { useState } from "react";
-import CompanyInfo from "@/components/AdminComponents/CompanyInfo";
-import Profile from "@/components/AdminComponents/Profile";
-import ForgotPassword from "@/components/AdminComponents/ForgotPassword";
-import Roles from "@/components/AdminComponents/Roles";
-import UserManagement from "@/components/AdminComponents/UserManagement";
+import CompanyInfo from "@/components/AdminComponents/settings/CompanyInfo";
+import Profile from "@/components/AdminComponents/settings/Profile";
+import ForgotPassword from "@/components/AdminComponents/settings/ForgotPassword";
+import Roles from "@/components/AdminComponents/settings/Roles";
+import UserManagement from "@/components/AdminComponents/settings/UserManagement";
 
 export default function Settings() {
   const [activeTab, setActiveTab] = useState("Profile");
@@ -19,7 +19,6 @@ export default function Settings() {
 
   return (
     <div className="w-full">
-    
       <div className="mb-6 space-y-2">
         <h1 className="text-2xl font-bold text-gray-800">Settings</h1>
         <p className="text-sm text-gray-600">
@@ -27,7 +26,6 @@ export default function Settings() {
         </p>
       </div>
 
-     
       <div className="flex border-b border-gray-200 mb-4">
         {tabs.map((tab) => (
           <button
@@ -44,7 +42,6 @@ export default function Settings() {
         ))}
       </div>
 
-     
       <div className="mt-4  ">
         {activeTab === "Profile" && <Profile />}
         {activeTab === "CompanyInfo" && <CompanyInfo />}

@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import ForgotPwDetail from "./ForgotPwDetail.jsx";
+import ForgotPwDetail from "./ForgotPwDetail.jsx.jsx";
 import { FiMail } from "react-icons/fi";
 
 export default function ForgotPassword() {
