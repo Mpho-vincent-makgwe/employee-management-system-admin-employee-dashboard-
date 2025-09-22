@@ -3,8 +3,7 @@
 import { useState, useMemo } from "react";
 import Table from "@/components/Table";
 import { employeeData } from "@/data/adminData/employeeData";
-import Filters from "../../../ui/Filters"
-
+import Filters from "../../../ui/EmployeeFilters";
 
 const columns = [
   { key: "name", title: "Name" },
@@ -69,37 +68,40 @@ export default function EmployeeDirectory() {
       {/* Filter Section */}
       <div className="flex flex-col">
         <div className="space-y-2 text- text-black ">
-          <h2 className="text-2xl"> Employee: <span className="font-bold">{filteredData.length}</span> </h2> 
-            <p>Manage and view all employee information</p>
-        
+          <h2 className="text-2xl">
+            {" "}
+            Employee: <span className="font-bold">
+              {filteredData.length}
+            </span>{" "}
+          </h2>
+          <p>Manage and view all employee information</p>
         </div>
 
-         <Filters
-        searchTerm={searchTerm}
-        setSearchTerm={setSearchTerm}
-        roleFilter={roleFilter}
-        setRoleFilter={setRoleFilter}
-        statusFilter={statusFilter}
-        setStatusFilter={setStatusFilter}
-        uniqueRoles={uniqueRoles}
-        uniqueStatuses={uniqueStatuses}
-      />       
-       
+        <Filters
+          searchTerm={searchTerm}
+          setSearchTerm={setSearchTerm}
+          roleFilter={roleFilter}
+          setRoleFilter={setRoleFilter}
+          statusFilter={statusFilter}
+          setStatusFilter={setStatusFilter}
+          uniqueRoles={uniqueRoles}
+          uniqueStatuses={uniqueStatuses}
+        />
 
-      {/* Table Section */}
-      <Table
-        columns={columns}
-        data={filteredData.map((employee) => ({
-          ...employee,
-          action: { text: "View Details" },
-        }))}
-        statusColorMap={statusColorMap}
-        limit={5}
-        enablePagination
-        stripedRows={true}
-        sortable={true}
-      />
-    </div>
+        {/* Table Section */}
+        <Table
+          columns={columns}
+          data={filteredData.map((employee) => ({
+            ...employee,
+            action: { text: "View Details" },
+          }))}
+          statusColorMap={statusColorMap}
+          limit={5}
+          enablePagination
+          stripedRows={true}
+          sortable={true}
+        />
+      </div>
     </div>
   );
 }
