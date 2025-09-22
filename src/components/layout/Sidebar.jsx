@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
-import EtiLogo from "./Logo";
+import EtiLogo from "../Logo";
 import { FiLogOut, FiSettings } from "react-icons/fi";
 import { BsGridFill, BsCalendarEvent } from "react-icons/bs";
 import {

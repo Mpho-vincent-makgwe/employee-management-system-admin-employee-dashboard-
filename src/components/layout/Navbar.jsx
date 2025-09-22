@@ -3,11 +3,11 @@
 import { FaSearch, FaBell, FaUser, FaChevronDown } from "react-icons/fa";
 import { FiSettings } from "react-icons/fi";
 import { useState, useCallback } from "react";
-import EtiLogo from "./Logo";
+import EtiLogo from "../Logo";
 import { useSearch } from "@/context/SearchContext";
 import { useUser } from "@/context/UserContext";
 import Link from "next/link";
-import ProfileModal from "./ProfileModal";
+import ProfileModal from "../ProfileModal";
 
 export default function Navbar() {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -35,7 +35,11 @@ export default function Navbar() {
   // Safely get user name
   const getUserName = () => {
     if (!user || !user.profile?.personal) return "User";
-    return `${user.profile.personal.firstName || ''} ${user.profile.personal.lastName || ''}`.trim() || 'User';
+    return (
+      `${user.profile.personal.firstName || ""} ${
+        user.profile.personal.lastName || ""
+      }`.trim() || "User"
+    );
   };
 
   // Loading state
@@ -78,11 +82,11 @@ export default function Navbar() {
         {/* Desktop View - Notification + User Info */}
         <div className="hidden lg:flex items-center gap-6">
           <div className="relative">
-            <Link href='/admin/notifications'>
-            <button className="p-2 rounded-full hover:bg-gray-100 transition">
-              <FaBell className="text-indigo-600 text-lg" />
-              <span className="absolute top-1.5 right-1.5 w-2 h-2 bg-red-500 rounded-full" />
-            </button>
+            <Link href="/admin/notifications">
+              <button className="p-2 rounded-full hover:bg-gray-100 transition">
+                <FaBell className="text-indigo-600 text-lg" />
+                <span className="absolute top-1.5 right-1.5 w-2 h-2 bg-red-500 rounded-full" />
+              </button>
             </Link>
           </div>
 
