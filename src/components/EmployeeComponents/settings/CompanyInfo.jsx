@@ -2,7 +2,7 @@
 
 import { companyData } from "@/data/employeeData/companyData";
 import birthdayData from "@/data/employeeData/birthdayData";
-import DetailField from "./DetailField";
+import DetailField from "../../ui/DetailField";
 
 export default function CompanyInfo() {
   return (

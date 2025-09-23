@@ -1,4 +1,4 @@
-import { timesheetEntries } from "../../data/employeeData/timesheetData";
+import { timesheetEntries } from "../../../data/employeeData/timesheetData";
 import { getTimeSummary } from "@/utils/attendanceUtils";
 import { getAttendanceSummary } from "@/utils/attendanceUtils";
 

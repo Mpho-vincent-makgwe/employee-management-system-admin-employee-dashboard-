@@ -149,18 +149,10 @@ export default function BirthdayTable() {
           ...employee,
           action: { text: "View" },
         }))}
-        // statusColorMap={statusColorMap}
         limit={5}
         enablePagination={true}
         stripedRows={true}
         sortable={true}
-        // Remove these props as they're now handled in the parent component
-        // showEmployeeCount={true}
-        // showFilters={true}
-        // showSearch={true}
-        // roleFilter={roleFilter}
-        // statusFilter={statusFilter}
-        // searchTerm={searchTerm}
       />
     </div>
   );

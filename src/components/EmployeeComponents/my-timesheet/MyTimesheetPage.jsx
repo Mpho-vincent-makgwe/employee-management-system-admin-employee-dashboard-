@@ -1,5 +1,5 @@
-import TimesheetSummaryCards from "./SummaryCards";
-import Heading from "../ui/Heading";
+import TimesheetSummaryCards from "../../ui/SummaryCards";
+import Heading from "../../ui/Heading";
 import TimesheetEntries from "./TimesheetEntries";
 
 export default function MyTimesheetPage() {

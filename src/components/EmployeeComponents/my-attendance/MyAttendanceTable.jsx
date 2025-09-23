@@ -1,9 +1,9 @@
 "use client";
 
-import Table from "../Table";
-import { timesheetEntries } from "../../data/employeeData/timesheetData";
+import Table from "../../Table";
+import { timesheetEntries } from "../../../data/employeeData/timesheetData";
 import { useEffect } from "react";
-import { useSearch } from "../../context/SearchContext";
+import { useSearch } from "../../../context/SearchContext";
 import { getStatus } from "@/utils/attendanceUtils";
 import { fillMissingDays } from "@/utils/attendanceUtils";
 

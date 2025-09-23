@@ -1,8 +1,8 @@
 import React from "react";
-import RecentEntries from "@/components/EmployeeComponents/RecentEntries";
+import RecentEntries from "@/components/EmployeeComponents/dashboard/RecentEntries";
 import DashboardBarChart from "@/components/EmployeeComponents/dashboard/DashboardBarChart";
-import DashboardNotifications from "@/components/EmployeeComponents/DashboardNotifications";
-import DashboardSummaryCards from "@/components/EmployeeComponents/DashboardSummaryCards";
+import DashboardNotifications from "@/components/EmployeeComponents/dashboard/DashboardNotifications";
+import DashboardSummaryCards from "@/components/EmployeeComponents/dashboard/DashboardSummaryCards";
 import Heading from "@/components/ui/Heading";
 
 const page = () => {

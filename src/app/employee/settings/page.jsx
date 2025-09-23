@@ -1,10 +1,10 @@
 "use client";
 import { useState } from "react";
-import CompanyInfo from "@/components/EmployeeComponents/CompanyInfo";
+import CompanyInfo from "@/components/EmployeeComponents/settings/CompanyInfo";
 import ForgotPassword from "@/components/AdminComponents/settings/ForgotPassword";
-import ProfileView from "@/components/EmployeeComponents/ProfileView";
+import ProfileView from "@/components/EmployeeComponents/settings/ProfileView";
 import Heading from "@/components/ui/Heading";
-import Roles from "@/components/EmployeeComponents/Roles";
+import Roles from "@/components/EmployeeComponents/settings/Roles";
 
 export default function Settings() {
   const [activeTab, setActiveTab] = useState("Profile");

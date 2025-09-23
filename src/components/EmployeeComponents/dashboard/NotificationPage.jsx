@@ -1,5 +1,5 @@
 import NotificationCard from "../NotificationCard";
-import Heading from "../ui/Heading";
+import Heading from "../../ui/Heading";
 
 export default function NotificationPage() {
   const notifications = [

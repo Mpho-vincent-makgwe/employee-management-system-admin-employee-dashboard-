@@ -1,9 +1,9 @@
 "use client";
 
-import Table from "../Table";
-import { timesheetEntries } from "../../data/employeeData/timesheetData";
+import Table from "../../Table";
+import { timesheetEntries } from "../../../data/employeeData/timesheetData";
 import { useEffect } from "react";
-import { useSearch } from "../../context/SearchContext";
+import { useSearch } from "../../../context/SearchContext";
 import { fillMissingDays } from "@/utils/attendanceUtils";
 import Link from "next/link";
 
@@ -51,11 +51,7 @@ const MyAttendanceTable = () => {
         </Link>
       </div>
 
-      <Table
-        columns={columns}
-        data={recentEntries} 
-        enablePagination={false} 
-      />
+      <Table columns={columns} data={recentEntries} enablePagination={false} />
     </div>
   );
 };
