@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-import Button from "../Button";
+import Button from "../../ui/Button";
 
 const AddEmployeeForm = () => {
   const router = useRouter();

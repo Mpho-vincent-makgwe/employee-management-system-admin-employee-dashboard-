@@ -2,7 +2,7 @@
 
 import { companyData } from "@/data/adminData/adminData";
 import { adminData } from "@/data/adminData/adminData";
-import DetailField from "../DetailField";
+import DetailField from "../../ui/DetailField";
 
 export default function CompanyInfo() {
   return (

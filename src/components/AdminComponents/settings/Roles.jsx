@@ -2,7 +2,7 @@
 import { useState } from "react";
 import { roles } from "@/data/adminData/roles";
 import AssignRoles from "./AssignRoles";
-import Button from "../Button";
+import Button from "../../ui/Button";
 
 const columns = [
   { key: "no", title: "No" },

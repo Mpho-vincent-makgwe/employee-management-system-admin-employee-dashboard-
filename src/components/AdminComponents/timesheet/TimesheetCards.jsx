@@ -1,7 +1,7 @@
 import Card from "../../ui/Card";
-import { FiUsers, FiCheckCircle, FiMinusCircle, FiClock } from "react-icons/fi";
+import { FiUsers } from "react-icons/fi";
 
-export default function OverViewCards() {
+export default function TimesheetCards() {
   const overview = [
     {
       label: "Total Employees",
@@ -9,19 +9,19 @@ export default function OverViewCards() {
       icon: <FiUsers className="text-white text-2xl" />,
     },
     {
-      label: "Present Today",
-      value: 16,
-      icon: <FiCheckCircle className="text-white text-2xl" />,
+      label: "Employee Present",
+      value: 20,
+      icon: <FiUsers className="text-white text-2xl" />,
     },
     {
-      label: "On Leave",
-      value: 16,
-      icon: <FiMinusCircle className="text-white text-2xl" />,
+      label: "Employee Absent",
+      value: 10,
+      icon: <FiUsers className="text-white text-2xl" />,
     },
     {
-      label: "Hours Logged This Week",
-      value: "1,600",
-      icon: <FiClock className="text-white text-2xl" />,
+      label: "Employee on Leave",
+      value: "5",
+      icon: <FiUsers className="text-white text-2xl" />,
     },
   ];
 
@@ -31,7 +31,7 @@ export default function OverViewCards() {
         <Card
           key={index}
           className="h-[130px] w-full xl:max-w-none"
-          border="0.6px solid  "
+          border=" #d0d5dd "
         >
           <div className="flex items-center h-full gap-5 w-full text-black">
             <div className="w-[48px] h-[48px] flex items-center justify-center rounded-full bg-[#4F46E5]">

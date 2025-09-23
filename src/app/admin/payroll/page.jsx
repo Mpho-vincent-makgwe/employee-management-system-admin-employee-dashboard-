@@ -1,7 +1,7 @@
 "use client";
 import Table from "@/components/Table";
 import payrollData from "@/data/adminData/payrollData";
-import EmployeeFilters from "@/ui/EmployeeFilters";
+import EmployeeFilters from "@/components/ui/EmployeeFilters";
 import { Filters } from "@/hooks/Filters";
 
 const columns = [

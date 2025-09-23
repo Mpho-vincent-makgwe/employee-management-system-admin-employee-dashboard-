@@ -4,7 +4,7 @@ import OverViewCards from "@/components/AdminComponents/dashboard/OverViewCards"
 import BarChart from "@/components/AdminComponents/dashboard/BarChart";
 import PieChart from "@/components/AdminComponents/dashboard/PieChart";
 import Timesheet from "@/components/AdminComponents/dashboard/Timesheet";
-import Button from "@/components/AdminComponents/Button";
+import Button from "@/components/ui/Button";
 
 export default function Dashboard() {
   return (
