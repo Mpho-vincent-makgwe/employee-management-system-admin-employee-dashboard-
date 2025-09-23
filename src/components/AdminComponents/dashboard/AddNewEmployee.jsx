@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-import Button from "../Button";
+import CustomButton from "@/components/ui/CustomButton";
 
 const AddEmployeeForm = () => {
   const router = useRouter();
@@ -149,19 +149,19 @@ const AddEmployeeForm = () => {
       </section>
 
       <div className="flex justify-start gap-4 pt-4">
-        <Button
+        <CustomButton
           type="submit"
-          className="px-4 py-2 text-sm font-medium bg-[#4F46E5] text-white border border-[#4F46E5] hover:bg-[#4338CA]"
-        >
-          Add Employee
-        </Button>
-        <Button
-          type="button"
+          text="Add Employee"
+          variant="primary"
+          size="large"
+        />
+
+        <CustomButton
           onClick={handleCancel}
-          className="px-4 py-2 text-sm font-medium bg-white text-[#4F46E5] border border-[#4F46E5] hover:bg-indigo-50 hover:text-white"
-        >
-          Cancel
-        </Button>
+          text="Cancel"
+          variant="outline"
+          size="large"
+        />
       </div>
     </form>
   );

@@ -1,33 +1,33 @@
-'use client';
+"use client";
 
-import Link from 'next/link';
+import Link from "next/link";
 
 const CustomButton = ({
   text,
   to = null,
   onClick = null,
   icon = null,
-  type = 'button',
-  variant = 'primary',
-  size = 'medium',
+  type = "button",
+  variant = "primary",
+  size = "medium",
   disabled = false,
-  className = '',
+  className = "",
   newTab = false,
 }) => {
   // Variant styles
   const variantStyles = {
-    primary: 'bg-[#4F46E5] text-white hover:opacity-90',
-    secondary: 'bg-gray-200 text-gray-800 hover:bg-gray-300',
-    outline: 'border border-[#4F46E5] text-[#4F46E5] hover:bg-[#4F46E5]/10',
-    ghost: 'text-[#4F46E5] hover:bg-[#4F46E5]/10',
-    danger: 'bg-red-500 text-white hover:bg-red-600',
+    primary: "bg-[#4F46E5] text-white hover:opacity-90",
+    secondary: "bg-gray-200 text-gray-800 hover:bg-gray-300",
+    outline: "border border-[#4F46E5] text-[#4F46E5] hover:bg-[#4F46E5]/10",
+    ghost: "text-[#4F46E5] hover:bg-[#4F46E5]/10",
+    danger: "bg-red-500 text-white hover:bg-red-600",
   };
 
   // Size styles - now responsive with mobile-first approach
   const sizeStyles = {
-    small: 'px-2 py-1 text-xs sm:px-3 sm:py-1.5 sm:text-sm',
-    medium: 'px-4 py-3 text-sm sm:px-4 sm:py-3 sm:text-base', // Adjusted to match the padding from the example
-    large: 'px-4 py-2 text-base sm:px-6 sm:py-3 sm:text-lg',
+    small: "px-2 py-1 text-xs sm:px-3 sm:py-1.5 sm:text-sm",
+    medium: "px-4 py-3 text-sm sm:px-4 sm:py-3 sm:text-base", // Adjusted to match the padding from the example
+    large: "px-4 py-2 text-medium sm:px-[55px] sm:py-[14px] sm:text-medium",
   };
 
   // Base button classes with responsive adjustments
@@ -47,8 +47,8 @@ const CustomButton = ({
     return (
       <Link
         href={to}
-        target={newTab ? '_blank' : '_self'}
-        rel={newTab ? 'noopener noreferrer' : ''}
+        target={newTab ? "_blank" : "_self"}
+        rel={newTab ? "noopener noreferrer" : ""}
         className={buttonClasses}
       >
         {icon && <span className="text-base">{icon}</span>}
