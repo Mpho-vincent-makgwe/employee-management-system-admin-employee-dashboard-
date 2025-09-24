@@ -4,7 +4,7 @@ import { useState } from "react";
 import { useParams } from "next/navigation";
 import { employeeData } from "@/data/adminData/employeeData";
 import DetailField from "@/components/ui/DetailField";
-import CustomButton from "@/components/Buttons/CustomButton";
+import CustomButton from "@/components/ui/CustomButton";
 import NotificationModal from "@/components/ui/NotificationModal";
 import { FaTrashAlt } from "react-icons/fa";
 
