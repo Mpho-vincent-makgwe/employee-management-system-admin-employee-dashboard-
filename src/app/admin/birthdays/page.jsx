@@ -3,7 +3,7 @@
 import { useState, useMemo } from "react";
 import Table from "@/components/Table";
 import birthdayData from "@/data/employeeData/birthdayData";
-import EmployeeFilters from "@/ui/EmployeeFilters"
+import EmployeeFilters from "@/components/ui/EmployeeFilters";
 import { Filters } from "@/hooks/Filters";
 
 const columns = [
@@ -17,13 +17,13 @@ const columns = [
 
 export default function Birthdays() {
   const {
-      searchTerm,
-      setSearchTerm,
-      filters,
-      setFilters,
-      uniqueValues,
-      filteredData,
-    } = Filters(birthdayData, columns);
+    searchTerm,
+    setSearchTerm,
+    filters,
+    setFilters,
+    uniqueValues,
+    filteredData,
+  } = Filters(birthdayData, columns);
 
   return (
     <div className="p-4">
@@ -31,15 +31,14 @@ export default function Birthdays() {
         <h2 className="text-black  text-2xl">Upcoming Birthday's</h2>
         <p className="text-black">View all employee birthdays</p>
       </div>
-         <EmployeeFilters
-             searchTerm={searchTerm}
-             setSearchTerm={setSearchTerm}
-             filters={filters}
-             setFilters={setFilters}
-             uniqueValues={uniqueValues}
-          filterKeys={["role", "employmentType"]}
-
-           />
+      <EmployeeFilters
+        searchTerm={searchTerm}
+        setSearchTerm={setSearchTerm}
+        filters={filters}
+        setFilters={setFilters}
+        uniqueValues={uniqueValues}
+        filterKeys={["role", "employmentType"]}
+      />
       <Table
         columns={columns}
         data={filteredData.map((employee) => ({

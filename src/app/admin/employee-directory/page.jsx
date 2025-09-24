@@ -3,7 +3,7 @@
 import { useState, useMemo } from "react";
 import Table from "@/components/Table";
 import { employeeData } from "@/data/adminData/employeeData";
-import EmployeeFilters from "@/ui/EmployeeFilters";
+import EmployeeFilters from "@/components/ui/EmployeeFilters";
 import { Filters } from "@/hooks/Filters";
 
 const columns = [
@@ -22,7 +22,7 @@ const statusColorMap = {
 };
 
 export default function EmployeeDirectory() {
-   const {
+  const {
     searchTerm,
     setSearchTerm,
     filters,
@@ -44,14 +44,14 @@ export default function EmployeeDirectory() {
           <p>Manage and view all employee information</p>
         </div>
 
-<EmployeeFilters
-        searchTerm={searchTerm}
-        setSearchTerm={setSearchTerm}
-        filters={filters}
-        setFilters={setFilters}
-        uniqueValues={uniqueValues}
-        filterKeys={["role", "status"]}
-      />
+        <EmployeeFilters
+          searchTerm={searchTerm}
+          setSearchTerm={setSearchTerm}
+          filters={filters}
+          setFilters={setFilters}
+          uniqueValues={uniqueValues}
+          filterKeys={["role", "status"]}
+        />
 
         {/* Table Section */}
         <Table

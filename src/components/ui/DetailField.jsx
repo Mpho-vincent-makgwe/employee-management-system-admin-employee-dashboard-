@@ -5,7 +5,7 @@ const DetailField = ({ label, value }) => (
       type="text"
       value={value}
       readOnly
-      className="h-[50px] border border-gray-200 rounded-md px-3 py-2 text-sm focus:outline-none"
+      className="h-[40px] border border-gray-200 rounded-md px-3 py-2 text-sm focus:outline-none"
     />
   </div>
 );

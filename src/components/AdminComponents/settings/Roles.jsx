@@ -2,8 +2,7 @@
 import { useState } from "react";
 import { roles } from "@/data/adminData/roles";
 import AssignRoles from "./AssignRoles";
-import CustomButton from "@/components/ui/CustomButton";
-import { FiPlus } from "react-icons/fi";
+import Button from "../../ui/Button";
 
 const columns = [
   { key: "no", title: "No" },

@@ -3,8 +3,8 @@
 import { useState } from "react";
 import { FaEdit, FaTrashAlt } from "react-icons/fa";
 import { users } from "@/data/adminData/rolesData";
-import Card from "../Card";
-import NotificationModal from "@/ui/NotificationModal";
+import Card from "../../ui/Card";
+import NotificationModal from "@/components/ui/NotificationModal";
 
 export default function UserManagement() {
   const [showDelete, setShowDelete] = useState(false);

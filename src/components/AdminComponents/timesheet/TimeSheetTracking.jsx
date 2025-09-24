@@ -1,8 +1,32 @@
 import CardTitle from "../../ui/CardTitle";
 import Card from "../../ui/Card";
 
-export default function Timesheet() {
+export default function TimesheetTracking() {
   const timesheetData = [
+    {
+      name: "Emmanuel Faremi",
+      initials: "EF",
+      status: "Present",
+      inTime: "09:00 AM",
+      outTime: "05:00 PM",
+      hours: "8.0",
+    },
+    {
+      name: "Saheed Faremi",
+      initials: "SF",
+      status: "Late",
+      inTime: "09:20 AM",
+      outTime: "05:00 PM",
+      hours: "8.0",
+    },
+    {
+      name: "Rukome Paul",
+      initials: "RP",
+      status: "Absent",
+      inTime: null,
+      outTime: null,
+      hours: null,
+    },
     {
       name: "Emmanuel Faremi",
       initials: "EF",
@@ -31,15 +55,17 @@ export default function Timesheet() {
 
   const statusColors = {
     Present: "bg-[#10B981] text-white",
-    Late: "bg-[#D1A039] text-white",
+    Late: "bg-[#F5F6F8] text-black",
     Absent: "bg-[#D11A2A] text-white",
   };
 
   return (
-    <div className="p-6 space-y-4 bg-white">
-      <CardTitle level={5}>Yesterday's TimeSheet</CardTitle>
+    <div className="p-6 space-y-4 bg-white mt-8">
+      <CardTitle className="text-[#4F46E5]" level={5}>
+        Yesterday's TimeSheet
+      </CardTitle>
       {timesheetData.map((employee, idx) => (
-        <Card key={idx} backgroundColor="bg-[#D0D5DD]">
+        <Card key={idx}>
           <div className="flex justify-between items-center h-full p-4">
             <div className="flex items-center gap-5">
               <div className="w-[48px] h-[48px] flex items-center justify-center rounded-full bg-[#4F46E5] text-white font-medium">

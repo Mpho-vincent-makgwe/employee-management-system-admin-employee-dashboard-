@@ -1,14 +1,15 @@
-import Card from "@/components/AdminComponents/Card";
-import CardTitle from "@/components/AdminComponents/CardTitle";
+import Card from "@/components/ui/Card";
+import CardTitle from "@/components/ui/CardTitle";
 
-import {FiBell, FiCalendar, FiXCircle, FiClock} from "react-icons/fi"; 
-import { FaCheckCircle, FaBirthdayCake } from "react-icons/fa"; 
+import { FiBell, FiCalendar, FiXCircle, FiClock } from "react-icons/fi";
+import { FaCheckCircle, FaBirthdayCake } from "react-icons/fa";
 
 const notificationData = [
   {
     id: 1,
     title: "New Employee Added",
-    message: "Rukome Paul was added to the system as a Graphic Designer in the Marketing department.",
+    message:
+      "Rukome Paul was added to the system as a Graphic Designer in the Marketing department.",
     time: "2 hours ago",
     icon: <FiBell className="text-[#4F46E5]" />,
   },
@@ -22,19 +23,21 @@ const notificationData = [
   {
     id: 3,
     title: "Upcoming Birthday's",
-    message: "Emmanuel Faremi birthday is in 2 days (July 7). Consider sending a greeting!",
+    message:
+      "Emmanuel Faremi birthday is in 2 days (July 7). Consider sending a greeting!",
     time: "2 hours ago",
     icon: <FaBirthdayCake className="text-[#D1A039]" />,
   },
   {
-     id: 4,
+    id: 4,
     title: "New Employee Added",
-    message: "Rukome Paul was added to the system as a Graphic Designer in the Marketing department.",
+    message:
+      "Rukome Paul was added to the system as a Graphic Designer in the Marketing department.",
     time: "2 hours ago",
     icon: <FiBell className="text-[#4F46E5]" />,
   },
   {
-   id: 5,
+    id: 5,
     title: "Late Clock-In Alert",
     message: "Saheed Faremi clocked in 25 minutes late today.",
     time: "2 hours ago",
@@ -43,12 +46,12 @@ const notificationData = [
   {
     id: 6,
     title: "Upcoming Birthday's",
-    message: "Emmanuel Faremi birthday is in 2 days (July 7). Consider sending a greeting!",
+    message:
+      "Emmanuel Faremi birthday is in 2 days (July 7). Consider sending a greeting!",
     time: "2 hours ago",
     icon: <FaBirthdayCake className="text-[#D1A039]" />,
   },
 ];
-
 
 export default function Notifications() {
   return (
