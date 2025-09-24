@@ -21,6 +21,8 @@ const CustomButton = ({
     outline: "border border-[#4F46E5] text-[#4F46E5] hover:bg-[#4F46E5]/10",
     ghost: "text-[#4F46E5] hover:bg-[#4F46E5]/10",
     danger: "bg-red-500 text-white hover:bg-red-600",
+    circle:
+      "bg-[#4F46E5] text-white w-8 h-8 rounded-full flex items-center justify-center text-[25px]",
   };
 
   // Size styles - now responsive with mobile-first approach

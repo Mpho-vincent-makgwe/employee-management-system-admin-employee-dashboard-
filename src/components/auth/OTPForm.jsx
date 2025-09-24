@@ -1,46 +1,43 @@
-// components/auth/OTPForm.jsx
 "use client";
 import { useState } from "react";
+import CustomButton from "../ui/CustomButton";
 
-export const OTPForm = ({ 
-  email, 
-  onSubmit, 
-  errors, 
-  loading 
-}) => {
-  const [otp, setOtp] = useState(['', '', '', '']);
+export const OTPForm = ({ email, onSubmit, errors, loading }) => {
+  const [otp, setOtp] = useState(["", "", "", ""]);
 
   const handleOtpChange = (e, index) => {
     const value = e.target.value;
     if (value && !/^[0-9]$/.test(value)) return;
-    
+
     const newOtp = [...otp];
     newOtp[index] = value;
     setOtp(newOtp);
-    
+
     // Auto focus to next input
     if (value && index < 3) {
-      document.querySelector(`input[name=otp${index+1}]`).focus();
+      document.querySelector(`input[name=otp${index + 1}]`).focus();
     }
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const otpCode = otp.join('');
+    const otpCode = otp.join("");
     onSubmit(otpCode);
   };
 
   return (
     <div className="w-full">
       <h2 className="text-xl font-semibold text-[#4F46E5] mb-4">Verify OTP</h2>
-      <p className="text-sm text-gray-600 mb-6">Enter the OTP sent to your email {email}</p>
-      
+      <p className="text-sm text-gray-600 mb-6">
+        Enter the OTP sent to your email {email}
+      </p>
+
       {errors.otp && (
         <div className="mb-4 p-2 bg-red-100 text-red-700 rounded-md text-sm">
           {errors.otp}
         </div>
       )}
-      
+
       <form onSubmit={handleSubmit}>
         <div className="grid grid-cols-4 gap-3 mb-8 max-w-[80%]">
           {[0, 1, 2, 3].map((index) => (
@@ -57,14 +54,15 @@ export const OTPForm = ({
             />
           ))}
         </div>
-        
-        <button 
+
+        <CustomButton
           type="submit"
           disabled={loading}
-          className="w-full bg-indigo-600 text-white py-2 rounded-md hover:bg-indigo-700 mb-6 disabled:opacity-50"
-        >
-          {loading ? 'Verifying...' : 'Submit'}
-        </button>
+          text={loading ? "Verifying..." : "Submit"}
+          variant="primary"
+          size="medium"
+          className="w-full mb-4"
+        />
       </form>
     </div>
   );
