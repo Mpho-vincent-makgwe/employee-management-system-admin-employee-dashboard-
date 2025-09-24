@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { adminData } from "@/data/adminData/adminData";
-import DetailField from "../DetailField";
+import DetailField from "../../ui/DetailField";
 
 export default function Profile() {
   return (

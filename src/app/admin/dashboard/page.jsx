@@ -5,6 +5,7 @@ import BarChart from "@/components/AdminComponents/dashboard/BarChart";
 import PieChart from "@/components/AdminComponents/dashboard/PieChart";
 import Timesheet from "@/components/AdminComponents/dashboard/Timesheet";
 import CustomButton from "@/components/ui/CustomButton";
+import Button from "@/components/ui/Button";
 
 export default function Dashboard() {
   return (

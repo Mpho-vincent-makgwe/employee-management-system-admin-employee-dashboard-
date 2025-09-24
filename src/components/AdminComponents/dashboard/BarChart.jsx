@@ -10,7 +10,7 @@ import {
   Tooltip,
   Legend,
 } from "chart.js";
-import Card from "../Card";
+import Card from "../../ui/Card";
 import { Poppins, Montserrat } from "next/font/google";
 
 ChartJS.register(

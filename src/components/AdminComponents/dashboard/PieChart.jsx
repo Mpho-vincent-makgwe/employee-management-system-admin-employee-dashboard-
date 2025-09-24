@@ -1,8 +1,8 @@
 "use client";
 import { Pie } from "react-chartjs-2";
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
-import Card from "../Card";
-import CardTitle from "../CardTitle";
+import Card from "../../ui/Card";
+import CardTitle from "../../ui/CardTitle";
 
 ChartJS.register(ArcElement, Tooltip, Legend);
 
