@@ -58,12 +58,13 @@ export default function Roles() {
         </table>
       </div>
       <div className="mt-6 flex justify-start">
-        <Button
+        <CustomButton
           onClick={handleAssign}
-          className="px-5 py-2 bg-[#4F46E5] text-white text-sm font-medium rounded-sm hover:bg-[#4338CA] transition-all"
-        >
-          Assign Role
-        </Button>
+          text="Assign Role"
+          variant="primary"
+          icon={<FiPlus className="text-xl text-white" />}
+          size="medium"
+        />
       </div>
     </div>
   );

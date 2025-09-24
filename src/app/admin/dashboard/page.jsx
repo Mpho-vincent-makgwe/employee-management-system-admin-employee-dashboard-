@@ -4,6 +4,7 @@ import OverViewCards from "@/components/AdminComponents/dashboard/OverViewCards"
 import BarChart from "@/components/AdminComponents/dashboard/BarChart";
 import PieChart from "@/components/AdminComponents/dashboard/PieChart";
 import Timesheet from "@/components/AdminComponents/dashboard/Timesheet";
+import CustomButton from "@/components/ui/CustomButton";
 import Button from "@/components/ui/Button";
 
 export default function Dashboard() {
@@ -18,10 +19,12 @@ export default function Dashboard() {
         </div>
 
         <Link href="/admin/add-employee">
-          <Button className="flex items-center gap-2 px-6 py-2 bg-[#4F46E5] text-white text-sm rounded-sm hover:bg-[#4338ca] transition">
-            <FiPlus className="text-xl text-white" />
-            Add New Employee
-          </Button>
+          <CustomButton
+            text="Add New Employee"
+            icon={<FiPlus className="text-xl text-white" />}
+            variant="primary"
+            size="medium"
+          />
         </Link>
       </div>
       <div className="mb-6">

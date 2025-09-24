@@ -7,7 +7,7 @@ import {
   AlarmClock,
   Users,
 } from "lucide-react";
-import { timesheetEntries } from "../../data/employeeData/timesheetData";
+import { timesheetEntries } from "../../../data/employeeData/timesheetData";
 import { getTimeSummary } from "@/utils/attendanceUtils";
 import users from "@/data/users.json";
 import { useUser } from "@/context/UserContext";

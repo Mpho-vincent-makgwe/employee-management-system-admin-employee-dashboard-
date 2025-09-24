@@ -1,4 +1,4 @@
-import NotificationCard from "@/components/EmployeeComponents/NotificationCard";
+import NotificationCard from "@/components/EmployeeComponents/dashboard/NotificationCard";
 import Heading from "@/components/Heading";
 
 export default function NotificationPage() {

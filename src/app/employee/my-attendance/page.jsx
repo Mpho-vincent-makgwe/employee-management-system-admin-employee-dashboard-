@@ -1,7 +1,7 @@
-import Heading from "@/components/Heading";
+import Heading from "@/components/ui/Heading";
 import SearchBar from "@/components/SearchBar";
-import MyAttendanceTable from "@/components/EmployeeComponents/MyAttendanceTable";
-import AttendanceSummaryCard from "@/components/EmployeeComponents/AttendanceSummaryCards";
+import MyAttendanceTable from "@/components/EmployeeComponents/my-attendance/MyAttendanceTable";
+import AttendanceSummaryCard from "@/components/EmployeeComponents/my-attendance/AttendanceSummaryCards";
 export default function EmployeeDirectory() {
   return (
     <main className="ml-[25px]">

@@ -1,9 +1,9 @@
 "use client";
 
-import Table from "../Table";
-import { timesheetEntries } from "../../data/employeeData/timesheetData";
+import Table from "../../Table";
+import { timesheetEntries } from "../../../data/employeeData/timesheetData";
 import { useEffect, useMemo } from "react";
-import { useSearch } from "../../context/SearchContext";
+import { useSearch } from "../../../context/SearchContext";
 
 const TimesheetEntries = () => {
   const columns = [

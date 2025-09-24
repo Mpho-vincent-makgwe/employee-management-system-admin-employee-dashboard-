@@ -1,4 +1,4 @@
-import DirectoryProfileTable from "@/components/EmployeeComponents/DirectoryProfileTable";
+import DirectoryProfileTable from "@/components/EmployeeComponents/employee-directory/DirectoryProfileTable";
 import { employeeData } from "@/data/adminData/employeeData";
 import { notFound } from "next/navigation";
 

@@ -1,9 +1,9 @@
 "use client";
 
 import React, { useState } from "react";
-import DetailField from "./DetailField";
+import DetailField from "../../ui/DetailField";
 import { useUser } from "@/context/UserContext";
-import CustomButton from "../Buttons/CustomButton";
+import CustomButton from "../../ui/CustomButton";
 import ProfileEdit from "./ProfileEdit";
 
 const ProfileView = () => {

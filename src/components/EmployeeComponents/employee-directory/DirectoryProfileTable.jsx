@@ -1,5 +1,5 @@
 import React from "react";
-import DetailField from "./DetailField";
+import DetailField from "../../ui/DetailField";
 
 const DirectoryProfileTable = ({
   profilePicture,

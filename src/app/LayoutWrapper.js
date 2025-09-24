@@ -3,8 +3,8 @@
 import { usePathname } from "next/navigation";
 import { SearchProvider } from "@/context/SearchContext";
 import { UserProvider } from "@/context/UserContext";
-import Navbar from "../components/Navbar";
-import Sidebar from "../components/Sidebar";
+import Navbar from "../components/layout/Navbar";
+import Sidebar from "../components/layout/Sidebar";
 
 export default function LayoutWrapper({ children }) {
   const pathname = usePathname();
