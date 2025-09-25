@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { FiPlus } from "react-icons/fi";
 import OverViewCards from "@/components/AdminComponents/dashboard/OverViewCards";
-import BarChart from "@/components/AdminComponents/dashboard/BarChart";
+import BarChart from "@/components/AdminComponents/dashboard/WeeklyHoursChart";
 import PieChart from "@/components/AdminComponents/dashboard/PieChart";
 import Timesheet from "@/components/AdminComponents/dashboard/Timesheet";
 import CustomButton from "@/components/ui/CustomButton";
