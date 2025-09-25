@@ -3,11 +3,11 @@
 import { FaSearch, FaBell, FaUser, FaChevronDown } from "react-icons/fa";
 import { FiSettings } from "react-icons/fi";
 import { useState, useCallback } from "react";
-import EtiLogo from "../Logo";
+import EtiLogo from "../ui/Logo";
 import { useSearch } from "@/context/SearchContext";
 import { useUser } from "@/context/UserContext";
 import Link from "next/link";
-import ProfileModal from "../ProfileModal";
+import ProfileModal from "../ui/ProfileModal";
 
 export default function Navbar() {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
