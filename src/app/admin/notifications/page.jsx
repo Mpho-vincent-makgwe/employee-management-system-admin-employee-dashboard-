@@ -3,6 +3,7 @@ import CardTitle from "@/components/ui/CardTitle";
 
 import { FiBell, FiCalendar, FiXCircle, FiClock } from "react-icons/fi";
 import { FaCheckCircle, FaBirthdayCake } from "react-icons/fa";
+import Heading from "@/components/ui/Heading";
 
 const notificationData = [
   {
@@ -57,10 +58,10 @@ export default function Notifications() {
   return (
     <div className="bg-white p-4">
       <div className="space-y-4">
-        <h2 className="text-2xl font-semibold text-black">Notifications</h2>
-        <p className="text-sm text-black">
-          Stay updated with leave management activities
-        </p>
+        <Heading
+          title="Notifications"
+          subtitle="Stay updated with leave management activities"
+        />
       </div>
       <div className="grid grid-cols-1 sm:grid-cols-1 gap-4 mt-6">
         {notificationData.map((item) => (

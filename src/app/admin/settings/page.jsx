@@ -5,6 +5,7 @@ import Profile from "@/components/AdminComponents/settings/Profile";
 import ForgotPassword from "@/components/AdminComponents/settings/ForgotPassword";
 import Roles from "@/components/AdminComponents/settings/Roles";
 import UserManagement from "@/components/AdminComponents/settings/UserManagement";
+import Heading from "@/components/ui/Heading";
 
 export default function Settings() {
   const [activeTab, setActiveTab] = useState("Profile");
@@ -20,10 +21,10 @@ export default function Settings() {
   return (
     <div className="w-full">
       <div className="mb-6 space-y-2">
-        <h1 className="text-2xl font-bold text-gray-800">Settings</h1>
-        <p className="text-sm text-gray-600">
-          Manage system preferences and configurations.
-        </p>
+        <Heading
+          title="Settings"
+          subtitle="Manage system preferences and configurations."
+        />
       </div>
 
       <div className="flex border-b border-gray-200 mb-4">

@@ -5,6 +5,7 @@ import Table from "@/components/Table";
 import { employeeData } from "@/data/adminData/employeeData";
 import EmployeeFilters from "@/components/ui/EmployeeFilters";
 import { Filters } from "@/hooks/Filters";
+import Heading from "@/components/ui/Heading";
 
 const columns = [
   { key: "name", title: "Name" },
@@ -35,13 +36,15 @@ export default function EmployeeDirectory() {
       {/* Filter Section */}
       <div className="flex flex-col">
         <div className="space-y-2 text- text-black ">
-          <h2 className="text-2xl">
-            {" "}
-            Employee: <span className="font-bold">
-              {filteredData.length}
-            </span>{" "}
-          </h2>
-          <p>Manage and view all employee information</p>
+          <Heading
+            title={
+              <>
+                Employee:{" "}
+                <span className="font-bold">{filteredData.length}</span>
+              </>
+            }
+            subtitle="Manage and view all employee information"
+          />
         </div>
 
         <EmployeeFilters

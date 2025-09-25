@@ -5,6 +5,7 @@ import Table from "@/components/Table";
 import birthdayData from "@/data/employeeData/birthdayData";
 import EmployeeFilters from "@/components/ui/EmployeeFilters";
 import { Filters } from "@/hooks/Filters";
+import Heading from "@/components/ui/Heading";
 
 const columns = [
   { key: "name", title: "Name" },
@@ -28,8 +29,10 @@ export default function Birthdays() {
   return (
     <div className="p-4">
       <div className="space-y-2">
-        <h2 className="text-black  text-2xl">Upcoming Birthday's</h2>
-        <p className="text-black">View all employee birthdays</p>
+        <Heading
+          title="Upcoming Birthday's"
+          subtitle="View all employee birthdays"
+        />
       </div>
       <EmployeeFilters
         searchTerm={searchTerm}
