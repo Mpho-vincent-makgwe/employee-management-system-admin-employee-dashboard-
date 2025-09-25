@@ -31,7 +31,7 @@ export default function TimesheetCards() {
         <Card
           key={index}
           className="h-[130px] w-full xl:max-w-none"
-          border=" #d0d5dd "
+          // border=" #d0d5dd "
         >
           <div className="flex items-center h-full gap-5 w-full text-black">
             <div className="w-[48px] h-[48px] flex items-center justify-center rounded-full bg-[#4F46E5]">

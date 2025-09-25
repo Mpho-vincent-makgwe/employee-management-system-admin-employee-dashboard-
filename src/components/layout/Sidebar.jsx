@@ -43,7 +43,7 @@ const adminMenuItems = [
   },
   { label: "Timesheet", icon: <FaClock />, href: "/admin/timesheet" },
   { label: "Payroll", icon: <FaFileInvoiceDollar />, href: "/admin/payroll" },
-  { label: "Birthday", icon: <FaBirthdayCake />, href: "/admin/birthdays" },
+  { label: "Birthdays", icon: <FaBirthdayCake />, href: "/admin/birthdays" },
   { label: "Settings", icon: <FiSettings />, href: "/admin/settings" },
 ];
 

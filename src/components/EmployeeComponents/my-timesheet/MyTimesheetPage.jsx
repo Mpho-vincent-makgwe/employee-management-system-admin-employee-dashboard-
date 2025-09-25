@@ -1,4 +1,4 @@
-import TimesheetSummaryCards from "../../ui/SummaryCards";
+import TimesheetSummaryCards from "./TimesheetSummaryCards";
 import Heading from "../../ui/Heading";
 import TimesheetEntries from "./TimesheetEntries";
 

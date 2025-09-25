@@ -1,8 +1,9 @@
 "use client";
 
 import { BsClockFill } from "react-icons/bs";
-import { timesheetEntries } from "../../data/employeeData/timesheetData";
+import { timesheetEntries } from "../../../data/employeeData/timesheetData";
 import { getTimeSummary } from "@/utils/attendanceUtils";
+import Card from "@/components/ui/Card";
 
 const TimesheetSummaryCards = () => {
   const summary = getTimeSummary(timesheetEntries);
