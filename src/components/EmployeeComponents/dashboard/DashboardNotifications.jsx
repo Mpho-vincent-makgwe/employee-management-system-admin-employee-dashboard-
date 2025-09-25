@@ -2,6 +2,7 @@ import NotificationCard from "./NotificationCard";
 import { Bell } from "lucide-react";
 import Link from "next/link";
 
+
 export default function DashboardNotifications() {
   const notifications = [
     {
