@@ -1,9 +1,7 @@
-
-import Table from "@/components/Table";
+import Table from "@/components/ui/Table";
 import birthdayData from "@/data/employeeData/birthdayData";
 import EmployeeFilters from "@/components/ui/EmployeeFilters";
 import { Filters } from "@/hooks/Filters";
-
 
 const columns = [
   { key: "name", title: "Name" },
@@ -15,26 +13,25 @@ const columns = [
 ];
 
 export default function BirthdayTable() {
-   const {
-      searchTerm,
-      setSearchTerm,
-      filters,
-      setFilters,
-      uniqueValues,
-      filteredData
-    } = Filters(birthdayData, columns);
+  const {
+    searchTerm,
+    setSearchTerm,
+    filters,
+    setFilters,
+    uniqueValues,
+    filteredData,
+  } = Filters(birthdayData, columns);
 
   return (
     <div className="mr-4">
- <EmployeeFilters
-              searchTerm={searchTerm}
-              setSearchTerm={setSearchTerm}
-              filters={filters}
-              setFilters={setFilters}
-              uniqueValues={uniqueValues}
-              filterKeys={["role", "employmentType"]}
-            />
-  
+      <EmployeeFilters
+        searchTerm={searchTerm}
+        setSearchTerm={setSearchTerm}
+        filters={filters}
+        setFilters={setFilters}
+        uniqueValues={uniqueValues}
+        filterKeys={["role", "employmentType"]}
+      />
 
       {/* Table component */}
       <Table
