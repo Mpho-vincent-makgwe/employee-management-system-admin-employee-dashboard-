@@ -1,5 +1,5 @@
 import NotificationCard from "@/components/EmployeeComponents/dashboard/NotificationCard";
-import Heading from "@/components/Heading";
+import Heading from "@/components/ui/Heading";
 
 export default function NotificationPage() {
   const notifications = [

@@ -1,5 +1,5 @@
 "use client";
-import Table from "@/components/Table";
+import Table from "@/components/ui/Table";
 import payrollData from "@/data/adminData/payrollData";
 import EmployeeFilters from "@/components/ui/EmployeeFilters";
 import { Filters } from "@/hooks/Filters";
