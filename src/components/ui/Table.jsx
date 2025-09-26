@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useState, useEffect, useMemo, useCallback } from "react";
 import { FaSort, FaSortUp, FaSortDown, FaSearch } from "react-icons/fa";
 import { usePathname } from "next/navigation";
+import Pagination from "./Pagination";
 
 const Table = ({
   title,
@@ -31,7 +32,7 @@ const Table = ({
   showSearch = false,
   roleFilter,
   statusFilter,
-  searchTerm
+  searchTerm,
 }) => {
   const pathname = usePathname();
   const [currentLimit, setCurrentLimit] = useState(limit || data.length);
@@ -39,7 +40,6 @@ const Table = ({
   const [sortConfig, setSortConfig] = useState(null);
   const [filteredData, setFilteredData] = useState(data);
   const [currentPage, setCurrentPage] = useState(1);
-
 
   const itemsPerPage = 5;
 
@@ -178,17 +178,13 @@ const Table = ({
         rounded ? "rounded-md" : ""
       } overflow-hidden`}
     >
-
-
       {/* Table Header with Title and View More Link */}
       <div className="flex justify-between items-center p-4 border-b border-gray-100">
         <div>
           {title && (
             <h3
               className={`font-medium text-[14px] leading-[22px] tracking-[0] text-[#3A3A3C]
- ${
-                titleClassName || "text-gray-800"
-              }`}
+ ${titleClassName || "text-gray-800"}`}
             >
               {title}
             </h3>
@@ -344,52 +340,13 @@ const Table = ({
       )}
 
       {enablePagination && totalPages > 1 && (
-        <div className="flex justify-between items-center p-6 border-t border-gray-100">
-          <div>
-            <span className="text-sm text-black">
-              Showing {(currentPage - 1) * itemsPerPage + 1} to{" "}
-              {Math.min(currentPage * itemsPerPage, filteredData.length)} of{" "}
-              {filteredData.length} entries
-            </span>
-          </div>
-          <div className="flex space-x-2">
-            <button
-              onClick={() => handlePageChange(currentPage - 1)}
-              disabled={currentPage === 1}
-              className={`px-3 py-1 rounded-md ${
-                currentPage === 1
-                  ? "bg-gray-200 text-gray-500 cursor-not-allowed"
-                  : "bg-[#4f46e5] text-white hover:bg-indigo-700"
-              }`}
-            >
-              Previous
-            </button>
-            {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
-              <button
-                key={page}
-                onClick={() => handlePageChange(page)}
-                className={`px-3 py-1 rounded-md ${
-                  currentPage === page
-                    ? "bg-[#4f46e5] text-white"
-                    : "bg-white text-black hover:bg-gray-100"
-                }`}
-              >
-                {page}
-              </button>
-            ))}
-            <button
-              onClick={() => handlePageChange(currentPage + 1)}
-              disabled={currentPage === totalPages}
-              className={`px-3 py-1 rounded-md ${
-                currentPage === totalPages
-                  ? "bg-gray-200 text-gray-500 cursor-not-allowed"
-                  : "bg-[#4f46e5] text-white hover:bg-indigo-700"
-              }`}
-            >
-              Next
-            </button>
-          </div>
-        </div>
+        <Pagination
+          currentPage={currentPage}
+          totalPages={totalPages}
+          onPageChange={handlePageChange}
+          itemsPerPage={itemsPerPage}
+          totalItems={filteredData.length}
+        />
       )}
     </div>
   );

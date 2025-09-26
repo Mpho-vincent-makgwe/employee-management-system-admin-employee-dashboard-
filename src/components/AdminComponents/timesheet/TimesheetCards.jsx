@@ -1,5 +1,6 @@
 import Card from "../../ui/Card";
 import { FiUsers } from "react-icons/fi";
+import SummaryCard from "@/components/ui/SummaryCard";
 
 export default function TimesheetCards() {
   const overview = [
@@ -28,21 +29,12 @@ export default function TimesheetCards() {
   return (
     <div className="flex flex-col  xl:flex-row items-center w-full gap-[18px]">
       {overview.map((item, index) => (
-        <Card
+        <SummaryCard
           key={index}
-          className="h-[130px] w-full xl:max-w-none"
-          border=" #d0d5dd "
-        >
-          <div className="flex items-center h-full gap-5 w-full text-black">
-            <div className="w-[48px] h-[48px] flex items-center justify-center rounded-full bg-[#4F46E5]">
-              {item.icon}
-            </div>
-            <div className="flex flex-col items-start">
-              <p className="text-sm font-small">{item.label}</p>
-              <p className="text-xl font-bold mt-1">{item.value}</p>
-            </div>
-          </div>
-        </Card>
+          icon={item.icon}
+          label={item.label}
+          value={item.value}
+        />
       ))}
     </div>
   );

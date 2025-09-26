@@ -1,5 +1,6 @@
+"use client";
+
 import { timesheetEntries } from "../../../data/employeeData/timesheetData";
-import { getTimeSummary } from "@/utils/attendanceUtils";
 import { getAttendanceSummary } from "@/utils/attendanceUtils";
 import { BsClockFill } from "react-icons/bs";
 import Card from "@/components/ui/Card";
@@ -8,10 +9,10 @@ const AttendanceSummary = () => {
   const summary = getAttendanceSummary(timesheetEntries);
 
   const items = [
-    { title: "This Month Working Days", value: summary.workingDaysThisMonth },
-    { title: "Present", value: summary.present },
-    { title: "Absent", value: summary.absent },
-    { title: "Late", value: summary.late },
+    { label: "This Month Working Days", value: summary.workingDaysThisMonth },
+    { label: "Present", value: summary.present },
+    { label: "Absent", value: summary.absent },
+    { label: "Late", value: summary.late },
   ];
 
   return (

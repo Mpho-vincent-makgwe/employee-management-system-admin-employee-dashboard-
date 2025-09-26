@@ -3,6 +3,7 @@ import Table from "@/components/ui/Table";
 import payrollData from "@/data/adminData/payrollData";
 import EmployeeFilters from "@/components/ui/EmployeeFilters";
 import { Filters } from "@/hooks/Filters";
+import Heading from "@/components/ui/Heading";
 
 const columns = [
   { key: "date", title: "Date" },
@@ -28,8 +29,7 @@ const PayrollPage = () => {
   return (
     <div className="p-4">
       <div className="space-y-2">
-        <h2 className="text-black text-2xl">Payroll</h2>
-        <p className="text-black">View all employee information</p>
+        <Heading title="Payroll" subtitle="View all employee information" />
       </div>
 
       <EmployeeFilters
