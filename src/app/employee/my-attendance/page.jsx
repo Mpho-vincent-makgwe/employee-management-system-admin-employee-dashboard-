@@ -1,5 +1,4 @@
 import Heading from "@/components/ui/Heading";
-import SearchBar from "@/components/SearchBar";
 import MyAttendanceTable from "@/components/EmployeeComponents/my-attendance/MyAttendanceTable";
 import AttendanceSummaryCard from "@/components/EmployeeComponents/my-attendance/AttendanceSummaryCards";
 export default function EmployeeDirectory() {

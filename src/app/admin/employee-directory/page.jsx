@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useMemo } from "react";
-import Table from "@/components/Table";
+import Table from "@/components/ui/Table";
 import { employeeData } from "@/data/adminData/employeeData";
 import EmployeeFilters from "@/components/ui/EmployeeFilters";
 import { Filters } from "@/hooks/Filters";
