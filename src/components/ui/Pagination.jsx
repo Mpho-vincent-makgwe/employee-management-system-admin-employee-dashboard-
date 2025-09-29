@@ -1,6 +1,6 @@
 "use client";
 
-import CustomButton from "./ui/CustomButton";
+import CustomButton from "./CustomButton";
 
 const Pagination = ({ currentPage, totalPages, onPageChange }) => {
   return (
